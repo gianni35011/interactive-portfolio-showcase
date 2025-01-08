@@ -1,19 +1,21 @@
 ﻿import {Mesh, Object3D} from "three";
 import {createRigidBodyFixed} from "../tools/RapierHelper.ts";
+import { World as PhysicsWorld } from "@dimforge/rapier3d-compat";
 
 export default class World extends Object3D {
-    constructor({visuals}: { visuals: Object3D, physicsEngine }) {
+    constructor({visuals, physicsEngine}: { visuals: Object3D, physicsEngine: PhysicsWorld }) {
         super();
-        this.initPhysic(visuals);
+        this.initPhysic(visuals, physicsEngine);
         this.initVisual(visuals);
     }
 
-    initPhysic(meshes: Object3D, physicsEngine) {
+    initPhysic(meshes: Object3D, physicsEngine: PhysicsWorld) {
         meshes.traverse((result) => {
-            console.log("Meshes", result);
-            // if (result instanceof Mesh) {
-            //     createRigidBodyFixed(result, physicsEngine);
-            // }
+            console.log("World Meshes", result);
+            if (!(result instanceof Mesh)) {
+                return;
+            }
+            createRigidBodyFixed(result, physicsEngine);
         })
     }
 

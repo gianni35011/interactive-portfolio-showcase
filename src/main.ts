@@ -9,37 +9,28 @@ import MyWorld from './entities/world.ts'
 import {Player} from "./entities/player.ts";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {GLTF} from "three/addons/loaders/GLTFLoader.js";
-
+import Rapier from "./engine/physics.ts"
 
 const ground_mesh = await loader('src/assets/world/ground/SM_Ground.gltf')
 const player_mesh: GLTF | null = await loader('src/assets/adventurers/Rogue.glb')
+
 const scene = new THREE.Scene();
 const camera = new Camera();
 const light = new Light();
-// console.log(player_mesh)
 
-scene.add(light);
-console.log(ground_mesh);
 
-let ab;
-
-import('@dimforge/rapier3d').then(RAPIER =>{
-    let gravity = {x: 0.0, y: -9.81, z:0.0}
-    ab = new RAPIER.World(gravity);
-
-})
-
+let player = null
 if (player_mesh){
-    const player = new Player({mesh: player_mesh.scene});
+    player = new Player({mesh: player_mesh.scene, physicsEngine: Rapier});
     scene.add(player);
 }
 
-const phy = createPhysicsWorld()
-
 if (ground_mesh){
-    const world = new MyWorld({visuals: ground_mesh.scene, physicsEngine: ab});
+    const world = new MyWorld({visuals: ground_mesh.scene, physicsEngine: Rapier});
     scene.add(world);
 }
+
+scene.add(light);
 
 const graphic = new Graphics({scene, camera})
 graphic.setSize(window.innerWidth, window.innerHeight);
@@ -53,4 +44,7 @@ controls.maxPolarAngle = Math.PI / 2;
 
 graphic.onUpdate((dt: number) => {
     controls.update();
+    if (!player) return;
+    player.update();
+    Rapier.step()
 });
