@@ -27,3 +27,7 @@ function createColliderBall(radius: number, rigidBody: any, physicsEngine: World
     const colliderDesc = ColliderDesc.ball(radius);
     return physicsEngine.createCollider(colliderDesc,  rigidBody);
 }
+
+export function thresholdFloor(float: number, max: number = 0.2): number {
+    return Math.abs(float) < max ? 0 : float;
+}
