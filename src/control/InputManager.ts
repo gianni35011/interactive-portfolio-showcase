@@ -4,7 +4,7 @@ const JUMP = 1
 const X = 0
 const Z = 1
 
-export default class Gamepad {
+export default class InputManager {
     get gamepad(){
         return navigator.getGamepads()[0]
     }

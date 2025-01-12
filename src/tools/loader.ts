@@ -1,11 +1,10 @@
-﻿import { GLTFLoader, GLTF } from 'three/addons/loaders/GLTFLoader.js';
+﻿import {GLTF, GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 
 const loaderGLTF = new GLTFLoader();
 
 export default async function loadAsset(path: string): Promise<GLTF | null> {
     try {
-        const gltf = await loaderGLTF.loadAsync(path);
-        return gltf;  // Success
+        return await loaderGLTF.loadAsync(path);  // Success
     } catch (error: any) {
         console.error(error);  // Error handling
         return null;  // Handle error case
