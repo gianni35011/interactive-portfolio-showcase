@@ -1,0 +1,4464 @@
+﻿{
+	"asset":
+	{
+		"version": "2.0",
+		"generator": "Unreal Engine 5.4.4"
+	},
+	"scene": 0,
+	"accessors": [
+		{
+			"bufferView": 0,
+			"count": 1119,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 1,
+			"count": 1117,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -10.2370539, -0.532421887, -9.14388657 ],
+			"max": [ 10.7076559, 1.86771035, 8.75387955 ]
+		},
+		{
+			"bufferView": 2,
+			"count": 1117,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 3,
+			"count": 1117,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 4,
+			"count": 1117,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 5,
+			"count": 1117,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 6,
+			"count": 1155,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 7,
+			"count": 1155,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -11.4301462, -0.608793676, -15.7590942 ],
+			"max": [ 12.5849266, 2.29915452, 14.567729 ]
+		},
+		{
+			"bufferView": 8,
+			"count": 1155,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 9,
+			"count": 1155,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 10,
+			"count": 1155,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 11,
+			"count": 1155,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 12,
+			"count": 1092,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 13,
+			"count": 1092,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -8.79563522, -0.306005418, -8.79652214 ],
+			"max": [ 8.8280592, 2.04965711, 8.81426144 ]
+		},
+		{
+			"bufferView": 14,
+			"count": 1092,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 15,
+			"count": 1092,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 16,
+			"count": 1092,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 17,
+			"count": 1092,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 18,
+			"count": 1263,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 19,
+			"count": 1263,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -11.992198, -0.740221024, -14.360467 ],
+			"max": [ 10.3601208, 3.02505922, 13.7821102 ]
+		},
+		{
+			"bufferView": 20,
+			"count": 1263,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 21,
+			"count": 1263,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 22,
+			"count": 1263,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 23,
+			"count": 1263,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 24,
+			"count": 1017,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 25,
+			"count": 1017,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -3.15230918, -0.207362399, -3.11492848 ],
+			"max": [ 3.23859215, 0.0223940294, 3.02354527 ]
+		},
+		{
+			"bufferView": 26,
+			"count": 1017,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 27,
+			"count": 1017,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 28,
+			"count": 1017,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 29,
+			"count": 1017,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 30,
+			"count": 1323,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 31,
+			"count": 1323,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -5.73034954, -0.323783666, -5.59361458 ],
+			"max": [ 5.63763428, 0.040153943, 5.62614298 ]
+		},
+		{
+			"bufferView": 32,
+			"count": 1323,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 33,
+			"count": 1323,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 34,
+			"count": 1323,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 35,
+			"count": 1323,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 36,
+			"count": 1143,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 37,
+			"count": 1141,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -7.76207113, -0.30894959, -6.64894772 ],
+			"max": [ 6.5928936, 0.0557466075, 6.94395685 ]
+		},
+		{
+			"bufferView": 38,
+			"count": 1141,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 39,
+			"count": 1141,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 40,
+			"count": 1141,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 41,
+			"count": 1141,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 42,
+			"count": 726,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 43,
+			"count": 726,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -5.56473875, -0.303331733, -5.60808563 ],
+			"max": [ 5.35733795, 0.806751251, 5.84508371 ]
+		},
+		{
+			"bufferView": 44,
+			"count": 726,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 45,
+			"count": 726,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 46,
+			"count": 726,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 47,
+			"count": 726,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 48,
+			"count": 654,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 49,
+			"count": 654,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -4.01436806, -0.17846103, -3.20900679 ],
+			"max": [ 3.29333591, 0.0166053213, 3.84862208 ]
+		},
+		{
+			"bufferView": 50,
+			"count": 654,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 51,
+			"count": 654,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 52,
+			"count": 654,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 53,
+			"count": 654,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 54,
+			"count": 1059,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 55,
+			"count": 1059,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -6.1066699, -0.147405252, -5.88369226 ],
+			"max": [ 6.62275791, 0.254099339, 6.47558594 ]
+		},
+		{
+			"bufferView": 56,
+			"count": 1059,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 57,
+			"count": 1059,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 58,
+			"count": 1059,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 59,
+			"count": 1059,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 60,
+			"count": 963,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 61,
+			"count": 963,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -7.70212126, -0.176849976, -12.1443014 ],
+			"max": [ 9.05409718, 0.311485201, 8.13142681 ]
+		},
+		{
+			"bufferView": 62,
+			"count": 963,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 63,
+			"count": 963,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 64,
+			"count": 963,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 65,
+			"count": 963,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 66,
+			"count": 1089,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 67,
+			"count": 1089,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -4.92376709, -0.204128578, -6.01569986 ],
+			"max": [ 4.93736696, 0.179007262, 5.99816275 ]
+		},
+		{
+			"bufferView": 68,
+			"count": 1089,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 69,
+			"count": 1089,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 70,
+			"count": 1089,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 71,
+			"count": 1089,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 72,
+			"count": 1068,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 73,
+			"count": 1068,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -6.19854784, -0.137310401, -5.20700788 ],
+			"max": [ 7.45753145, 0.18113637, 7.05039454 ]
+		},
+		{
+			"bufferView": 74,
+			"count": 1068,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 75,
+			"count": 1068,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 76,
+			"count": 1068,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 77,
+			"count": 1068,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 78,
+			"count": 726,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 79,
+			"count": 724,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -5.6680131, -0.220461816, -5.30386686 ],
+			"max": [ 5.82811737, 0.941707373, 6.44748783 ]
+		},
+		{
+			"bufferView": 80,
+			"count": 724,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 81,
+			"count": 724,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 82,
+			"count": 724,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 83,
+			"count": 724,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 84,
+			"count": 684,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 85,
+			"count": 684,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -3.19964194, -0.131131947, -3.20536304 ],
+			"max": [ 3.20440173, 0.0238355696, 3.22097826 ]
+		},
+		{
+			"bufferView": 86,
+			"count": 684,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 87,
+			"count": 684,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 88,
+			"count": 684,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 89,
+			"count": 684,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 90,
+			"count": 726,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 91,
+			"count": 726,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -5.87906647, -0.260620177, -5.48548031 ],
+			"max": [ 5.5118432, 0.786323786, 5.48616648 ]
+		},
+		{
+			"bufferView": 92,
+			"count": 726,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 93,
+			"count": 726,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 94,
+			"count": 726,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 95,
+			"count": 726,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 96,
+			"count": 1275,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 97,
+			"count": 1275,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -7.88172102, -0.152481273, -11.7910385 ],
+			"max": [ 8.70652485, 0.0540437624, 9.23658562 ]
+		},
+		{
+			"bufferView": 98,
+			"count": 1275,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 99,
+			"count": 1275,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 100,
+			"count": 1275,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 101,
+			"count": 1275,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 102,
+			"count": 1080,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 103,
+			"count": 1080,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -3.95737457, -0.180673808, -3.66282654 ],
+			"max": [ 3.78280354, 0.0160106551, 3.80641055 ]
+		},
+		{
+			"bufferView": 104,
+			"count": 1080,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 105,
+			"count": 1080,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 106,
+			"count": 1080,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 107,
+			"count": 1080,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 108,
+			"count": 1212,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 109,
+			"count": 1212,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -7.24946451, -0.229012772, -5.74019098 ],
+			"max": [ 7.4192977, 0.0825299844, 6.4855113 ]
+		},
+		{
+			"bufferView": 110,
+			"count": 1212,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 111,
+			"count": 1212,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 112,
+			"count": 1212,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 113,
+			"count": 1212,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 114,
+			"count": 996,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 115,
+			"count": 994,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -10.9718084, -0.622065663, -9.00078392 ],
+			"max": [ 10.4610519, 1.91064513, 9.0793705 ]
+		},
+		{
+			"bufferView": 116,
+			"count": 994,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 117,
+			"count": 994,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 118,
+			"count": 994,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 119,
+			"count": 994,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 120,
+			"count": 1263,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 121,
+			"count": 1261,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -15.8621626, -0.659302354, -12.6906567 ],
+			"max": [ 14.535697, 1.8190254, 13.205842 ]
+		},
+		{
+			"bufferView": 122,
+			"count": 1261,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 123,
+			"count": 1261,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 124,
+			"count": 1261,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 125,
+			"count": 1261,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 126,
+			"count": 192,
+			"type": "SCALAR",
+			"componentType": 5121
+		},
+		{
+			"bufferView": 127,
+			"count": 192,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -1.015692, -0.0528964698, -0.64468652 ],
+			"max": [ 0.850360155, 0.355785996, 0.554021716 ]
+		},
+		{
+			"bufferView": 128,
+			"count": 192,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 129,
+			"count": 192,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 130,
+			"count": 192,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 131,
+			"count": 192,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 132,
+			"count": 342,
+			"type": "SCALAR",
+			"componentType": 5123
+		},
+		{
+			"bufferView": 133,
+			"count": 342,
+			"type": "VEC3",
+			"componentType": 5126,
+			"min": [ -1.2310673, -0.0182450768, -0.535143733 ],
+			"max": [ 1.29097331, 0.227230206, 0.402238429 ]
+		},
+		{
+			"bufferView": 134,
+			"count": 342,
+			"type": "VEC3",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 135,
+			"count": 342,
+			"type": "VEC4",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 136,
+			"count": 342,
+			"type": "VEC2",
+			"componentType": 5126
+		},
+		{
+			"bufferView": 137,
+			"count": 342,
+			"type": "VEC2",
+			"componentType": 5126
+		}
+	],
+	"buffers": [
+		{
+			"uri": "Ground.bin",
+			"byteLength": 1284956
+		}
+	],
+	"bufferViews": [
+		{
+			"buffer": 0,
+			"byteLength": 2238,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13404,
+			"byteOffset": 2240,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13404,
+			"byteOffset": 15644,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 17872,
+			"byteOffset": 29048,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8936,
+			"byteOffset": 46920,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8936,
+			"byteOffset": 55856,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2310,
+			"byteOffset": 64792,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13860,
+			"byteOffset": 67104,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13860,
+			"byteOffset": 80964,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 18480,
+			"byteOffset": 94824,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9240,
+			"byteOffset": 113304,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9240,
+			"byteOffset": 122544,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2184,
+			"byteOffset": 131784,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13104,
+			"byteOffset": 133968,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13104,
+			"byteOffset": 147072,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 17472,
+			"byteOffset": 160176,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8736,
+			"byteOffset": 177648,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8736,
+			"byteOffset": 186384,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2526,
+			"byteOffset": 195120,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15156,
+			"byteOffset": 197648,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15156,
+			"byteOffset": 212804,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 20208,
+			"byteOffset": 227960,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10104,
+			"byteOffset": 248168,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10104,
+			"byteOffset": 258272,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2034,
+			"byteOffset": 268376,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12204,
+			"byteOffset": 270412,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12204,
+			"byteOffset": 282616,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 16272,
+			"byteOffset": 294820,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8136,
+			"byteOffset": 311092,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8136,
+			"byteOffset": 319228,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2646,
+			"byteOffset": 327364,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15876,
+			"byteOffset": 330012,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15876,
+			"byteOffset": 345888,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 21168,
+			"byteOffset": 361764,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10584,
+			"byteOffset": 382932,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10584,
+			"byteOffset": 393516,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2286,
+			"byteOffset": 404100,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13692,
+			"byteOffset": 406388,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13692,
+			"byteOffset": 420080,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 18256,
+			"byteOffset": 433772,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9128,
+			"byteOffset": 452028,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9128,
+			"byteOffset": 461156,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1452,
+			"byteOffset": 470284,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 471736,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 480448,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11616,
+			"byteOffset": 489160,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5808,
+			"byteOffset": 500776,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5808,
+			"byteOffset": 506584,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1308,
+			"byteOffset": 512392,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7848,
+			"byteOffset": 513700,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7848,
+			"byteOffset": 521548,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10464,
+			"byteOffset": 529396,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5232,
+			"byteOffset": 539860,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5232,
+			"byteOffset": 545092,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2118,
+			"byteOffset": 550324,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12708,
+			"byteOffset": 552444,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12708,
+			"byteOffset": 565152,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 16944,
+			"byteOffset": 577860,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8472,
+			"byteOffset": 594804,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8472,
+			"byteOffset": 603276,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1926,
+			"byteOffset": 611748,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11556,
+			"byteOffset": 613676,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11556,
+			"byteOffset": 625232,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15408,
+			"byteOffset": 636788,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7704,
+			"byteOffset": 652196,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7704,
+			"byteOffset": 659900,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2178,
+			"byteOffset": 667604,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13068,
+			"byteOffset": 669784,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 13068,
+			"byteOffset": 682852,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 17424,
+			"byteOffset": 695920,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 713344,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 722056,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2136,
+			"byteOffset": 730768,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12816,
+			"byteOffset": 732904,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12816,
+			"byteOffset": 745720,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 17088,
+			"byteOffset": 758536,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8544,
+			"byteOffset": 775624,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8544,
+			"byteOffset": 784168,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1452,
+			"byteOffset": 792712,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8688,
+			"byteOffset": 794164,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8688,
+			"byteOffset": 802852,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11584,
+			"byteOffset": 811540,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5792,
+			"byteOffset": 823124,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5792,
+			"byteOffset": 828916,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1368,
+			"byteOffset": 834708,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8208,
+			"byteOffset": 836076,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8208,
+			"byteOffset": 844284,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10944,
+			"byteOffset": 852492,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5472,
+			"byteOffset": 863436,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5472,
+			"byteOffset": 868908,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1452,
+			"byteOffset": 874380,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 875832,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8712,
+			"byteOffset": 884544,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11616,
+			"byteOffset": 893256,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5808,
+			"byteOffset": 904872,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5808,
+			"byteOffset": 910680,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2550,
+			"byteOffset": 916488,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15300,
+			"byteOffset": 919040,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15300,
+			"byteOffset": 934340,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 20400,
+			"byteOffset": 949640,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10200,
+			"byteOffset": 970040,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10200,
+			"byteOffset": 980240,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2160,
+			"byteOffset": 990440,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12960,
+			"byteOffset": 992600,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 12960,
+			"byteOffset": 1005560,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 17280,
+			"byteOffset": 1018520,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8640,
+			"byteOffset": 1035800,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 8640,
+			"byteOffset": 1044440,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2424,
+			"byteOffset": 1053080,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 14544,
+			"byteOffset": 1055504,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 14544,
+			"byteOffset": 1070048,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 19392,
+			"byteOffset": 1084592,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9696,
+			"byteOffset": 1103984,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 9696,
+			"byteOffset": 1113680,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1992,
+			"byteOffset": 1123376,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11928,
+			"byteOffset": 1125368,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 11928,
+			"byteOffset": 1137296,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15904,
+			"byteOffset": 1149224,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7952,
+			"byteOffset": 1165128,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 7952,
+			"byteOffset": 1173080,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2526,
+			"byteOffset": 1181032,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15132,
+			"byteOffset": 1183560,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 15132,
+			"byteOffset": 1198692,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 20176,
+			"byteOffset": 1213824,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10088,
+			"byteOffset": 1234000,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 10088,
+			"byteOffset": 1244088,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 192,
+			"byteOffset": 1254176,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2304,
+			"byteOffset": 1254368,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2304,
+			"byteOffset": 1256672,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 3072,
+			"byteOffset": 1258976,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1536,
+			"byteOffset": 1262048,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 1536,
+			"byteOffset": 1263584,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 684,
+			"byteOffset": 1265120,
+			"target": 34963
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4104,
+			"byteOffset": 1265804,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 4104,
+			"byteOffset": 1269908,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 5472,
+			"byteOffset": 1274012,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2736,
+			"byteOffset": 1279484,
+			"target": 34962
+		},
+		{
+			"buffer": 0,
+			"byteLength": 2736,
+			"byteOffset": 1282220,
+			"target": 34962
+		}
+	],
+	"images": [
+		{
+			"uri": "MI_Base_BaseColor.png"
+		}
+	],
+	"materials": [
+		{
+			"name": "MI_Base",
+			"pbrMetallicRoughness":
+			{
+				"baseColorTexture":
+				{
+					"index": 0
+				},
+				"metallicFactor": 0
+			}
+		}
+	],
+	"meshes": [
+		{
+			"name": "SM_DarkGrassyLowHillA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 1,
+						"NORMAL": 2,
+						"TANGENT": 3,
+						"TEXCOORD_0": 4,
+						"TEXCOORD_1": 5
+					},
+					"indices": 0,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 7,
+						"NORMAL": 8,
+						"TANGENT": 9,
+						"TEXCOORD_0": 10,
+						"TEXCOORD_1": 11
+					},
+					"indices": 6,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassyLowHillA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 13,
+						"NORMAL": 14,
+						"TANGENT": 15,
+						"TEXCOORD_0": 16,
+						"TEXCOORD_1": 17
+					},
+					"indices": 12,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassyLowHillB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 19,
+						"NORMAL": 20,
+						"TANGENT": 21,
+						"TEXCOORD_0": 22,
+						"TEXCOORD_1": 23
+					},
+					"indices": 18,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtMoundA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 25,
+						"NORMAL": 26,
+						"TANGENT": 27,
+						"TEXCOORD_0": 28,
+						"TEXCOORD_1": 29
+					},
+					"indices": 24,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtMoundB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 31,
+						"NORMAL": 32,
+						"TANGENT": 33,
+						"TEXCOORD_0": 34,
+						"TEXCOORD_1": 35
+					},
+					"indices": 30,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtMoundC",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 37,
+						"NORMAL": 38,
+						"TANGENT": 39,
+						"TEXCOORD_0": 40,
+						"TEXCOORD_1": 41
+					},
+					"indices": 36,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkGrassMoundD",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 43,
+						"NORMAL": 44,
+						"TANGENT": 45,
+						"TEXCOORD_0": 46,
+						"TEXCOORD_1": 47
+					},
+					"indices": 42,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkGrassMoundA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 49,
+						"NORMAL": 50,
+						"TANGENT": 51,
+						"TEXCOORD_0": 52,
+						"TEXCOORD_1": 53
+					},
+					"indices": 48,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkGrassMoundB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 55,
+						"NORMAL": 56,
+						"TANGENT": 57,
+						"TEXCOORD_0": 58,
+						"TEXCOORD_1": 59
+					},
+					"indices": 54,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkGrassMoundC",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 61,
+						"NORMAL": 62,
+						"TANGENT": 63,
+						"TEXCOORD_0": 64,
+						"TEXCOORD_1": 65
+					},
+					"indices": 60,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassMoundB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 67,
+						"NORMAL": 68,
+						"TANGENT": 69,
+						"TEXCOORD_0": 70,
+						"TEXCOORD_1": 71
+					},
+					"indices": 66,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassMoundC",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 73,
+						"NORMAL": 74,
+						"TANGENT": 75,
+						"TEXCOORD_0": 76,
+						"TEXCOORD_1": 77
+					},
+					"indices": 72,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassMoundD",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 79,
+						"NORMAL": 80,
+						"TANGENT": 81,
+						"TEXCOORD_0": 82,
+						"TEXCOORD_1": 83
+					},
+					"indices": 78,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassMoundA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 85,
+						"NORMAL": 86,
+						"TANGENT": 87,
+						"TEXCOORD_0": 88,
+						"TEXCOORD_1": 89
+					},
+					"indices": 84,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtDarkMoundD",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 91,
+						"NORMAL": 92,
+						"TANGENT": 93,
+						"TEXCOORD_0": 94,
+						"TEXCOORD_1": 95
+					},
+					"indices": 90,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtDarkMoundC",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 97,
+						"NORMAL": 98,
+						"TANGENT": 99,
+						"TEXCOORD_0": 100,
+						"TEXCOORD_1": 101
+					},
+					"indices": 96,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtDarkMoundA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 103,
+						"NORMAL": 104,
+						"TANGENT": 105,
+						"TEXCOORD_0": 106,
+						"TEXCOORD_1": 107
+					},
+					"indices": 102,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtDarkMoundB",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 109,
+						"NORMAL": 110,
+						"TANGENT": 111,
+						"TEXCOORD_0": 112,
+						"TEXCOORD_1": 113
+					},
+					"indices": 108,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DirtLowHillA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 115,
+						"NORMAL": 116,
+						"TANGENT": 117,
+						"TEXCOORD_0": 118,
+						"TEXCOORD_1": 119
+					},
+					"indices": 114,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_DarkDirtLowHillA",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 121,
+						"NORMAL": 122,
+						"TANGENT": 123,
+						"TEXCOORD_0": 124,
+						"TEXCOORD_1": 125
+					},
+					"indices": 120,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassPileE",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 127,
+						"NORMAL": 128,
+						"TANGENT": 129,
+						"TEXCOORD_0": 130,
+						"TEXCOORD_1": 131
+					},
+					"indices": 126,
+					"material": 0
+				}
+			]
+		},
+		{
+			"name": "SM_GrassPileH",
+			"primitives": [
+				{
+					"attributes":
+					{
+						"POSITION": 133,
+						"NORMAL": 134,
+						"TANGENT": 135,
+						"TEXCOORD_0": 136,
+						"TEXCOORD_1": 137
+					},
+					"indices": 132,
+					"material": 0
+				}
+			]
+		}
+	],
+	"nodes": [
+		{
+			"name": "SM_DarkGrassyLowHillA",
+			"translation": [ -57.6026649, -0.250004888, 118.574829 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA2",
+			"translation": [ -84.2173996, -0.250004888, 118.574829 ],
+			"rotation": [ -0, -0.999924302, 0, 0.0123052243 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA3",
+			"translation": [ -74.8667145, -0.250004888, 138.202881 ],
+			"rotation": [ -0, -0.999924302, 0, 0.0123052243 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB",
+			"translation": [ -142.86969, -0.25, 65.3971252 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB2",
+			"translation": [ -128.300781, -0.25, 51.9810371 ],
+			"rotation": [ -0, -0.96964097, 0, 0.244533107 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB3",
+			"translation": [ -128.300766, -0.25, 80.789711 ],
+			"rotation": [ 0, 0.530162692, -0, 0.84789592 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB4",
+			"translation": [ -121.061035, -0.25, 64.6903992 ],
+			"rotation": [ 0, 0.530162692, -0, 0.84789592 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_GrassyLowHillA",
+			"translation": [ 110.46743, -0.25, 123.827194 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_GrassyLowHillB",
+			"translation": [ 102.74736, -0.25, 113.30159 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB2",
+			"translation": [ 86.3932953, -0.249997556, 106.209717 ],
+			"rotation": [ 0, 0.787462115, -0, 0.616363049 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillA2",
+			"translation": [ 97.7167358, -0.25, 98.0585709 ],
+			"rotation": [ -0, -0.167228267, 0, 0.985918224 ],
+			"scale": [ 1, 1, 1.32673204 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_GrassyLowHillA3",
+			"translation": [ -62.860218, -0.249995112, -105.439751 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_GrassyLowHillB3",
+			"translation": [ -71.566246, -0.249997556, -117.045799 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB4",
+			"translation": [ -75.2545471, -0.249997556, -99.0014267 ],
+			"rotation": [ -0, -0.126869529, 0, 0.991919518 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillA4",
+			"translation": [ -112.352242, -0.249997556, -50.3473244 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_GrassyLowHillA5",
+			"translation": [ -108.437973, -0.250002444, -41.360672 ],
+			"rotation": [ -0, -0.626240075, 0, 0.779630303 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB5",
+			"translation": [ 112.389893, -0.25, -98.1334381 ],
+			"rotation": [ -0, -0.395381212, 0, 0.918517113 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA4",
+			"translation": [ 102.589668, -0.249995112, -79.4855194 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA5",
+			"translation": [ 102.589691, -0.249995112, -58.2347679 ],
+			"rotation": [ 0, 0.851768732, -0, 0.523917973 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB6",
+			"translation": [ 72.228981, -0.25, -68.7970505 ],
+			"rotation": [ 0, 0.155578777, -0, 0.987823486 ],
+			"scale": [ 2.22528434, 1, 1.47723091 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_GrassyLowHillB5",
+			"translation": [ 21.3385487, -0.250009745, -69.5093002 ],
+			"rotation": [ -0, -0.616693854, 0, 0.787203074 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB6",
+			"translation": [ -18.9823036, -0.25, -69.5093002 ],
+			"rotation": [ 0, 0.715861559, -0, 0.698242247 ],
+			"scale": [ 2, 1, 3 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB7",
+			"translation": [ -41.4840927, -0.249995112, -87.4824066 ],
+			"rotation": [ 0, 0.419819087, -0, 0.907607794 ],
+			"scale": [ 1, 1, 1.4518224 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB8",
+			"translation": [ -63.2766304, -0.249995112, -91.9416199 ],
+			"rotation": [ -0, -0.49669987, 0, 0.867922366 ],
+			"scale": [ 1, 1, 1.45182204 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB9",
+			"translation": [ -84.2557373, -0.249995112, -75.7784271 ],
+			"rotation": [ -0, -0.269972354, 0, 0.962868094 ],
+			"scale": [ 1, 1, 1.45182204 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillA7",
+			"translation": [ -99.7823715, -0.250004888, -61.469326 ],
+			"rotation": [ -0, -0.28837043, 0, 0.957518935 ],
+			"scale": [ 1.62841392, 1, 1.61097181 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_GrassyLowHillB10",
+			"translation": [ -99.006134, -0.249997556, -28.4813805 ],
+			"rotation": [ 0, 0.238057196, -0, 0.971251249 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB11",
+			"translation": [ -99.006134, -0.249997556, -13.5455551 ],
+			"rotation": [ 0, 0.702506125, -0, 0.71167767 ],
+			"scale": [ 1.62135363, 1, 1 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB12",
+			"translation": [ -102.223679, -0.249997556, 7.4448204 ],
+			"rotation": [ -0, -0.857838511, 0, 0.513919294 ],
+			"scale": [ 1.62135398, 1.25734925, 1.18409336 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillA8",
+			"translation": [ -104.901062, -0.25, 28.7894688 ],
+			"rotation": [ -0, -0.158769101, 0, 0.987315834 ],
+			"scale": [ 1, 0.904547274, 1.55959809 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA6",
+			"translation": [ -115.533279, -0.249990225, 43.2947006 ],
+			"rotation": [ -0, -0.295008838, 0, 0.955494523 ],
+			"scale": [ 1, 1, 1.83926129 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB7",
+			"translation": [ -101.318169, -0.249980465, 100.288399 ],
+			"rotation": [ 0, 0.275021583, -0, 0.96143806 ],
+			"scale": [ 1, 1, 1.49570954 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA7",
+			"translation": [ -117.460587, -0.25, 84.131813 ],
+			"scale": [ 1.47690201, 1, 2.10076976 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA8",
+			"translation": [ 98.572319, -0.249819323, 76.9306641 ],
+			"rotation": [ 0, 0.796874404, -0, 0.60414499 ],
+			"scale": [ 2, 2, 2 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA9",
+			"translation": [ 98.572319, -0.249838859, 44.0768242 ],
+			"rotation": [ -0, -0.999997854, 0, 0.00211974164 ],
+			"scale": [ 2, 2, 3.08210039 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB8",
+			"translation": [ 94.1244278, -0.250019521, 12.5292749 ],
+			"scale": [ 1, 1, 1.3396585 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB9",
+			"translation": [ 94.1244278, -0.250009745, -14.5976343 ],
+			"rotation": [ 0, 0.957413316, -0, 0.288721204 ],
+			"scale": [ 1, 1, 1.33965802 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA10",
+			"translation": [ 90.3472672, -0.249990225, -33.7423058 ],
+			"scale": [ 1.57368815, 1, 1.57368815 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA11",
+			"translation": [ 88.3185501, -0.249991447, -49.6117554 ],
+			"scale": [ 1.57368803, 1, 1.57368803 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_GrassyLowHillB14",
+			"translation": [ 4.39257812, -0.249997556, 108.285492 ],
+			"rotation": [ -0, -0.457572788, 0, 0.889172196 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB16",
+			"translation": [ -39.033741, -0.250017077, 115.70694 ],
+			"rotation": [ -0, -0.457572788, 0, 0.889172196 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillB17",
+			"translation": [ -20.841383, -0.250017077, 108.489021 ],
+			"rotation": [ 0, 0.214853391, -0, 0.976646423 ],
+			"scale": [ 1.40212798, 1, 0.717145979 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_GrassyLowHillA11",
+			"translation": [ -5.61215544, -0.250019521, 109.313026 ],
+			"rotation": [ -0, -0.982219934, 0, 0.187733993 ],
+			"scale": [ 1.49369502, 1, 1 ],
+			"mesh": 2
+		},
+		{
+			"name": "SM_DirtMoundA",
+			"translation": [ -30.9948788, -0.099999994, -8.01485252 ],
+			"rotation": [ 0, 0.443531454, -0, 0.896258831 ],
+			"scale": [ 0.757540226, 1, 1 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB",
+			"translation": [ -36.0402489, -0.099999994, -11.5422068 ],
+			"rotation": [ 0, 0.341611475, -0, 0.93984127 ],
+			"scale": [ 0.692853212, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC",
+			"translation": [ -44.4450569, -0.100039057, -21.9040947 ],
+			"rotation": [ -0, -0.418666393, 0, 0.908140123 ],
+			"scale": [ 2.15564299, 1, 0.516544878 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundA2",
+			"translation": [ -49.9772453, -0.099999994, -30.2409878 ],
+			"rotation": [ 0, 0.443531454, -0, 0.896258831 ],
+			"scale": [ 0.757539988, 1, 1 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB2",
+			"translation": [ -55.5463371, -0.100000605, -34.3936539 ],
+			"rotation": [ 0, 0.341611475, -0, 0.93984127 ],
+			"scale": [ 0.692852974, 1, 1.11400807 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC2",
+			"translation": [ -64.4293823, -0.099999994, -43.2507057 ],
+			"rotation": [ -0, -0.418666393, 0, 0.908140123 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundA3",
+			"translation": [ -37.7881088, -0.099999994, 51.5405464 ],
+			"rotation": [ 0, 0.0348100699, -0, 0.99939394 ],
+			"scale": [ 0.757539988, 1, 1 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB3",
+			"translation": [ -38.4713783, -0.099999994, 45.422451 ],
+			"rotation": [ -0, -0.0760161057, 0, 0.997106612 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC3",
+			"translation": [ -36.2437477, -0.099999994, 32.2860374 ],
+			"rotation": [ -0, -0.755682468, 0, 0.654938161 ],
+			"scale": [ 1.88583004, 1, 0.657801867 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundA4",
+			"translation": [ -33.6344147, -0.099999994, 22.6082535 ],
+			"rotation": [ 0, 0.0348100699, -0, 0.99939394 ],
+			"scale": [ 0.757539988, 1, 1 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB4",
+			"translation": [ -34.1972122, -0.099999994, 15.7044897 ],
+			"rotation": [ -0, -0.0760161057, 0, 0.997106612 ],
+			"scale": [ 0.692852974, 1, 1.10520005 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC4",
+			"translation": [ -33.4096222, -0.099999994, 3.16432095 ],
+			"rotation": [ -0, -0.755682468, 0, 0.654938161 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB5",
+			"translation": [ -86.031601, -0.099999994, 51.4414787 ],
+			"rotation": [ -0, -0.757347822, 0, 0.65301168 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC5",
+			"translation": [ -74.8564529, -0.099999994, 52.7926178 ],
+			"rotation": [ 0, 0.991587818, -0, 0.129435763 ],
+			"scale": [ 1.88583004, 1, 0.516544998 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB6",
+			"translation": [ -59.4406929, -0.099999994, 56.1117897 ],
+			"rotation": [ -0, -0.757347822, 0, 0.65301168 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC6",
+			"translation": [ -46.1110306, -0.099999994, 56.9602509 ],
+			"rotation": [ 0, 0.997616827, -0, 0.0689977109 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundA7",
+			"translation": [ -4.10585928, -0.099999994, 52.5522346 ],
+			"rotation": [ 0, 0.569443583, -0, 0.822030425 ],
+			"scale": [ 1.25513256, 1, 1.41345048 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB7",
+			"translation": [ -9.47515678, -0.099999994, 49.908329 ],
+			"rotation": [ 0, 0.612646282, -0, 0.790357232 ],
+			"scale": [ 1.1046716, 1, 1.33498609 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC7",
+			"translation": [ -21.9046459, -0.0999902338, 45.162281 ],
+			"rotation": [ -0, -0.289426357, 0, 0.957200289 ],
+			"scale": [ 1.88583004, 1, 0.713472486 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundA8",
+			"translation": [ 27.2031822, -0.099999994, 60.1558418 ],
+			"rotation": [ 0, 0.696357906, -0, 0.717694759 ],
+			"scale": [ 0.757539988, 1, 1 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_DirtMoundB8",
+			"translation": [ 21.1399364, -0.099999994, 58.7762642 ],
+			"rotation": [ 0, 0.612646282, -0, 0.790357232 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC8",
+			"translation": [ 9.63506031, -0.099999994, 57.2675095 ],
+			"rotation": [ -0, -0.120904066, 0, 0.992664218 ],
+			"scale": [ 1.88583004, 1, 0.516544998 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB9",
+			"translation": [ 57.3699417, -0.0999609381, 19.0011883 ],
+			"rotation": [ 0, 0.943123579, -0, 0.332442641 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC9",
+			"translation": [ 48.747982, -0.0999963358, 25.8367081 ],
+			"rotation": [ 0, 0.436134189, -0, 0.899881661 ],
+			"scale": [ 1.88583004, 1, 0.729104757 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB10",
+			"translation": [ 38.9457321, -0.099999994, 38.3677177 ],
+			"rotation": [ 0, 0.943123579, -0, 0.332442641 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC10",
+			"translation": [ 31.4740467, -0.099999994, 49.4391632 ],
+			"rotation": [ 0, 0.436133265, -0, 0.899882078 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB11",
+			"translation": [ 14.2324104, -0.099999994, -14.2346029 ],
+			"rotation": [ -0, -0.968814433, 0, 0.247787371 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC11",
+			"translation": [ 20.5515709, -0.0999975577, -2.50990343 ],
+			"rotation": [ 0, 0.862700343, -0, 0.505715668 ],
+			"scale": [ 1.88583004, 1, 0.516544998 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB12",
+			"translation": [ 28.3122234, -0.099999994, 11.3781481 ],
+			"rotation": [ -0, -0.968814433, 0, 0.247787371 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC12",
+			"translation": [ 35.6869736, -0.099999994, 22.5143909 ],
+			"rotation": [ 0, 0.862701178, -0, 0.505714059 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB13",
+			"translation": [ 22.6707001, -0.099999994, -9.74471092 ],
+			"rotation": [ -0, -0.427562892, 0, 0.90398562 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC13",
+			"translation": [ 33.4606934, -0.0999987796, -18.3329239 ],
+			"rotation": [ -0, -0.939921856, 0, 0.341389686 ],
+			"scale": [ 2.00575566, 1, 0.703824878 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB14",
+			"translation": [ 45.0865288, -0.099999994, -28.5026608 ],
+			"rotation": [ -0, -0.936711192, 0, 0.35010311 ],
+			"scale": [ 1.35556197, 1, 0.602024794 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC14",
+			"translation": [ 54.9510727, -0.099999994, -36.0749397 ],
+			"rotation": [ -0, -0.939920247, 0, 0.341394067 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DarkGrassMoundD",
+			"translation": [ 63.5202866, -0.250048816, -37.6245728 ],
+			"rotation": [ 0, 0.36724481, -0, 0.930124342 ],
+			"scale": [ 1.20589161, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD2",
+			"translation": [ 57.9318657, -0.250019521, -32.0889702 ],
+			"rotation": [ 0, 0.938534617, -0, 0.345185459 ],
+			"scale": [ 1, 1, 1.23898149 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD3",
+			"translation": [ 53.5866051, -0.250019521, -26.3219681 ],
+			"rotation": [ 0, 0.985557318, -0, 0.16934216 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD4",
+			"translation": [ 47.113533, -0.250056148, -21.1429272 ],
+			"rotation": [ -0, -0.632478058, 0, 0.774578273 ],
+			"scale": [ 1, 1, 1.12939572 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD5",
+			"translation": [ 41.4553108, -0.249978021, -18.2572937 ],
+			"rotation": [ -0, -0.433055162, 0, 0.901367545 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD6",
+			"translation": [ 57.4403992, -0.250014633, -46.1375122 ],
+			"rotation": [ 0, 0.36724481, -0, 0.930124342 ],
+			"scale": [ 1.10998583, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD7",
+			"translation": [ 52.9134789, -0.250014633, -40.8060875 ],
+			"rotation": [ 0, 0.855814636, -0, 0.517282605 ],
+			"scale": [ 1, 1, 1.20347118 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD8",
+			"translation": [ 47.0582466, -0.250009745, -33.8250694 ],
+			"rotation": [ 0, 0.953677714, -0, 0.300830543 ],
+			"scale": [ 1, 1, 1.28410554 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD9",
+			"translation": [ 41.4340439, -0.25005126, -29.6673336 ],
+			"rotation": [ -0, -0.446893305, 0, 0.894587278 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD10",
+			"translation": [ 34.1789513, -0.249951169, -25.1714153 ],
+			"rotation": [ -0, -0.433055162, 0, 0.901367545 ],
+			"scale": [ 1, 1, 1.24360538 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundA2",
+			"translation": [ 56.9007301, 0.0262727737, -56.2043877 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB",
+			"translation": [ 50.3885078, -0.249997556, -48.9742012 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundC",
+			"translation": [ 67.4505539, -0.0967822224, -47.6241684 ],
+			"rotation": [ 0, 0.438734919, -0, 0.898616552 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundA3",
+			"translation": [ 51.2992554, 0.0263024904, -62.6965675 ],
+			"rotation": [ -0, -0.196155027, 0, 0.980572999 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB2",
+			"translation": [ 42.5067978, -0.249997556, -58.5279427 ],
+			"rotation": [ -0, -0.196155071, 0, 0.980572879 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundA4",
+			"translation": [ 45.2320557, 0.0263024904, -53.7781372 ],
+			"rotation": [ -0, -0.196155027, 0, 0.980572999 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB10",
+			"translation": [ 42.7559204, -0.25, -76.469223 ],
+			"rotation": [ 0, 0.155578777, -0, 0.987823486 ],
+			"scale": [ 2.2252841, 1, 1.47723103 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassMoundC2",
+			"translation": [ 75.3927307, -0.0967822224, -35.6164017 ],
+			"rotation": [ 0, 0.438734919, -0, 0.898616552 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC3",
+			"translation": [ 80.0049057, -0.0967822224, -20.4441872 ],
+			"rotation": [ -0, -0.409055978, 0, 0.912509322 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC4",
+			"translation": [ 62.9719238, -0.0967773423, -26.5669518 ],
+			"rotation": [ -0, -0.409055978, 0, 0.912509322 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundA5",
+			"translation": [ 74.7203598, -0.0802868605, -26.9948349 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB3",
+			"translation": [ 72.4097214, -0.248455808, -20.9885445 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundA6",
+			"translation": [ 75.8457108, -0.00771484338, -49.086277 ],
+			"rotation": [ 0, 0.240971252, -0, 0.970532358 ],
+			"scale": [ 1, 1, 1.6495837 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA7",
+			"translation": [ 40.7629662, 0.0263024904, -40.8064308 ],
+			"rotation": [ 0, 0.798875332, -0, 0.601496637 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA8",
+			"translation": [ 32.3469048, 0.0262951646, -33.7815285 ],
+			"rotation": [ 0, 0.798875332, -0, 0.601496637 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA9",
+			"translation": [ 27.1321964, 0.0262951646, -50.4195061 ],
+			"rotation": [ 0, 0.798875332, -0, 0.601496637 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB4",
+			"translation": [ 33.7697449, -0.149802238, -40.3361206 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB5",
+			"translation": [ 33.7697449, -0.149802238, -54.3673286 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundC5",
+			"translation": [ 25.5486221, -0.0021557617, -37.7661133 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundA10",
+			"translation": [ 37.2502937, 0.0262951646, -50.2544746 ],
+			"rotation": [ 0, 0.798875332, -0, 0.601496637 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundC6",
+			"translation": [ 10.6831722, -0.00215820316, -53.6326447 ],
+			"rotation": [ -0, -0.585124552, 0, 0.810943425 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC7",
+			"translation": [ 11.0017653, -0.00215575984, -37.5791969 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundA11",
+			"translation": [ 18.1645699, 0.0263000485, -47.8403397 ],
+			"rotation": [ 0, 0.798875332, -0, 0.601496637 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundC8",
+			"translation": [ 25.5486107, -0.00215575984, -35.6223755 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundD11",
+			"translation": [ 29.6640682, -0.250014633, -20.6915588 ],
+			"rotation": [ 0, 0.857459784, -0, 0.514550984 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD12",
+			"translation": [ 36.3213005, -0.250014633, -13.7075615 ],
+			"rotation": [ -0, -0.539864957, 0, 0.841751635 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD13",
+			"translation": [ 31.529604, -0.249926746, -10.2083273 ],
+			"rotation": [ -0, -0.500507832, 0, 0.865732014 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD14",
+			"translation": [ 23.9327965, -0.250014633, -16.1386871 ],
+			"rotation": [ -0, -0.362988472, 0, 0.931793749 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD15",
+			"translation": [ 20.6612511, -0.250003666, -14.2014093 ],
+			"rotation": [ 0, 0.830356479, -0, 0.557232559 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD16",
+			"translation": [ 26.3524475, -0.249978021, -4.43702984 ],
+			"rotation": [ 0, 0.257191747, -0, 0.96636039 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundB6",
+			"translation": [ 25.101572, -0.106824949, -28.5186729 ],
+			"rotation": [ -0, -0.407321274, 0, 0.913284957 ],
+			"scale": [ 2.68794608, 1, 2 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_GrassMoundB",
+			"translation": [ 17.3642559, -0.250002444, -18.7304192 ],
+			"scale": [ 1.27236056, 1.27236056, 1.27236056 ],
+			"mesh": 11
+		},
+		{
+			"name": "SM_GrassMoundC",
+			"translation": [ 1.16864014, -0.131904289, -50.1995354 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundD",
+			"translation": [ 9.04292488, -0.250002444, -12.5728216 ],
+			"rotation": [ 0, 0.242213771, -0, 0.97022289 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD2",
+			"translation": [ 13.2132225, -0.25, -5.49960136 ],
+			"rotation": [ -0, -0.38899827, 0, 0.921238482 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundC2",
+			"translation": [ 12.1189594, -0.191659182, -24.0963478 ],
+			"scale": [ 1.17185307, 1.17185307, 1.17185307 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC3",
+			"translation": [ 12.1189594, -0.191659182, -30.4846573 ],
+			"scale": [ 1.17185295, 1.17185295, 1.17185295 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundA",
+			"translation": [ 9.45976067, -0.114372559, -18.161726 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundD3",
+			"translation": [ 15.2732334, -0.250031739, 1.03175592 ],
+			"rotation": [ 0, 0.892555296, -0, 0.450937957 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD4",
+			"translation": [ 18.8996964, -0.250031114, 5.60757113 ],
+			"rotation": [ 0, 0.260485917, -0, 0.965477645 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD5",
+			"translation": [ 22.9020138, -0.25002867, 12.484848 ],
+			"rotation": [ 0, 0.874653399, -0, 0.48474884 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD6",
+			"translation": [ 26.120491, -0.250021368, 18.6654015 ],
+			"rotation": [ 0, 0.874653399, -0, 0.48474884 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD7",
+			"translation": [ 29.292778, -0.250025004, 23.1181431 ],
+			"rotation": [ 0, 0.892555296, -0, 0.450937957 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD8",
+			"translation": [ 32.919239, -0.250024408, 27.693964 ],
+			"rotation": [ 0, 0.260485917, -0, 0.965477645 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD9",
+			"translation": [ 33.150547, -0.250024408, 34.8853836 ],
+			"rotation": [ 0, 0.337875813, -0, 0.94119072 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_DarkGrassMoundD17",
+			"translation": [ 29.80303, -0.249978021, 1.93401754 ],
+			"rotation": [ 0, 0.215720788, -0, 0.976455092 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD18",
+			"translation": [ 33.1848564, -0.250014633, 7.66789055 ],
+			"rotation": [ 0, 0.199873894, -0, 0.979821742 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD19",
+			"translation": [ 36.5496292, -0.249926746, 12.5549488 ],
+			"rotation": [ 0, 0.24480547, -0, 0.969572246 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DirtMoundB15",
+			"translation": [ 28.4587574, -0.110871881, 7.08409882 ],
+			"rotation": [ -0, -0.968814433, 0, 0.247787371 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC15",
+			"translation": [ 41.1372604, -0.099999994, 57.0666504 ],
+			"rotation": [ 0, 0.938797057, -0, 0.344470739 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB16",
+			"translation": [ 51.6599388, -0.099999994, 64.0556564 ],
+			"rotation": [ 0, 0.478941351, -0, 0.877846897 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC16",
+			"translation": [ 64.0481186, -0.099999994, 70.1952057 ],
+			"rotation": [ -0, -0.285049826, 0, 0.958512723 ],
+			"scale": [ 1.88583004, 1, 0.516544998 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundC17",
+			"translation": [ 72.2630005, -0.100004882, 75.6104736 ],
+			"rotation": [ 0, 0.938797057, -0, 0.344470739 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DarkGrassMoundD20",
+			"translation": [ 44.6150856, -0.249891356, 21.7893486 ],
+			"rotation": [ -0, -0.357773215, 0, 0.933808506 ],
+			"scale": [ 1, 1, 1.13190126 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD21",
+			"translation": [ 41.2591438, -0.250046372, 16.3464317 ],
+			"rotation": [ 0, 0.913005054, -0, 0.407948256 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD22",
+			"translation": [ 52.5192375, -0.250004888, 16.8531189 ],
+			"rotation": [ 0, 0.853683949, -0, 0.520791411 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD23",
+			"translation": [ 57.8017273, -0.249965817, 12.3063278 ],
+			"rotation": [ -0, -0.979857624, 0, 0.19969739 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD24",
+			"translation": [ 51.1801949, -0.24988769, 29.312746 ],
+			"rotation": [ -0, -0.357773215, 0, 0.933808506 ],
+			"scale": [ 1, 1, 1.15785897 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD25",
+			"translation": [ 57.6660309, -0.250004888, 25.3319969 ],
+			"rotation": [ 0, 0.853683949, -0, 0.520791411 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD26",
+			"translation": [ 62.9485474, -0.249965817, 20.7852173 ],
+			"rotation": [ -0, -0.979857624, 0, 0.19969739 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD27",
+			"translation": [ 40.3641243, -0.249882802, 46.0869331 ],
+			"rotation": [ -0, -0.219323874, 0, 0.975652099 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD28",
+			"translation": [ 44.6675758, -0.250009745, 39.1233788 ],
+			"rotation": [ 0, 0.962303936, -0, 0.271976769 ],
+			"scale": [ 1, 1, 1.14116096 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD29",
+			"translation": [ 48.6561813, -0.249960929, 33.6194229 ],
+			"rotation": [ -0, -0.890031576, 0, 0.455898911 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DirtMoundB17",
+			"translation": [ 46.1239891, -0.100002438, -25.5798111 ],
+			"rotation": [ -0, -0.936711192, 0, 0.35010311 ],
+			"scale": [ 1.35556197, 1, 0.602024972 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundB18",
+			"translation": [ 61.6804008, -0.0999597162, 15.4722433 ],
+			"rotation": [ 0, 0.698395073, -0, 0.715712547 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DarkGrassMoundD30",
+			"translation": [ 45.7721901, -0.249882802, 51.8303452 ],
+			"rotation": [ -0, -0.219323874, 0, 0.975652099 ],
+			"scale": [ 1.2238239, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD31",
+			"translation": [ 50.7313461, -0.249882802, 56.9412346 ],
+			"rotation": [ 0, 0.285050929, -0, 0.958512366 ],
+			"scale": [ 0.849179029, 1, 1.21180642 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD32",
+			"translation": [ 58.9234276, -0.249882802, 59.9647751 ],
+			"rotation": [ 0, 0.950997591, -0, 0.30919835 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD33",
+			"translation": [ 65.6207047, -0.249875486, 65.4442368 ],
+			"rotation": [ 0, 0.451653987, -0, 0.892193198 ],
+			"scale": [ 0.849179029, 1, 1.21180606 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD34",
+			"translation": [ 73.5901566, -0.249873042, 67.3781891 ],
+			"rotation": [ 0, 0.975029647, -0, 0.222074792 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD35",
+			"translation": [ 78.3086014, -0.249868155, 74.7647629 ],
+			"rotation": [ 0, 0.218191057, -0, 0.975906193 ],
+			"scale": [ 0.849179029, 1, 1.45003927 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD36",
+			"translation": [ 87.4232864, -0.249821767, 81.8184052 ],
+			"rotation": [ 0, 0.923241615, -0, 0.384219944 ],
+			"scale": [ 1.41572499, 1, 1 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_DarkGrassMoundD37",
+			"translation": [ 37.6805344, -0.249870598, 59.2889977 ],
+			"rotation": [ -0, -0.369178832, 0, 0.929358482 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD38",
+			"translation": [ 43.9074249, -0.249926746, 64.6369095 ],
+			"rotation": [ 0, 0.285050929, -0, 0.958512366 ],
+			"scale": [ 0.849179029, 1, 1.21180606 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD39",
+			"translation": [ 50.3719711, -0.249868155, 69.2875977 ],
+			"rotation": [ 0, 0.977286696, -0, 0.211921453 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD40",
+			"translation": [ 58.0359917, -0.249868155, 70.8504105 ],
+			"rotation": [ 0, 0.542888463, -0, 0.839804828 ],
+			"scale": [ 0.849179029, 1, 1.21180606 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD41",
+			"translation": [ 64.6917725, -0.249858394, 76.0065918 ],
+			"rotation": [ 0, 0.923241615, -0, 0.384219944 ],
+			"scale": [ 1.60657048, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD42",
+			"translation": [ 71.2305145, -0.249860838, 79.5590744 ],
+			"rotation": [ 0, 0.918417931, -0, 0.395611584 ],
+			"scale": [ 1.11081409, 1, 0.714291334 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD43",
+			"translation": [ 75.9829102, -0.249760732, 86.2368469 ],
+			"rotation": [ 0, 0.923241615, -0, 0.384219944 ],
+			"scale": [ 1.63844979, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundD44",
+			"translation": [ 83.9597702, -0.249758288, 91.5543594 ],
+			"rotation": [ 0, 0.609609306, -0, 0.792702138 ],
+			"scale": [ 0.855113029, 1, 1.32465005 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DirtMoundC18",
+			"translation": [ 88.9772949, -0.100004882, 89.7846985 ],
+			"rotation": [ 0, 0.938797057, -0, 0.344470739 ],
+			"scale": [ 1.88583004, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DarkGrassMoundD45",
+			"translation": [ 86.2200775, -0.249758288, 96.5423431 ],
+			"rotation": [ 0, 0.923241615, -0, 0.384219944 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DarkGrassMoundA12",
+			"translation": [ 55.4811745, 0.0263122525, -18.026741 ],
+			"rotation": [ -0, -0.0603467599, 0, 0.998177469 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA14",
+			"translation": [ 45.9477577, 0.0262121595, 10.0619469 ],
+			"rotation": [ 0, 0.873562753, -0, 0.48671177 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA15",
+			"translation": [ 41.2232666, 0.0263049342, -7.51324892 ],
+			"rotation": [ 0, 0.873562753, -0, 0.48671177 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA16",
+			"translation": [ 48.7285576, 0.0262951683, -13.7770891 ],
+			"rotation": [ 0, 0.873562753, -0, 0.48671177 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundC9",
+			"translation": [ 38.1904793, -0.00214599608, 0.706318974 ],
+			"rotation": [ 0, 0.136627764, -0, 0.990622461 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundA17",
+			"translation": [ 67.9650269, 0.0262072776, -15.1097822 ],
+			"rotation": [ 0, 0.873562753, -0, 0.48671177 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA18",
+			"translation": [ 82.4011688, 0.0262841713, 2.87096071 ],
+			"rotation": [ 0, 0.99836576, -0, 0.0571474507 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB10",
+			"translation": [ 77.1652451, -0.149727777, 16.8942928 ],
+			"rotation": [ 0, 0.554864347, -0, 0.83194083 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundA20",
+			"translation": [ 77.0437164, 0.0262719728, -6.41715765 ],
+			"rotation": [ 0, 0.99836576, -0, 0.0571474507 ],
+			"scale": [ 2, 1, 2.46783233 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundA21",
+			"translation": [ 72.7974319, 0.0262841694, 6.97748661 ],
+			"rotation": [ -0, -0.611571908, 0, 0.791188896 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundB12",
+			"translation": [ 79.8693542, -0.149727777, 10.3971481 ],
+			"rotation": [ 0, 0.554864347, -0, 0.83194083 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB13",
+			"translation": [ 85.2505569, -0.149727777, 12.6368208 ],
+			"rotation": [ 0, 0.554864347, -0, 0.83194083 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB14",
+			"translation": [ 64.856308, -0.149727777, 10.6231737 ],
+			"rotation": [ 0, 0.554864347, -0, 0.83194083 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB15",
+			"translation": [ 71.8127365, -0.149727777, 13.5183668 ],
+			"rotation": [ -0, -0.990844071, 0, 0.135011241 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB16",
+			"translation": [ 69.4226379, -0.149727777, 17.7346668 ],
+			"rotation": [ -0, -0.990844071, 0, 0.135011241 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundB17",
+			"translation": [ 72.3445663, -0.149686277, 24.4968777 ],
+			"rotation": [ -0, -0.990844071, 0, 0.135011241 ],
+			"scale": [ 1.56817913, 1, 1.56817913 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundA22",
+			"translation": [ 83.4887085, 0.0262792874, 27.9117622 ],
+			"rotation": [ -0, -0.611571908, 0, 0.791188896 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundC10",
+			"translation": [ 84.5953369, -0.00214599981, 22.1362057 ],
+			"rotation": [ 0, 0.136627764, -0, 0.990622461 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC11",
+			"translation": [ 61.3257599, -0.00214111712, 31.9315205 ],
+			"rotation": [ -0, -0.449352264, 0, 0.893354654 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC12",
+			"translation": [ 58.7879486, -0.00213623419, 46.7894707 ],
+			"rotation": [ -0, -0.449352264, 0, 0.893354654 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundB18",
+			"translation": [ 80.8892365, -0.149686277, 55.2692566 ],
+			"rotation": [ -0, -0.990844071, 0, 0.135011241 ],
+			"scale": [ 1.56817901, 1, 1.56817901 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassMoundC13",
+			"translation": [ 79.4039612, -0.00214599981, 38.8108253 ],
+			"rotation": [ 0, 0.136627764, -0, 0.990622461 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundC14",
+			"translation": [ 83.1719513, -0.00214599981, 70.8063583 ],
+			"rotation": [ 0, 0.136627764, -0, 0.990622461 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_DarkGrassMoundB19",
+			"translation": [ 71.631134, -0.14959839, 61.3925819 ],
+			"rotation": [ -0, -0.990844071, 0, 0.135011241 ],
+			"scale": [ 1.56817901, 1, 1.56817901 ],
+			"mesh": 9
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB11",
+			"translation": [ 93.0435791, -0.250019521, -1.28179443 ],
+			"rotation": [ 0, 0.734617174, -0, 0.678481817 ],
+			"scale": [ 1.39999998, 1, 1 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB12",
+			"translation": [ 93.9236374, -0.250019521, -24.5483227 ],
+			"rotation": [ 0, 0.734617174, -0, 0.678481817 ],
+			"scale": [ 1.39999998, 1, 1 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DarkGrassyLowHillB13",
+			"translation": [ 97.9572067, -0.249956056, 26.1403103 ],
+			"rotation": [ 0, 0.734617174, -0, 0.678481817 ],
+			"scale": [ 1.39999998, 1, 1 ],
+			"mesh": 1
+		},
+		{
+			"name": "SM_DirtDarkMoundC",
+			"translation": [ 37.472393, -0.0952734351, 79.8083496 ],
+			"rotation": [ -0, -0.802648246, 0, 0.596452713 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 16
+		},
+		{
+			"name": "SM_DirtDarkMoundC2",
+			"translation": [ 61.0260201, -0.0952734351, 92.0742874 ],
+			"rotation": [ -0, -0.802648246, 0, 0.596452713 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 16
+		},
+		{
+			"name": "SM_DirtDarkMoundA",
+			"translation": [ 34.1722488, -0.119746089, 65.53965 ],
+			"scale": [ 1.61786568, 1, 1.61786568 ],
+			"mesh": 17
+		},
+		{
+			"name": "SM_DarkGrassMoundD46",
+			"translation": [ 29.2056885, -0.249870598, 62.0609512 ],
+			"rotation": [ 0, 0.304139346, -0, 0.95262754 ],
+			"scale": [ 1.22382402, 1, 1 ],
+			"mesh": 15
+		},
+		{
+			"name": "SM_DirtDarkMoundB",
+			"translation": [ 23.2325745, -0.0899999961, 89.6327744 ],
+			"mesh": 18
+		},
+		{
+			"name": "SM_DirtDarkMoundB2",
+			"translation": [ 31.8946724, -0.0899999961, 93.719841 ],
+			"mesh": 18
+		},
+		{
+			"name": "SM_DirtMoundC19",
+			"translation": [ 16.7356567, -0.0899999961, 81.8266068 ],
+			"rotation": [ 0, 0.671009362, -0, 0.741448879 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundB19",
+			"translation": [ 12.112361, -0.0899999961, 91.5542755 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_DirtMoundC20",
+			"translation": [ 17.1496239, -0.0899365246, 74.8939133 ],
+			"rotation": [ 0, 0.0685516223, -0, 0.997647583 ],
+			"scale": [ 1, 1, 1.22089481 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundC21",
+			"translation": [ 11.3719368, -0.089995116, 72.00177 ],
+			"rotation": [ 0, 0.0685516223, -0, 0.997647583 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_DirtMoundC22",
+			"translation": [ 8.02913189, -0.089995116, 80.1971359 ],
+			"rotation": [ 0, 0.560614169, -0, 0.828077137 ],
+			"scale": [ 1.52471781, 1, 1 ],
+			"mesh": 6
+		},
+		{
+			"name": "SM_GrassMoundC4",
+			"translation": [ -6.18360949, -0.0899999961, 70.4309082 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC5",
+			"translation": [ -7.9955163, -0.0900024399, 95.7111282 ],
+			"rotation": [ 0, 0.67291528, -0, 0.73971957 ],
+			"scale": [ 2.33152533, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundD10",
+			"translation": [ 1.34166992, -0.250023186, 61.8553047 ],
+			"rotation": [ 0, 0.994381845, -0, 0.105852261 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD11",
+			"translation": [ 7.08895302, -0.25002259, 62.8838806 ],
+			"rotation": [ 0, 0.585335612, -0, 0.810791135 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD12",
+			"translation": [ -32.0008812, -0.250016481, 45.4531441 ],
+			"rotation": [ -0, -0.0400330871, 0, 0.999198377 ],
+			"scale": [ 1.0840404, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD13",
+			"translation": [ -27.3403683, -0.250038445, 50.3838425 ],
+			"rotation": [ 0, 0.970215738, -0, 0.24224256 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD14",
+			"translation": [ -21.7589417, -0.250037849, 52.3169212 ],
+			"rotation": [ 0, 0.467682064, -0, 0.883896887 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD15",
+			"translation": [ -14.0243378, -0.250035405, 56.9739723 ],
+			"rotation": [ 0, 0.971629322, -0, 0.236508965 ],
+			"scale": [ 1.40078664, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD16",
+			"translation": [ -5.46975946, -0.250026852, 58.8757248 ],
+			"rotation": [ 0, 0.9859671, -0, 0.166939795 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD17",
+			"translation": [ -25.429945, -0.250009149, 35.3967094 ],
+			"rotation": [ -0, -0.156617388, 0, 0.987659454 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD18",
+			"translation": [ -21.4269791, -0.250036001, 38.9646378 ],
+			"rotation": [ 0, 0.974673748, -0, 0.223631606 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD19",
+			"translation": [ -16.0949593, -0.250064701, 41.6716194 ],
+			"rotation": [ 0, 0.484506875, -0, 0.87478745 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD20",
+			"translation": [ -8.29381657, -0.250062257, 45.1190109 ],
+			"rotation": [ 0, 0.998318315, -0, 0.0579722002 ],
+			"scale": [ 1.21495676, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD21",
+			"translation": [ -1.49516261, -0.250036627, 47.4749489 ],
+			"rotation": [ 0, 0.9859671, -0, 0.166939795 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD22",
+			"translation": [ 3.52930808, -0.250024408, 48.8251686 ],
+			"rotation": [ -0, -0.000296644896, 0, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD23",
+			"translation": [ 8.21471786, -0.250056148, 51.7295265 ],
+			"rotation": [ 0, 0.997649848, -0, 0.068518281 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD24",
+			"translation": [ 14.0228968, -0.250055522, 52.3247986 ],
+			"rotation": [ 0, 0.61530143, -0, 0.78829205 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD25",
+			"translation": [ 30.638319, -0.250017077, 40.8088531 ],
+			"rotation": [ -0, -0.841418862, 0, 0.540383458 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD26",
+			"translation": [ 25.8933849, -0.250048816, 45.9708748 ],
+			"rotation": [ 0, 0.481717497, -0, 0.876326561 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD27",
+			"translation": [ 21.6864014, -0.250045776, 52.4176636 ],
+			"rotation": [ -0, -0.330500811, 0, 0.943805695 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD28",
+			"translation": [ 14.5603657, -0.250055522, 63.8249779 ],
+			"rotation": [ 0, 0.61530143, -0, 0.78829205 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD29",
+			"translation": [ 21.5538807, -0.250055522, 65.2713242 ],
+			"rotation": [ 0, 0.61530143, -0, 0.78829205 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_DirtDarkMoundB3",
+			"translation": [ 56.5992661, -0.0900366157, 76.1892548 ],
+			"rotation": [ -0, -0.384320349, 0, 0.923199773 ],
+			"mesh": 18
+		},
+		{
+			"name": "SM_DirtMoundA9",
+			"translation": [ -32.8215752, -0.099999994, 38.190361 ],
+			"rotation": [ 0, 0.0348100699, -0, 0.99939394 ],
+			"scale": [ 1.44782996, 1, 1.69028997 ],
+			"mesh": 4
+		},
+		{
+			"name": "SM_GrassMoundD30",
+			"translation": [ -29.5865307, -0.250009149, 31.8581581 ],
+			"rotation": [ 0, 0.853236973, -0, 0.521523416 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD31",
+			"translation": [ -26.6453266, -0.250028074, 7.39134502 ],
+			"rotation": [ -0, -0.741151989, 0, 0.671337306 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD32",
+			"translation": [ -28.1121235, -0.250020742, 14.2035494 ],
+			"rotation": [ 0, 0.658351302, -0, 0.752710938 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD33",
+			"translation": [ -28.511797, -0.250024408, 19.6561375 ],
+			"rotation": [ 0, 0.686661124, -0, 0.726977646 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD34",
+			"translation": [ -28.6403465, -0.29216674, 25.4933224 ],
+			"rotation": [ -0, -0.0824790895, 0, 0.99659282 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD35",
+			"translation": [ -31.9670162, -0.250028074, -15.9777145 ],
+			"rotation": [ -0, -0.367950022, 0, 0.929845572 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD36",
+			"translation": [ -28.7003803, -0.250020742, -9.56558609 ],
+			"rotation": [ 0, 0.90393275, -0, 0.427674621 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD37",
+			"translation": [ -24.4988651, -0.250024408, -4.42192698 ],
+			"rotation": [ 0, 0.686661124, -0, 0.726977646 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD38",
+			"translation": [ -24.6274147, -0.250023812, 1.41525757 ],
+			"rotation": [ -0, -0.0824790895, 0, 0.99659282 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD39",
+			"translation": [ -45.8026123, -0.249880359, -33.1328239 ],
+			"rotation": [ 0, 0.358871877, -0, 0.933386862 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD40",
+			"translation": [ -40.0422668, -0.24987793, -27.2812862 ],
+			"rotation": [ -0, -0.273595721, 0, 0.961844802 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD41",
+			"translation": [ -36.4605904, -0.249909669, -21.4440002 ],
+			"rotation": [ 0, 0.940937698, -0, 0.338579744 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD42",
+			"translation": [ -60.9695282, -0.249851063, -49.2415695 ],
+			"rotation": [ 0, 0.388926893, -0, 0.921268642 ],
+			"scale": [ 1, 1, 1.40670133 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD43",
+			"translation": [ -54.8422432, -0.249848634, -43.7754631 ],
+			"rotation": [ -0, -0.242283657, 0, 0.970205486 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD44",
+			"translation": [ -50.8899689, -0.249880359, -38.182457 ],
+			"rotation": [ 0, 0.951415718, -0, 0.30790931 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD45",
+			"translation": [ -66.1070251, -0.249853507, -52.7445755 ],
+			"rotation": [ -0, -0.242283657, 0, 0.970205486 ],
+			"scale": [ 1.2439419, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD46",
+			"translation": [ -40.5754738, -0.250145257, 8.9302597 ],
+			"rotation": [ 0, 0.705670953, -0, 0.708539724 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD47",
+			"translation": [ -41.1503372, -0.250137925, 15.8748579 ],
+			"rotation": [ 0, 0.705670953, -0, 0.708539724 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD48",
+			"translation": [ -40.2971573, -0.250143439, 29.4040718 ],
+			"rotation": [ -0, -0.017828349, 0, 0.999841154 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD49",
+			"translation": [ -39.3461456, -0.250140995, 2.74363828 ],
+			"rotation": [ -0, -0.0178272799, 0, 0.999841094 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD50",
+			"translation": [ -40.7122421, -0.250024408, 22.3066711 ],
+			"rotation": [ 0, 0.686661124, -0, 0.726977646 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD51",
+			"translation": [ -41.7715797, -0.250203848, -9.58856869 ],
+			"rotation": [ -0, -0.367950022, 0, 0.929845572 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD52",
+			"translation": [ -55.3217697, -0.249860838, -26.4079685 ],
+			"rotation": [ 0, 0.358871877, -0, 0.933386862 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD53",
+			"translation": [ -50.9485435, -0.249829099, -21.1094913 ],
+			"rotation": [ 0, 0.829466462, -0, 0.558556557 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD54",
+			"translation": [ -46.7747993, -0.249899894, -14.9611492 ],
+			"rotation": [ 0, 0.297452867, -0, 0.954736531 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD55",
+			"translation": [ -72.5426483, -0.249831542, -40.8964157 ],
+			"rotation": [ 0, 0.388926893, -0, 0.921268642 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD56",
+			"translation": [ -66.1794739, -0.249848634, -37.4570885 ],
+			"rotation": [ -0, -0.242283657, 0, 0.970205486 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD57",
+			"translation": [ -61.5636368, -0.249860838, -32.071476 ],
+			"rotation": [ 0, 0.951415718, -0, 0.30790931 ],
+			"scale": [ 1.20736945, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD58",
+			"translation": [ -39.0437393, -0.250075072, -5.73376226 ],
+			"rotation": [ -0, -0.0178272799, 0, 0.999841094 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundC6",
+			"translation": [ -3.02218866, -0.0899999961, 34.7446899 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC7",
+			"translation": [ 16.4373093, -0.0899829045, 35.4769783 ],
+			"rotation": [ 0, 0.67291528, -0, 0.73971957 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC8",
+			"translation": [ -5.64075327, -0.0899999961, 16.145668 ],
+			"rotation": [ 0, 0.819866121, -0, 0.572555244 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC9",
+			"translation": [ 9.03577137, -0.0899829045, 16.8711872 ],
+			"rotation": [ 0, 0.67291528, -0, 0.73971957 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC10",
+			"translation": [ -22.588047, -0.0899999961, -19.1692352 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC11",
+			"translation": [ -3.12854934, -0.0899829045, -18.436945 ],
+			"rotation": [ 0, 0.67291528, -0, 0.73971957 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC12",
+			"translation": [ -20.0607128, -0.0899999961, -39.6557426 ],
+			"rotation": [ 0, 0.819866121, -0, 0.572555244 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC13",
+			"translation": [ -10.5300875, -0.0899829045, -37.0427322 ],
+			"rotation": [ 0, 0.67291528, -0, 0.73971957 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC14",
+			"translation": [ -4.76259947, -0.0899829045, -1.19889808 ],
+			"rotation": [ 0, 0.0758223608, -0, 0.997121334 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC15",
+			"translation": [ -20.7600994, -0.0899926722, 24.0107098 ],
+			"rotation": [ 0, 0.740593135, -0, 0.671953797 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC16",
+			"translation": [ -23.0672455, -0.0900219679, 0.327111721 ],
+			"rotation": [ 0, 0.740593135, -0, 0.671953797 ],
+			"scale": [ 2.33152509, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC17",
+			"translation": [ -54.0007782, -0.0899999961, -50.9587059 ],
+			"rotation": [ 0, 0.936655045, -0, 0.350253284 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC18",
+			"translation": [ -59.7481232, -0.0899999961, -75.9452057 ],
+			"rotation": [ 0, 0.990635157, -0, 0.136536434 ],
+			"scale": [ 2.49009824, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC19",
+			"translation": [ -35.4423943, -0.0900219679, -39.1008987 ],
+			"rotation": [ 0, 0.965304911, -0, 0.261125386 ],
+			"scale": [ 2.33152509, 1, 2.19484472 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC20",
+			"translation": [ -77.6820984, -0.0899902359, -58.3343887 ],
+			"rotation": [ -0, -0.825697064, 0, 0.564113796 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC21",
+			"translation": [ -67.6823654, -0.0901416019, -62.85429 ],
+			"rotation": [ 0, 0.936655045, -0, 0.350253284 ],
+			"scale": [ 2.48142314, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC22",
+			"translation": [ -57.6995201, -0.0899999961, -9.51898193 ],
+			"rotation": [ 0, 0.510567844, -0, 0.859837472 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC23",
+			"translation": [ -70.4201126, -0.0899999961, -21.660471 ],
+			"rotation": [ 0, 0.708678246, -0, 0.705531895 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC24",
+			"translation": [ -96.2044144, -0.0899999961, -42.7054138 ],
+			"rotation": [ 0, 0.8460325, -0, 0.533131301 ],
+			"scale": [ 2.490098, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC25",
+			"translation": [ -83.9851227, -0.0900219679, -7.9720068 ],
+			"rotation": [ 0, 0.771552563, -0, 0.636165738 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC26",
+			"translation": [ -83.5376511, -0.0901416019, -33.5760841 ],
+			"rotation": [ 0, 0.708678186, -0, 0.705531895 ],
+			"scale": [ 2.4814229, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC28",
+			"translation": [ -69.2517548, -0.0897753909, 33.1287689 ],
+			"rotation": [ -0, -0.7943542, 0, 0.607454896 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC29",
+			"translation": [ -52.5314445, -0.0897973627, 23.5467091 ],
+			"rotation": [ -0, -0.734061599, 0, 0.67908287 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC31",
+			"translation": [ -46.7909889, -0.0897656158, 3.5767889 ],
+			"rotation": [ -0, -0.7943542, 0, 0.607454896 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundA2",
+			"translation": [ -87.2480469, -0.219399408, 7.89231682 ],
+			"scale": [ 1.96116817, 1, 1.96116817 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassyLowHillB18",
+			"translation": [ 14.1026659, -0.250009745, -55.3784981 ],
+			"rotation": [ 0, 0.143582493, -0, 0.989638448 ],
+			"mesh": 3
+		},
+		{
+			"name": "SM_DarkGrassyLowHillA12",
+			"translation": [ 54.9005356, -0.25, -64.3419342 ],
+			"mesh": 0
+		},
+		{
+			"name": "SM_GrassMoundD59",
+			"translation": [ -60.726799, -0.250026852, 61.8613892 ],
+			"rotation": [ 0, 0.0613844395, -0, 0.998114288 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD60",
+			"translation": [ -55.5893974, -0.250053704, 63.3978996 ],
+			"rotation": [ 0, 0.999976516, -0, 0.0068519935 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD61",
+			"translation": [ -49.6127243, -0.250082403, 63.5916061 ],
+			"rotation": [ 0, 0.662752151, -0, 0.748838782 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD62",
+			"translation": [ -41.085743, -0.25007996, 63.4101791 ],
+			"rotation": [ -0, -0.987117708, 0, 0.15999575 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD63",
+			"translation": [ -68.801651, -0.250021964, 61.0034256 ],
+			"rotation": [ 0, 0.999997854, -0, 0.00208205776 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD64",
+			"translation": [ -73.8605042, -0.250139147, 59.9401932 ],
+			"rotation": [ -0, -0.0703029409, 0, 0.997525692 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD65",
+			"translation": [ -79.7488098, -0.250075072, 58.4373016 ],
+			"rotation": [ -0, -0.789390326, 0, 0.613891661 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD66",
+			"translation": [ -88.0883102, -0.250075072, 56.979229 ],
+			"rotation": [ 0, 0.0970309004, -0, 0.995281398 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD67",
+			"translation": [ -65.0538559, -0.250021964, 49.3301392 ],
+			"rotation": [ 0, 0.0613844395, -0, 0.998114288 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD68",
+			"translation": [ -59.9164543, -0.250048816, 50.8666458 ],
+			"rotation": [ 0, 0.999976516, -0, 0.0068519935 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD69",
+			"translation": [ -53.9397736, -0.250077516, 51.0603561 ],
+			"rotation": [ 0, 0.662752151, -0, 0.748838782 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD70",
+			"translation": [ -45.4127922, -0.250075072, 50.8789291 ],
+			"rotation": [ -0, -0.987117708, 0, 0.15999575 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD71",
+			"translation": [ -73.1287079, -0.250017077, 48.4721718 ],
+			"rotation": [ 0, 0.999997854, -0, 0.00208205776 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD72",
+			"translation": [ -78.0300751, -0.250043929, 46.2973366 ],
+			"rotation": [ -0, -0.0703029409, 0, 0.997525692 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD73",
+			"translation": [ -83.9340897, -0.250072628, 45.3480988 ],
+			"rotation": [ -0, -0.789390326, 0, 0.613891661 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD74",
+			"translation": [ -92.4153671, -0.250070184, 44.4479713 ],
+			"rotation": [ 0, 0.0970309004, -0, 0.995281398 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_DirtMoundB20",
+			"translation": [ -93.0084076, -0.099999994, 52.1360016 ],
+			"rotation": [ -0, -0.757347822, 0, 0.65301168 ],
+			"scale": [ 0.692852974, 1, 1 ],
+			"mesh": 5
+		},
+		{
+			"name": "SM_GrassMoundD75",
+			"translation": [ -31.8992367, -0.250060409, 52.4394531 ],
+			"rotation": [ -0, -0.678457081, 0, 0.734640062 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD76",
+			"translation": [ -34.4059715, -0.250065297, 58.8422318 ],
+			"rotation": [ 0, 0.451451391, -0, 0.892295837 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD77",
+			"translation": [ -43.4913864, -0.250075072, 36.1249199 ],
+			"rotation": [ 0, 0.591473877, -0, 0.806324184 ],
+			"scale": [ 1.214957, 1, 1 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundD78",
+			"translation": [ -44.8888168, -0.250024408, 43.5931816 ],
+			"rotation": [ 0, 0.686661124, -0, 0.726977646 ],
+			"mesh": 13
+		},
+		{
+			"name": "SM_GrassMoundC32",
+			"translation": [ -58.8103714, -0.0900512785, 79.3826904 ],
+			"rotation": [ 0, 0.948646963, -0, 0.31633684 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC33",
+			"translation": [ -32.3598862, -0.0898046941, 98.2279739 ],
+			"rotation": [ 0, 0.180120543, -0, 0.983644545 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC34",
+			"translation": [ -23.231142, -0.0898046941, 66.5909882 ],
+			"rotation": [ -0, -0.522937, 0, 0.852371335 ],
+			"scale": [ 2, 1, 2.16390538 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC35",
+			"translation": [ -21.0123844, -0.0898266658, 80.4970169 ],
+			"rotation": [ -0, -0.4409284, 0, 0.897542298 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC36",
+			"translation": [ -40.6810837, -0.0897949189, 78.451622 ],
+			"rotation": [ -0, -0.522937, 0, 0.852371335 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC37",
+			"translation": [ -52.2667084, -0.0897876173, 101.212227 ],
+			"rotation": [ -0, -0.991540492, 0, 0.129797935 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC38",
+			"translation": [ -66.0022049, -0.0898095891, 101.918488 ],
+			"rotation": [ -0, -0.975056291, 0, 0.221957684 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC39",
+			"translation": [ -84.7027588, -0.0897778422, 99.6489563 ],
+			"rotation": [ -0, -0.991540134, 0, 0.129800454 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC40",
+			"translation": [ -99.36586, -0.0897680745, 81.0784531 ],
+			"rotation": [ 0, 0.954832911, -0, 0.297143281 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC41",
+			"translation": [ -108.791779, -0.0897680745, 59.5890274 ],
+			"rotation": [ 0, 0.954832911, -0, 0.297143281 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC42",
+			"translation": [ -99.5038757, -0.0897753909, 37.497776 ],
+			"rotation": [ -0, -0.656074703, 0, 0.754695952 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundA3",
+			"translation": [ -95.9239349, -0.0899999961, 58.9154282 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundB3",
+			"translation": [ -86.510704, -0.0899999961, 32.2134209 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 11
+		},
+		{
+			"name": "SM_GrassMoundB4",
+			"translation": [ -90.0187302, -0.0900048837, 66.6684418 ],
+			"rotation": [ 0, 0.73543781, -0, 0.677592218 ],
+			"scale": [ 2, 1, 2.32827187 ],
+			"mesh": 11
+		},
+		{
+			"name": "SM_GrassMoundA4",
+			"translation": [ -95.9239349, -0.0899999961, 23.5643559 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundB5",
+			"translation": [ -71.704567, -0.0899853483, 86.1833878 ],
+			"rotation": [ 0, 0.739847481, -0, 0.672774613 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 11
+		},
+		{
+			"name": "SM_GrassMoundA5",
+			"translation": [ -75.3866501, -0.0899999961, 66.055191 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundA6",
+			"translation": [ -84.1503296, -0.0899999961, 82.2850647 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundB6",
+			"translation": [ -77.5030823, -0.0900048837, 75.9652252 ],
+			"rotation": [ -0, -0.775024295, 0, 0.631931424 ],
+			"scale": [ 2, 1, 2.49546456 ],
+			"mesh": 11
+		},
+		{
+			"name": "SM_GrassMoundA7",
+			"translation": [ -62.1629486, -0.0899999961, 42.4432411 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_GrassMoundA8",
+			"translation": [ -52.6897049, -0.0899902359, 42.4432411 ],
+			"rotation": [ 0, 0.90802151, -0, 0.418923587 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 14
+		},
+		{
+			"name": "SM_DarkGrassMoundA19",
+			"translation": [ 62.6928558, 0.0262194835, -17.741354 ],
+			"rotation": [ 0, 0.873562753, -0, 0.48671177 ],
+			"scale": [ 2, 1, 2 ],
+			"mesh": 8
+		},
+		{
+			"name": "SM_DarkGrassMoundC15",
+			"translation": [ 3.52653313, -0.00214599608, -37.7661133 ],
+			"mesh": 10
+		},
+		{
+			"name": "SM_GrassMoundC27",
+			"translation": [ -68.8950119, -0.0900219679, 1.10273683 ],
+			"rotation": [ 0, 0.771552563, -0, 0.636165738 ],
+			"scale": [ 2.33152509, 1, 2.19484496 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_GrassMoundC30",
+			"translation": [ -81.2151642, -0.0900219679, 12.7080517 ],
+			"rotation": [ 0, 0.245322853, -0, 0.969441533 ],
+			"scale": [ 2.50943112, 1, 2.372751 ],
+			"mesh": 12
+		},
+		{
+			"name": "SM_DirtLowHillA",
+			"translation": [ 30.1600094, -0.141533196, 103.687927 ],
+			"rotation": [ -0, -0.271383435, 0, 0.962471426 ],
+			"mesh": 19
+		},
+		{
+			"name": "SM_DirtLowHillA2",
+			"translation": [ 22.0189838, -0.141533196, 100.62487 ],
+			"rotation": [ -0, -0.782861769, 0, 0.622195661 ],
+			"mesh": 19
+		},
+		{
+			"name": "SM_DarkDirtLowHillA",
+			"translation": [ 40.4164734, 0.401244283, 104.932602 ],
+			"rotation": [ -0, -0.277750254, 0, 0.960653305 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA2",
+			"translation": [ 62.4435196, 0.401241839, 104.538559 ],
+			"rotation": [ 0, 0.97301507, -0, 0.23074159 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA3",
+			"translation": [ 57.2704468, 3.22912216, 114.545723 ],
+			"rotation": [ -0.023310449, 0.963770866, -0.159305021, 0.212659955 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA4",
+			"translation": [ 44.015728, 2.10893393, 110.240585 ],
+			"rotation": [ -0.023310449, 0.963770866, -0.159305021, 0.212659955 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA5",
+			"translation": [ 25.1471634, 1.04529762, 109.570641 ],
+			"rotation": [ -0.034583237, 0.964503229, -0.155262247, 0.210787103 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA6",
+			"translation": [ 24.457407, 4.48692656, 119.976631 ],
+			"rotation": [ -0.0473567992, 0.963959873, -0.158049837, 0.208707795 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA7",
+			"translation": [ 18.3119106, 9.15664673, 134.06459 ],
+			"rotation": [ -0.145431831, 0.532104015, -0.0779293254, 0.830446959 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA8",
+			"translation": [ 40.5470428, 6.97793245, 125.979469 ],
+			"rotation": [ -0.145431831, 0.532104015, -0.0779293254, 0.830446959 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA9",
+			"translation": [ 30.7750416, 9.27681351, 133.441544 ],
+			"rotation": [ -0.042901855, 0.969440877, -0.159323856, 0.181548059 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA10",
+			"translation": [ 58.6498718, 6.4692564, 127.00853 ],
+			"rotation": [ -0.13031812, 0.536007524, -0.0543994233, 0.832318485 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA11",
+			"translation": [ 72.9075394, 3.78145289, 119.752983 ],
+			"rotation": [ -0.145431831, 0.532104015, -0.0779293254, 0.830446959 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA12",
+			"translation": [ 63.0251312, 8.39979553, 138.259949 ],
+			"rotation": [ -0.00175781688, 0.985116243, -0.0560506098, 0.162484556 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA13",
+			"translation": [ 74.3262329, 7.78129005, 134.224777 ],
+			"rotation": [ 0.00444420613, 0.982259631, -0.0936038494, 0.162433267 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DarkDirtLowHillA14",
+			"translation": [ 50.3058548, 9.7242775, 133.220428 ],
+			"rotation": [ -0.105479114, 0.527760148, -0.10333214, 0.836460352 ],
+			"mesh": 20
+		},
+		{
+			"name": "SM_DirtDarkMoundB4",
+			"translation": [ 67.4748688, 9.12405586, 136.668549 ],
+			"rotation": [ -0.113942973, 0.0121390894, -0.105239712, 0.987823009 ],
+			"scale": [ 1.84704494, 7.83270836, 1.84704494 ],
+			"mesh": 18
+		},
+		{
+			"name": "SM_GrassPileE3",
+			"translation": [ 39.2864304, -0.220649868, 8.70779705 ],
+			"rotation": [ -0, -0.589815617, 0, 0.807538092 ],
+			"mesh": 21
+		},
+		{
+			"name": "SM_GrassPileE4",
+			"translation": [ 46.9130058, -0.217993885, 16.7533703 ],
+			"scale": [ 1, 1, 2.82402825 ],
+			"mesh": 21
+		},
+		{
+			"name": "SM_GrassPileE5",
+			"translation": [ 76.3345795, -0.346957475, 12.7562323 ],
+			"rotation": [ 0, 0.259196699, -0, 0.965824544 ],
+			"scale": [ 1.89347041, 1, 1.72232223 ],
+			"mesh": 21
+		},
+		{
+			"name": "SM_GrassPileH",
+			"translation": [ 81.9188538, -0.29721573, 9.36259842 ],
+			"mesh": 22
+		},
+		{
+			"name": "SM_GrassPileH2",
+			"translation": [ 83.3334351, -0.297216028, 9.36259842 ],
+			"mesh": 22
+		},
+		{
+			"name": "SM_GrassPileH3",
+			"translation": [ 84.7328033, -0.310587317, 8.89506721 ],
+			"rotation": [ 0, 0.245944694, -0, 0.969283879 ],
+			"mesh": 22
+		},
+		{
+			"name": "SM_GrassPileE6",
+			"translation": [ 78.5398483, -0.423417419, 61.0772171 ],
+			"rotation": [ 0, 0.357070059, -0, 0.934077621 ],
+			"scale": [ 1.25295174, 1, 1 ],
+			"mesh": 21
+		},
+		{
+			"name": "SM_DarkGrassMoundD47",
+			"translation": [ 51.5463104, -0.250014633, -50.0304031 ],
+			"rotation": [ 0, 0.554290831, -0, 0.832323074 ],
+			"scale": [ 0.657249153, 0.736908615, 0.736908615 ],
+			"mesh": 7
+		},
+		{
+			"name": "SM_GrassPileE7",
+			"translation": [ 33.7057762, -0.30959481, -44.4747314 ],
+			"mesh": 21
+		}
+	],
+	"samplers": [
+		{
+			"minFilter": 9987,
+			"magFilter": 9729
+		}
+	],
+	"scenes": [
+		{
+			"name": "Demo",
+			"nodes": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358 ]
+		}
+	],
+	"textures": [
+		{
+			"name": "MI_Base_BaseColor",
+			"sampler": 0,
+			"source": 0
+		}
+	]
+}

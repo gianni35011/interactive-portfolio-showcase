@@ -1,16 +1,17 @@
 ﻿import { Object3D, Vector3 } from "three";
 import {createRigidBodyEntity} from "../tools/RapierHelper.ts";
 import {RigidBody, World} from "@dimforge/rapier3d-compat";
-import Gamepad from "../control/gamepad.ts";
+import InputManager from "../control/InputManager.ts";
 
-const SPEED = 3;
+const SPEED: number = 3;
 
 export class Player extends Object3D {
-    private static readonly DEFAULT_START_POSITION = new Vector3(0, 1, 0);
+    private static readonly DEFAULT_START_POSITION = new Vector3(0, 2, 0);
 
     rigidBody: RigidBody | null = null;
     collider: any | null = null;
-    controller = new Gamepad();
+    controller = new InputManager();
+    debugMesh: any = null;
 
     constructor(
         {mesh, physicsEngine}: { mesh: Object3D; physicsEngine: World },
@@ -24,7 +25,7 @@ export class Player extends Object3D {
     }
 
     private initializePhysics(physicsEngine: World) {
-        const {rigidBody, collider} = createRigidBodyEntity(this.position, physicsEngine);
+        const {rigidBody, collider} = createRigidBodyEntity(this.position, physicsEngine, this);
         this.rigidBody = rigidBody;
         this.collider = collider;
     }
@@ -50,6 +51,7 @@ export class Player extends Object3D {
     private updateVisuals() {
         if (this.rigidBody) {
             this.position.copy(this.rigidBody.translation());
+            this.debugMesh.position.copy(this.rigidBody.translation())
         }
     }
 }

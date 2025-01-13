@@ -1,4 +1,5 @@
 ﻿import {AmbientLight, PointLight, Object3D, Vector2 } from "three";
+import {Player} from "../entities/player.ts";
 
 export default class Light extends Object3D {
     constructor() {
@@ -13,5 +14,9 @@ export default class Light extends Object3D {
 
         this.add(ambient);
         this.add(point);
+    }
+
+    update(player: Player){
+        this.position.copy(player.position);
     }
 }

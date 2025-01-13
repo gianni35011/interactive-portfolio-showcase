@@ -16,7 +16,7 @@ export default class Camera extends PerspectiveCamera {
     update(player: Player){
         const offset = new Vector3(0,4,4);
         this.targetPosition.copy(player.position).add(offset);
-
+        this.position.copy(player.position);
         this.position.lerp(this.targetPosition, 0.08);
     }
 }
