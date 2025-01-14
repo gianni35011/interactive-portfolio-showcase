@@ -1,4 +1,5 @@
 ﻿import {GLTF, GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {AnimationClip, Mesh} from "three";
 
 const loaderGLTF = new GLTFLoader();
 
@@ -11,38 +12,28 @@ export default async function loadAsset(path: string): Promise<GLTF | null> {
     }
 }
 
-// export default async function loadAsset(path: string): Promise<{ meshes: Object3D[] }> {
-//     const meshes: Object3D[] = [];
-//
-//     const glb = await loaderGLTF.loadAsync(path);
-//
-//     glb.scene.traverse(glb => {
-//         meshes.push(glb);
-//         console.log(glb);
-//     })
-//
-//     return { meshes };
-//
-// }
+export async function loadStaticAsset(path: string): Promise<Mesh | null>{
+    try{
+        const asset = await loadAsset(path);
+        const mesh: Mesh|null = asset?.scene.children[0] as Mesh;
+        return mesh;
+    } catch (error: any) {
+        console.error(error);
+        return null;
+    }
+}
 
-/*
-export default async function loadAsset(path: string): Promise<{ meshes: Object3D[] }> {
-    const meshes: Object3D[] = [];
-
-    const glb = await loaderGLTF.loadAsync(path);
-    try {
-        glb.scene.traverse((child) => {
-            meshes.push(child);
-            console.log(child);
+export async function loadAnimatedAsset(path: string): Promise<Mesh | null>{
+    try{
+        const asset = await loadAsset(path);
+        const mesh: Mesh|null = asset?.scene.children[0] as Mesh;
+        mesh.traverse(child => {
+            child.castShadow = true;
         })
-        return { meshes };
-
+        mesh.animations = asset?.animations as AnimationClip[];
+        return mesh;
+    } catch (error: any) {
+        console.error(error);
+        return null;
     }
-    catch (e) {
-        console.log(e);
-        console.log("Failed to load asset");
-    }
-
-
-}*/
-
+}

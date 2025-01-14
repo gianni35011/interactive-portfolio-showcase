@@ -19,7 +19,6 @@ function createColliderGeo(mesh: Mesh, rigidBody, physicsEngine: World, w: MyWor
     clonedGeo.applyMatrix4(mesh.matrixWorld)
     const vertices = new Float32Array(clonedGeo.attributes.position.array);
     const indices = new Uint32Array(clonedGeo.index?.array ?? []);
-    console.log("Geo", vertices, indices)
     const colliderDesc = ColliderDesc.trimesh(vertices, indices);
     w.debugMeshes1 = createDebugWireframe(vertices, indices);
     physicsEngine.createCollider(colliderDesc);
@@ -28,9 +27,6 @@ function createColliderGeo(mesh: Mesh, rigidBody, physicsEngine: World, w: MyWor
 export function createRigidBodyFixed(mesh: Mesh, physicsEngine: World, w: MyWorld){
     const rigidBodyDesc = RigidBodyDesc.fixed()
     const rigidBody = physicsEngine.createRigidBody(rigidBodyDesc);
-    console.log("Position:", mesh.position);
-    console.log("Scale:", mesh.scale);
-    console.log("Rotation:", mesh.rotation);
     createColliderGeo(mesh, rigidBody, physicsEngine, w, mesh)
 }
 export function createRigidBodyEntity(position: Vector3, physicsEngine: World, player: Player){
@@ -104,4 +100,22 @@ export function createDebugWireframe(vertices: Float32Array, indices: Uint32Arra
 
     // Create the LineSegments object
     return new LineSegments(debugGeometry, material);
+}
+
+export function angle(x: number,z: number){
+    return Math.atan2(x,z);
+}
+
+export function range(angle1: number, angle2: number){
+    let angle = ((angle1 - angle2 + Math.PI) % (2 * Math.PI)) - Math.PI;
+    angle < - Math.PI ? angle += 2 * Math.PI : angle;
+    return angle;
+}
+
+export function findByName(name: string, array: any[]){
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].name === name) {
+            return array[i];
+        }
+    }
 }

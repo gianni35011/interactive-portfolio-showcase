@@ -4,24 +4,28 @@ import * as THREE from 'three'
 import Camera from './engine/camera'
 import Light from './engine/light'
 import { Graphics } from './engine/graphics.ts'
+import {loadStaticAsset, loadAnimatedAsset } from './tools/loader.ts'
 import loader from './tools/loader.ts'
 import MyWorld from './entities/world.ts'
 import {Player} from "./entities/player.ts";
 import {GLTF} from "three/addons/loaders/GLTFLoader.js";
 import Rapier from "./engine/physics.ts"
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import {OrbitControls} from "three/addons/controls/OrbitControls.js";
+import {Mesh} from "three";
 
 const ground_mesh = await loader('src/assets/world/ground/testfloor.glb')
-const player_mesh: GLTF | null = await loader('src/assets/adventurers/Rogue.glb')
+const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
 const trees: GLTF | null = await loader('src/assets/world/ground/Trees.glb')
-
 const scene = new THREE.Scene();
 const light = new Light();
 const camera = new Camera();
 
 let player = null
+
+
 if (player_mesh){
-    player = new Player({mesh: player_mesh.scene, physicsEngine: Rapier});
+    console.log(player_mesh);
+    player = new Player({mesh: player_mesh, physicsEngine: Rapier});
     scene.add(player);
     scene.add(player.debugMesh);
 }
@@ -44,11 +48,10 @@ controls.enableDamping = true; // Optional: Enables smooth damping (e.g., for de
 controls.dampingFactor = 0.25; // Optional: Controls the speed of damping
 controls.screenSpacePanning = false; // Optional: Prevents panning beyond the scene
 controls.maxPolarAngle = Math.PI / 2;
-camera.update(player);
 
 graphic.onUpdate((dt: number) => {
     if (!player) return;
-    player.update();
+    player.update(dt);
     Rapier.step();
     light.update(player);
 });

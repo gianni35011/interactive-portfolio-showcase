@@ -16,6 +16,8 @@ export default class World extends Object3D {
                 if (result.type !== "Mesh" || !(result instanceof Mesh)) {
                     return; // Skip non-mesh objects
                 }
+                result.castShadow = true;
+                result.receiveShadow = true;
                 createRigidBodyFixed(result, physicsEngine, this);
         });
     }
