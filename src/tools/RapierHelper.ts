@@ -1,4 +1,4 @@
-﻿import {ColliderDesc, RigidBodyDesc, World, Vector, RigidBody} from '@dimforge/rapier3d-compat'
+﻿import {ColliderDesc, RigidBodyDesc, World } from '@dimforge/rapier3d-compat'
 import {
     BufferAttribute,
     BufferGeometry,
@@ -40,8 +40,7 @@ export function createRigidBodyEntity(position: Vector3, physicsEngine: World, p
 
 function createColliderBall(radius: number, rigidBody: any, physicsEngine: World) {
     const colliderDesc = ColliderDesc.ball(radius);
-    const collider = physicsEngine.createCollider(colliderDesc,  rigidBody);
-    return collider;
+    return physicsEngine.createCollider(colliderDesc,  rigidBody);
 }
 
 export function thresholdFloor(float: number, max: number = 0.2): number {

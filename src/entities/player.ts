@@ -3,11 +3,15 @@ import {createRigidBodyEntity, range} from "../tools/RapierHelper.ts";
 import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import InputManager from "../control/InputManager.ts";
 import Animator from "../engine/AnimationHandler.ts";
+import SoundManager from "../engine/SoundManager.ts";
 
 const SPEED: number = 3;
-const WALK = "Walking_B";
+const WALK = "Walking_C";
 const IDLE = "Idle";
 
+// Sounds
+const GRASS_L = 'src/assets/sounds/footsteps/grass/17_footstep_single_dried_leaves.mp3';
+const GRASS_R = 'src/assets/sounds/footsteps/grass/00_footstep_single_dried_leaves.mp3';
 export class Player extends Object3D {
     private static readonly DEFAULT_START_POSITION = new Vector3(0, 2, 0);
 
@@ -16,6 +20,7 @@ export class Player extends Object3D {
     controller = new InputManager();
     debugMesh: any = null;
     animator: Animator | null = null;
+    soundManager: SoundManager = new SoundManager();
 
     constructor(
         {mesh, physicsEngine}: { mesh: Mesh; physicsEngine: World },
@@ -27,6 +32,8 @@ export class Player extends Object3D {
         this.initializePhysics(physicsEngine);
         this.initializeVisual(mesh);
         this.initializeAnimator(mesh);
+        this.initializeSound();
+        this.syncAnimationSounds()
     }
 
     private initializePhysics(physicsEngine: World) {
@@ -46,6 +53,11 @@ export class Player extends Object3D {
         animator.load(IDLE, 0.3, true);
         animator.load(WALK, 0.3, true);
         this.animator = animator;
+    }
+
+    private initializeSound() {
+        this.soundManager.load(GRASS_L);
+        this.soundManager.load(GRASS_R);
     }
 
     update(dt: number) {
@@ -81,5 +93,15 @@ export class Player extends Object3D {
             this.animator?.play(IDLE);
         }
         this.animator?.update(dt);
+    }
+
+    syncAnimationSounds(){
+        if (!this.animator) return;
+        this.animator.on(WALK, 'loop', () => {
+            this.soundManager.play(GRASS_L)
+        });
+        this.animator.on(WALK, 'half', () => {
+            this.soundManager.play(GRASS_R)
+        });
     }
 }

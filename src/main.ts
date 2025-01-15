@@ -4,7 +4,7 @@ import * as THREE from 'three'
 import Camera from './engine/camera'
 import Light from './engine/light'
 import { Graphics } from './engine/graphics.ts'
-import {loadStaticAsset, loadAnimatedAsset } from './tools/loader.ts'
+import { loadAnimatedAsset } from './tools/loader.ts'
 import loader from './tools/loader.ts'
 import MyWorld from './entities/world.ts'
 import {Player} from "./entities/player.ts";
