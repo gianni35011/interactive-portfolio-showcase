@@ -109,6 +109,7 @@ export function angle(x: number,z: number){
 export function range(angle1: number, angle2: number){
     let angle = ((angle1 - angle2 + Math.PI) % (2 * Math.PI)) - Math.PI;
     angle < - Math.PI ? angle += 2 * Math.PI : angle;
+    
     return angle;
 }
 

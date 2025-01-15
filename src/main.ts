@@ -13,7 +13,7 @@ import Rapier from "./engine/physics.ts"
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {Mesh} from "three";
 
-const ground_mesh = await loader('src/assets/world/ground/testfloor.glb')
+const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
 const trees: GLTF | null = await loader('src/assets/world/ground/Trees.glb')
 const scene = new THREE.Scene();
@@ -36,6 +36,8 @@ if (ground_mesh){
     scene.add(world);
     scene.add(world.debugMeshes1);
 }
+
+if (trees) scene.add(trees?.scene);
 
 scene.add(light);
 
