@@ -16,6 +16,9 @@ export async function loadStaticAsset(path: string): Promise<Mesh | null>{
     try{
         const asset = await loadAsset(path);
         const mesh: Mesh|null = asset?.scene.children[0] as Mesh;
+        mesh.traverse(child => {
+            child.castShadow = true;
+        })
         return mesh;
     } catch (error: any) {
         console.error(error);
@@ -31,6 +34,31 @@ export async function loadAnimatedAsset(path: string): Promise<Mesh | null>{
             child.castShadow = true;
         })
         mesh.animations = asset?.animations as AnimationClip[];
+        return mesh;
+    } catch (error: any) {
+        console.error(error);
+        return null;
+    }
+}
+
+// TODO: Combine with loadStaticAsset
+export async function loadStaticAssetArray(path: string): Promise<Mesh[] | null>{
+    try{
+        const asset = await loadAsset(path);
+        const mesh: Mesh[] = [];
+        if (!asset) return null;
+        for (const child of asset.scene.children) {
+            if (child.type === 'Mesh') {
+                mesh.push(child as Mesh);
+            } else if (child.type === 'Group') {
+                for (const subChild of child.children) {
+                    if (subChild.type === 'Mesh') {
+                        subChild.position.set(child.position.x, child.position.y, child.position.z);
+                        mesh.push(subChild as Mesh);
+                    }
+                }
+            }
+        }
         return mesh;
     } catch (error: any) {
         console.error(error);

@@ -4,28 +4,37 @@ import * as THREE from 'three'
 import Camera from './engine/camera'
 import Light from './engine/light'
 import { Graphics } from './engine/graphics.ts'
-import { loadAnimatedAsset } from './tools/loader.ts'
+import {loadAnimatedAsset, loadStaticAsset, loadStaticAssetArray} from './tools/loader.ts'
 import loader from './tools/loader.ts'
 import MyWorld from './entities/world.ts'
-import {Player} from "./entities/player.ts";
-import {GLTF} from "three/addons/loaders/GLTFLoader.js";
+import {Player, PlayerDependencies} from "./entities/player.ts";
 import Rapier from "./engine/physics.ts"
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {Mesh} from "three";
+import SoundManager from "./engine/SoundManager.ts";
+import Animator from "./engine/AnimationHandler.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
-const trees: GLTF | null = await loader('src/assets/world/ground/Trees.glb')
+const trees: Mesh | null = await loadStaticAsset('src/assets/world/ground/foliage.glb')
+const grass: Mesh | null = await loadStaticAsset('src/assets/world/ground/grass/SM_GrassLumpLargeC.gltf')
+const centralRuins: Mesh[] | null = await loadStaticAssetArray('src/assets/world/ground/centralRuins/CentralRuins.gltf')
 const scene = new THREE.Scene();
 const light = new Light();
 const camera = new Camera();
 
 let player = null
 
+const DEBUG = false;
 
 if (player_mesh){
     console.log(player_mesh);
-    player = new Player({mesh: player_mesh, physicsEngine: Rapier});
+    const dependencies: PlayerDependencies = {
+        soundManager: new SoundManager(),
+        animator: new Animator(player_mesh),
+        physicsEngine: Rapier
+    }
+    player = new Player(dependencies, player_mesh);
     scene.add(player);
     scene.add(player.debugMesh);
 }
@@ -34,10 +43,38 @@ if (player_mesh){
 if (ground_mesh){
     const world = new MyWorld({visuals: ground_mesh.scene, physicsEngine: Rapier});
     scene.add(world);
-    scene.add(world.debugMeshes1);
+    scene.add(world.debugMesh);
 }
 
-if (trees) scene.add(trees?.scene);
+if (trees) scene.add(trees);
+if (centralRuins) {
+    for (const centralRuin of centralRuins) {
+        scene.add(centralRuin);
+    }
+}
+
+if (grass) {
+    const grassCount = 50;
+    const grassGeometry = grass.geometry;
+    const grassMaterial = grass.material;
+
+    const instancedGrass = new THREE.InstancedMesh(grassGeometry, grassMaterial, grassCount);
+    scene.add(instancedGrass);
+    const dummy = new THREE.Object3D();
+    for (let i = 0; i < grassCount; i++) {
+        dummy.position.set(
+            Math.random() * 50 - 25,
+            0,
+            Math.random() * 50 - 25
+        );
+        dummy.rotation.y = Math.random() * Math.PI * 2;
+        dummy.scale.setScalar(Math.random() * 0.5 + 0.75 + 1);
+        dummy.updateMatrix();
+        instancedGrass.setMatrixAt(i, dummy.matrix);
+    }
+}
+
+
 
 scene.add(light);
 
@@ -45,15 +82,23 @@ const graphic = new Graphics({scene, camera})
 graphic.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(graphic.domElement);
 
-const controls = new OrbitControls(camera, graphic.domElement);
-controls.enableDamping = true; // Optional: Enables smooth damping (e.g., for deceleration)
-controls.dampingFactor = 0.25; // Optional: Controls the speed of damping
-controls.screenSpacePanning = false; // Optional: Prevents panning beyond the scene
-controls.maxPolarAngle = Math.PI / 2;
+if(DEBUG){
+    const controls = new OrbitControls(camera, graphic.domElement);
+    controls.enableDamping = true; // Optional: Enables smooth damping (e.g., for deceleration)
+    controls.dampingFactor = 0.25; // Optional: Controls the speed of damping
+    controls.screenSpacePanning = false; // Optional: Prevents panning beyond the scene
+    controls.maxPolarAngle = Math.PI / 2;
+}
 
+let once = true;
 graphic.onUpdate((dt: number) => {
     if (!player) return;
     player.update(dt);
     Rapier.step();
     light.update(player);
+    if (!DEBUG) camera.update(player);
+    if (once) {
+        camera.updateLookAtTarget(player);
+        once = false;
+    }
 });

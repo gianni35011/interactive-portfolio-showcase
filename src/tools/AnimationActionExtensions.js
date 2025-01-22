@@ -3,8 +3,7 @@
 Mesh.prototype.isRootName = function isRootName(name) {
     return this.name.includes(name)
 }
-//this Class is not directly accessible !
-//THREE.AnimationAction.prototype._updateTime
+
 const mesh = new Mesh()
 const mixer = new AnimationMixer()
 const anime = new AnimationClip('empty', 1, [])
@@ -12,6 +11,7 @@ const animationAction = mixer.clipAction(anime, mesh)
 
 animationAction.constructor.prototype.halfPass = false
 
+//TODO: Create a wrapper class instead.
 animationAction.constructor.prototype._updateTime = function _updateTime(
     deltaTime
 ) {

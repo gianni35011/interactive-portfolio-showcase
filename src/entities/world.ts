@@ -1,9 +1,9 @@
 ﻿import {Mesh, Object3D } from "three";
-import {createColliderDebug, createRigidBodyFixed} from "../tools/RapierHelper.ts";
+import {createRigidBodyFixed} from "../tools/RapierHelper.ts";
 import { World as PhysicsWorld } from "@dimforge/rapier3d-compat";
 
 export default class World extends Object3D {
-     debugMeshes1: any = null;
+     debugMesh: any = null;
 
     constructor({visuals, physicsEngine}: { visuals: Object3D, physicsEngine: PhysicsWorld }) {
         super();
@@ -13,12 +13,13 @@ export default class World extends Object3D {
 
     initPhysic(meshes: Object3D, physicsEngine: PhysicsWorld) {
         meshes.traverse((result: Object3D) => {
-                if (result.type !== "Mesh" || !(result instanceof Mesh)) {
+                if (result.type !== "Mesh") {
                     return; // Skip non-mesh objects
                 }
-                result.castShadow = true;
-                result.receiveShadow = true;
-                createRigidBodyFixed(result, physicsEngine, this);
+                const meshResult = result as Mesh;
+                meshResult.castShadow = true;
+                meshResult.receiveShadow = true;
+                createRigidBodyFixed(meshResult, physicsEngine, this);
         });
     }
 

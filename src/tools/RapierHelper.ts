@@ -1,4 +1,4 @@
-﻿import {ColliderDesc, RigidBodyDesc, World } from '@dimforge/rapier3d-compat'
+﻿import {ColliderDesc, RigidBody, RigidBodyDesc, World} from '@dimforge/rapier3d-compat'
 import {
     BufferAttribute,
     BufferGeometry,
@@ -14,22 +14,26 @@ import {
 import MyWorld from '../entities/world.ts'
 import {Player} from "../entities/player.ts";
 
-function createColliderGeo(mesh: Mesh, rigidBody, physicsEngine: World, w: MyWorld){
+function createColliderGeo(mesh: Mesh, physicsEngine: World, world: MyWorld){
     const clonedGeo: BufferGeometry = mesh.geometry.clone()
+    if (!clonedGeo.attributes.position || !clonedGeo.index) {
+        throw new Error("Mesh geometry requires an index buffer.");
+    }
+
     clonedGeo.applyMatrix4(mesh.matrixWorld)
     const vertices = new Float32Array(clonedGeo.attributes.position.array);
     const indices = new Uint32Array(clonedGeo.index?.array ?? []);
     const colliderDesc = ColliderDesc.trimesh(vertices, indices);
-    w.debugMeshes1 = createDebugWireframe(vertices, indices);
+    world.debugMesh = createDebugWireframe(vertices, indices);
     physicsEngine.createCollider(colliderDesc);
+    clonedGeo.dispose();
 }
 
 export function createRigidBodyFixed(mesh: Mesh, physicsEngine: World, w: MyWorld){
-    const rigidBodyDesc = RigidBodyDesc.fixed()
-    const rigidBody = physicsEngine.createRigidBody(rigidBodyDesc);
-    createColliderGeo(mesh, rigidBody, physicsEngine, w, mesh)
+    createColliderGeo(mesh, physicsEngine, w)
 }
-export function createRigidBodyEntity(position: Vector3, physicsEngine: World, player: Player){
+
+export function createRigidBodyDynamic(position: Vector3, physicsEngine: World, player: Player){
     const rigidBodyDesc = RigidBodyDesc.dynamic()
     rigidBodyDesc.setTranslation(position.x, position.y, position.z);
     const rigidBody = physicsEngine.createRigidBody(rigidBodyDesc);
@@ -38,9 +42,9 @@ export function createRigidBodyEntity(position: Vector3, physicsEngine: World, p
     return { rigidBody, collider}
 }
 
-function createColliderBall(radius: number, rigidBody: any, physicsEngine: World) {
+function createColliderBall(radius: number, rigidBody: RigidBody, physicsEngine: World) {
     const colliderDesc = ColliderDesc.ball(radius);
-    return physicsEngine.createCollider(colliderDesc,  rigidBody);
+    return physicsEngine.createCollider(colliderDesc, rigidBody)
 }
 
 export function thresholdFloor(float: number, max: number = 0.2): number {
@@ -107,15 +111,8 @@ export function angle(x: number,z: number){
 
 export function range(angle1: number, angle2: number){
     let angle = ((angle1 - angle2 + Math.PI) % (2 * Math.PI)) - Math.PI;
-    angle < - Math.PI ? angle += 2 * Math.PI : angle;
+    angle = angle < -Math.PI ? angle + 2 * Math.PI : angle;
     
     return angle;
 }
 
-export function findByName(name: string, array: any[]){
-    for (let i = 0; i < array.length; i++) {
-        if (array[i].name === name) {
-            return array[i];
-        }
-    }
-}

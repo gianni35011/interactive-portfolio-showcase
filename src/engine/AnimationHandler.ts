@@ -1,6 +1,7 @@
 ﻿import {LoopOnce, AnimationMixer, Mesh, AnimationClip, LoopRepeat} from 'three';
 import '../tools/AnimationActionExtensions.js';
 
+//TODO: Switch to EventEmitter for type safety
 export default class Animator{
     animations: Map<string, any> = new Map();
     mixer: AnimationMixer|null = null;
@@ -21,7 +22,7 @@ export default class Animator{
         animation.clampWhenFinished = true;
         animation.setDuration(duration);
         this.animations.set(name, animation);
-        animation.setEffectiveTimeScale(1)
+        animation.setEffectiveTimeScale(2)
         this.listeners.set(name, new Map());
     }
 
@@ -29,7 +30,6 @@ export default class Animator{
         const newAnim = this.animations.get(name);
 
         if(!newAnim) return;
-
 
         this.stopCurrentAnimation(newAnim);
         this.current = newAnim;
@@ -55,6 +55,7 @@ export default class Animator{
         this.mixer!.addEventListener('finished', () => {
             this.invokeListener(this.current._clip.name, 'finished')
         });
+        // @ts-ignore
         this.mixer!.addEventListener('half', () => {
             this.invokeListener(this.current._clip.name, 'half')
         });
