@@ -31,4 +31,5 @@ export default class Camera extends PerspectiveCamera {
         //this.position.copy(player.position);
         this.position.lerp(this.targetPosition, 0.02);
     }
+
 }

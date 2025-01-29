@@ -6,7 +6,7 @@ const Z = 1
 
 export default class InputManager {
     private keys: Set<string>;
-    private interactionPressed; false;
+    private interactionPressed = false;
 
     constructor() {
         this.keys = new Set<string>();
@@ -18,8 +18,10 @@ export default class InputManager {
             const key = e.key.toLowerCase();
             this.keys.add(key);
 
-            if(key === 'e')  this.interactionPressed = true
-            ;
+            if(key === 'e')  {
+                this.interactionPressed = true;
+                console.log("Interaction pressed");
+            }
             this.preventScrolling(e);
 
         };

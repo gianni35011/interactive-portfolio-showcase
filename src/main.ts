@@ -29,17 +29,6 @@ let player = null
 let npc = null
 const DEBUG = false;
 
-if (player_mesh){
-    console.log(player_mesh);
-    const dependencies: PlayerDependencies = {
-        soundManager: new SoundManager(),
-        animator: new Animator(player_mesh),
-        physicsEngine: Rapier
-    }
-    player = new Player(dependencies, player_mesh);
-    scene.add(player);
-    scene.add(player.debugMesh);
-}
 
 if (npc_mesh){
     console.log(npc_mesh);
@@ -49,7 +38,21 @@ if (npc_mesh){
         physicsEngine: Rapier
     }
     npc = new NPC(dependencies, npc_mesh);
+
     scene.add(npc);
+}
+if (player_mesh){
+    console.log(player_mesh);
+    const dependencies: PlayerDependencies = {
+        soundManager: new SoundManager(),
+        animator: new Animator(player_mesh),
+        physicsEngine: Rapier,
+        npcList: [],
+    }
+    if (npc) dependencies.npcList.push(npc);
+    player = new Player(dependencies, player_mesh);
+    scene.add(player);
+    scene.add(player.debugMesh);
 }
 
 

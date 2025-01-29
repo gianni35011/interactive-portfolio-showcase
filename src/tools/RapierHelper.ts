@@ -37,6 +37,7 @@ export function createRigidBodyFixed(mesh: Mesh, physicsEngine: World, w: MyWorl
 export function createRigidBodyDynamic(position: Vector3, physicsEngine: World, player: Player | NPC){
     const rigidBodyDesc = RigidBodyDesc.dynamic()
     rigidBodyDesc.setTranslation(position.x, position.y, position.z);
+    rigidBodyDesc.lockRotations();
     const rigidBody = physicsEngine.createRigidBody(rigidBodyDesc);
     player.debugMesh = createDebugSphere(0.25, position);
     const collider = createColliderBall(0.25, rigidBody, physicsEngine)

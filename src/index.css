@@ -1,0 +1,34 @@
+﻿#dialogue-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    display: none;
+    border: 2px solid gold;
+    font-family: 'MedievalSharp', cursive;
+    z-index: 1000;
+}
+
+#dialogue-text {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#dialogue-close {
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+#dialogue-close:hover {
+    background: #5a5a5a;
+}

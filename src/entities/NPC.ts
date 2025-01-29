@@ -76,5 +76,9 @@ export class NPC extends Object3D{
     update(dt: number){
         this.updateAnimation(dt);
     }
+
+    isInRange(position: Vector3, range: number): boolean {
+        return true;
+    }
 }
 
