@@ -9,6 +9,11 @@ export class DialogueManager{
     private intervalId: number | null = null;
     private isAnimating = false;
 
+    private onHideCallback: () => void = () => {};
+
+    setOnHideCallback(callback: () => void){
+        this.onHideCallback = callback;
+    }
 
     // @ts-ignore
     private currentNPC: NPC | null = null;
@@ -98,9 +103,17 @@ export class DialogueManager{
         this.box.style.display = 'none';
         this.currentTextPos = 0;
         this.clearAnimation();
+        console.log("Dialogue hidden");
+        if(this.onHideCallback){
+            this.onHideCallback();
+        }
     }
+
+
 
     get isActive(){
         return this.active;
     }
+
+
 }

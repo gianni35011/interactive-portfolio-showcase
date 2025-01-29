@@ -1,5 +1,6 @@
 import './style.css'
 import * as THREE from 'three'
+import * as TWEEN from '@tweenjs/tween.js'
 
 import Camera from './engine/camera'
 import Light from './engine/light'
@@ -14,6 +15,7 @@ import {Mesh} from "three";
 import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
+import {Tween} from "@tweenjs/tween.js";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
@@ -48,6 +50,7 @@ if (player_mesh){
         animator: new Animator(player_mesh),
         physicsEngine: Rapier,
         npcList: [],
+        camera,
     }
     if (npc) dependencies.npcList.push(npc);
     player = new Player(dependencies, player_mesh);
@@ -95,7 +98,7 @@ if (grass) {
 scene.add(light);
 
 const graphic = new Graphics({scene, camera})
-graphic.setSize(window.innerWidth, window.innerHeight);
+graphic.setSize(window.innerWidth, windCow.innerHeight);
 document.body.appendChild(graphic.domElement);
 
 if(DEBUG){
@@ -113,9 +116,10 @@ graphic.onUpdate((dt: number) => {
     player.update(dt);
     Rapier.step();
     light.update(player);
-    if (!DEBUG) camera.update(player);
+    if (!DEBUG) camera.update(player, dt);
     if (once) {
         camera.updateLookAtTarget(player);
         once = false;
     }
 });
+

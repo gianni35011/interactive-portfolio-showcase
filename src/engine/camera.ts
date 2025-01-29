@@ -1,11 +1,19 @@
-﻿import {PerspectiveCamera, Vector3} from "three";
+﻿import {Euler, PerspectiveCamera, Vector3} from "three";
 import {Player} from "../entities/player.ts";
 import {GUI} from "dat.gui";
+import * as TWEEN from "@tweenjs/tween.js";
 
 export default class Camera extends PerspectiveCamera {
     private targetPosition: Vector3 = new Vector3();
     offset = new Vector3(-12, 8, 0);
     LookAtTarget = new Vector3(0, 0, 0);
+
+    private _isPanning = false;
+    private originalOffset = new Vector3();
+    private originalRotation = new Euler();
+    private originalLookAt = new Vector3();
+    private tweenGroup = new TWEEN.Group();
+    private tp: TWEEN.Tween;
 
     constructor() {
         super(70,
@@ -26,10 +34,60 @@ export default class Camera extends PerspectiveCamera {
         this.lookAt(player.position);
     }
 
-    update(player: Player){
+    update(player: Player, dt: number){
+        if (this._isPanning){
+            this.tweenGroup.update();
+            return;
+        }
         this.targetPosition.copy(player.position).add(this.offset);
         //this.position.copy(player.position);
         this.position.lerp(this.targetPosition, 0.02);
     }
 
+    startPanAnimation(targetPosition: Vector3, targetLookAt: Vector3, duration: number){
+        if(this._isPanning) return;
+        this._isPanning = true;
+        this.originalOffset.copy(this.offset);
+        this.originalRotation.copy(this.rotation);
+        this.originalLookAt.copy(this.LookAtTarget)
+
+        const tweenPos = new TWEEN.Tween(this.position)
+            .to(targetPosition, duration)
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .start();
+
+         const tweenRot = new TWEEN.Tween(this.rotation)
+            .to(targetPosition, duration)
+            .easing(TWEEN.Easing.Quadratic.InOut);
+
+        const tweenLookAt = new TWEEN.Tween(this.LookAtTarget)
+            .to(targetLookAt, duration)
+            .onUpdate(() => {
+                this.lookAt(this.LookAtTarget);
+            });
+
+        this.tweenGroup.add(tweenPos);
+        this.tweenGroup.add(tweenRot);
+        this.tweenGroup.add(tweenLookAt);
+    }
+
+    resetToPlayer(duration: number = 3000){
+        new TWEEN.Tween(this.offset)
+            .to(this.originalOffset, duration)
+            .easing(TWEEN.Easing.Quadratic.InOut)
+            .start();
+
+        new TWEEN.Tween(this.rotation)
+            .to(this.originalRotation, duration)
+            .start();
+
+        new TWEEN.Tween(this.LookAtTarget)
+            .to(this.originalLookAt, duration)
+            .onComplete(() => this._isPanning = false)
+            .start();
+    }
+
+    get isPanning(){
+        return this._isPanning;
+    }
 }

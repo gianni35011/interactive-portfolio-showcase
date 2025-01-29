@@ -6,6 +6,7 @@ import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
 import {DialogueManager} from "../engine/DialogueManager.ts";
 import {NPC} from "./NPC.ts";
+import Camera from "../engine/camera.ts";
 
 const SPEED: number = 1;
 const WALK = "Walking_C";
@@ -27,6 +28,7 @@ export interface PlayerDependencies {
     animator: Animator;
     physicsEngine: World;
     npcList: NPC[];
+    camera: Camera;
 }
 
 export class Player extends Object3D {
@@ -41,6 +43,7 @@ export class Player extends Object3D {
     private dialogueManager: DialogueManager;
     private npcList: NPC[] = [];
     private nearbyNPCs: NPC[] = [];
+    private camera: Camera;
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -59,6 +62,9 @@ export class Player extends Object3D {
         this.syncAnimationSounds()
         this.dialogueManager = new DialogueManager();
         this.npcList = playerDependencies.npcList;
+        this.camera = playerDependencies.camera;
+
+        this.dialogueManager.setOnHideCallback(this.onDialogueHidden.bind(this));
     }
 
     private initializePhysics(physicsEngine: World) {
@@ -169,5 +175,14 @@ export class Player extends Object3D {
         //         this.dialogueManager.startDialogue(object);
         //     }
         // }
+    }
+
+    onDialogueHidden(){
+        console.log("Dialogue");
+        this.camera.startPanAnimation(
+            new Vector3().copy(this.camera.position).add(new Vector3(0, 50, 0)),
+            new Vector3(this.camera.position.x, this.camera.position.y, this.camera.position.z),
+            3000
+        );
     }
 }
