@@ -13,9 +13,11 @@ import {OrbitControls} from "three/addons/controls/OrbitControls.js";
 import {Mesh} from "three";
 import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
+import {NPC, NPCDependencies} from "./entities/NPC.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
+const npc_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Barbarian.glb')
 const trees: Mesh | null = await loadStaticAsset('src/assets/world/ground/foliage.glb')
 const grass: Mesh | null = await loadStaticAsset('src/assets/world/ground/grass/SM_GrassLumpLargeC.gltf')
 const centralRuins: Mesh[] | null = await loadStaticAssetArray('src/assets/world/ground/centralRuins/CentralRuins.gltf')
@@ -24,7 +26,7 @@ const light = new Light();
 const camera = new Camera();
 
 let player = null
-
+let npc = null
 const DEBUG = false;
 
 if (player_mesh){
@@ -37,6 +39,17 @@ if (player_mesh){
     player = new Player(dependencies, player_mesh);
     scene.add(player);
     scene.add(player.debugMesh);
+}
+
+if (npc_mesh){
+    console.log(npc_mesh);
+    const dependencies: NPCDependencies = {
+        soundManager: new SoundManager(),
+        animator: new Animator(npc_mesh),
+        physicsEngine: Rapier
+    }
+    npc = new NPC(dependencies, npc_mesh);
+    scene.add(npc);
 }
 
 
@@ -54,7 +67,7 @@ if (centralRuins) {
 }
 
 if (grass) {
-    const grassCount = 50;
+    const grassCount = 10000;
     const grassGeometry = grass.geometry;
     const grassMaterial = grass.material;
 
@@ -92,7 +105,8 @@ if(DEBUG){
 
 let once = true;
 graphic.onUpdate((dt: number) => {
-    if (!player) return;
+    if (!player || !npc) return;
+    npc.update(dt);
     player.update(dt);
     Rapier.step();
     light.update(player);

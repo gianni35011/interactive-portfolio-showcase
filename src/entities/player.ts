@@ -34,7 +34,7 @@ export class Player extends Object3D {
     controller = new InputManager();
     debugMesh: any = null;
     animator: Animator | null = null;
-    soundManager: SoundManager = new SoundManager();
+    soundManager: SoundManager| null = null;
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -73,6 +73,8 @@ export class Player extends Object3D {
     }
 
     private initializeSound() {
+        if (!this.soundManager) return;
+
         this.soundManager.load(GRASS, GRASS_FOOTSTEPS);
     }
 
@@ -84,6 +86,7 @@ export class Player extends Object3D {
 
     private updatePhysics() {
         if (!this.rigidBody) return;
+        // Rotate to face the direction of movement from the controller (Up is up)
         const {x, z} = this.rotateInputClockwise90();
         const y = this.rigidBody.linvel().y;
         this.rigidBody.setLinvel({x: x * SPEED, y, z: z * SPEED}, true);
@@ -121,12 +124,13 @@ export class Player extends Object3D {
     }
 
     syncAnimationSounds(){
-        if (!this.animator) return;
+        if (!this.animator || !this.soundManager) return;
+
         this.animator.on(WALK, 'loop', () => {
-            this.soundManager.play(GRASS)
+            this.soundManager!.play(GRASS)
         });
         this.animator.on(WALK, 'half', () => {
-            this.soundManager.play(GRASS)
+            this.soundManager!.play(GRASS)
         });
     }
 }

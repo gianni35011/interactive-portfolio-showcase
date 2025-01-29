@@ -13,6 +13,7 @@ import {
 } from "three";
 import MyWorld from '../entities/world.ts'
 import {Player} from "../entities/player.ts";
+import {NPC} from "../entities/NPC.ts";
 
 function createColliderGeo(mesh: Mesh, physicsEngine: World, world: MyWorld){
     const clonedGeo: BufferGeometry = mesh.geometry.clone()
@@ -33,7 +34,7 @@ export function createRigidBodyFixed(mesh: Mesh, physicsEngine: World, w: MyWorl
     createColliderGeo(mesh, physicsEngine, w)
 }
 
-export function createRigidBodyDynamic(position: Vector3, physicsEngine: World, player: Player){
+export function createRigidBodyDynamic(position: Vector3, physicsEngine: World, player: Player | NPC){
     const rigidBodyDesc = RigidBodyDesc.dynamic()
     rigidBodyDesc.setTranslation(position.x, position.y, position.z);
     const rigidBody = physicsEngine.createRigidBody(rigidBodyDesc);
