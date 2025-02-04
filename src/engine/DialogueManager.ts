@@ -12,12 +12,6 @@ export class DialogueManager{
 
     private stateManager = GameStateManager.getInstance();
 
-    private onHideCallback: () => void = () => {};
-
-    setOnHideCallback(callback: () => void){
-        this.onHideCallback = callback;
-    }
-
     // @ts-ignore
     private currentNPC: NPC | null = null;
 
@@ -42,7 +36,7 @@ export class DialogueManager{
         document.getElementById('dialogue-close')?.addEventListener('click', () => this.handleContinue());
     }
 
-    show(npc: NPC, text: string[]){
+    startDialogue(npc: NPC, text: string[]){
         this.active = true;
         this.currentNPC = npc;
         this.textToDisplay = text;
@@ -112,9 +106,6 @@ export class DialogueManager{
         this.currentTextPos = 0;
         this.clearAnimation();
         console.log("Dialogue hidden");
-        if(this.onHideCallback){
-            this.onHideCallback();
-        }
         this.stateManager.setState(GameState.CAMERA_TRANSITION);
     }
 

@@ -5,6 +5,7 @@ import InputManager from "../control/InputManager.ts";
 import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
 import {NPC} from "./NPC.ts";
+import {DialogueManager} from "../engine/DialogueManager.ts";
 
 const SPEED: number = 1;
 const WALK = "Walking_C";
@@ -27,6 +28,7 @@ export interface PlayerDependencies {
     animator: Animator;
     physicsEngine: World;
     npcList: NPC[];
+    dialogueManager: DialogueManager;
 }
 
 export class Player extends Object3D {
@@ -39,7 +41,7 @@ export class Player extends Object3D {
     animator: Animator | null = null;
     soundManager: SoundManager| null = null;
     private npcList: NPC[] = [];
-    private nearbyNPCs: NPC[] = [];
+    private dialogueManager: DialogueManager;
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -57,7 +59,7 @@ export class Player extends Object3D {
         this.initializeSound();
         this.syncAnimationSounds()
         this.npcList = playerDependencies.npcList;
-
+        this.dialogueManager = playerDependencies.dialogueManager;
     }
 
     private initializePhysics(physicsEngine: World) {
@@ -86,6 +88,9 @@ export class Player extends Object3D {
     }
 
     update(dt: number) {
+        if (this.controller.interaction) {
+            this.checkNPCInteractions();
+        }
         this.updatePhysics();
         this.updateVisuals(dt);
         this.updateAnimation(dt);
@@ -141,16 +146,17 @@ export class Player extends Object3D {
 
     // @ts-ignore
     private checkNPCInteractions(){
-        this.nearbyNPCs = [];
+        const nearbyNPCs: NPC[] = [];
 
         this.npcList.forEach(npc => {
             if(npc.isInRange(this.position, 1)){
-                this.nearbyNPCs.push(npc);
+                nearbyNPCs.push(npc);
             }
         });
 
-
-
+        if (nearbyNPCs.length === 0) return;
+        this.dialogueManager.startDialogue(nearbyNPCs[0], nearbyNPCs[0].getDialogue());
+        this.npcList[0].getDialogue();
         // const direction = this.rotateInputClockwise90();
         // const ray = new Raycaster(this.position, new Vector3(direction.x, 0, direction.z), 0, 1);
         // const intersects = ray.intersectObjects(scene.children, true);

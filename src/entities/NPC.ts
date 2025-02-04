@@ -21,6 +21,8 @@ export class NPC extends Object3D{
     debugMesh: any = null;
     animator: Animator | null = null;
     soundManager: SoundManager | null = null;
+    private dialogueText: string[] = ["\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.", "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.\"", "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time."];
+
 
     constructor(
         npcDependencies: NPCDependencies,
@@ -81,5 +83,8 @@ export class NPC extends Object3D{
     isInRange(position: Vector3, range: number): boolean {
         return true;
     }
-}
 
+    getDialogue(): string[] {
+        return this.dialogueText;
+    }
+}

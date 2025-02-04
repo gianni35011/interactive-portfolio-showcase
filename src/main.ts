@@ -14,6 +14,7 @@ import {Mesh} from "three";
 import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
+import {DialogueManager} from "./engine/DialogueManager.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
@@ -49,6 +50,7 @@ if (player_mesh){
         animator: new Animator(player_mesh),
         physicsEngine: Rapier,
         npcList: [],
+       dialogueManager: new DialogueManager(),
     }
     if (npc) dependencies.npcList.push(npc);
     player = new Player(dependencies, player_mesh);

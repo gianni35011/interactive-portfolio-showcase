@@ -1,4 +1,27 @@
-﻿import { EventEmitter } from "events";
+﻿type EventCallback = (event: StateChangeEvent) => void;
+
+class EventEmitter{
+    private listeners: Map<string, EventCallback[]>;
+
+    constructor() {
+        this.listeners = new Map();
+    }
+
+    on(event: string, callback: EventCallback){
+        if(!this.listeners.has(event)){
+            this.listeners.set(event, []);
+        }
+        this.listeners.get(event)!.push(callback);
+    }
+
+    emit(event: string, data: StateChangeEvent): void{
+        const callbacks = this.listeners.get(event);
+        if(callbacks){
+            callbacks.forEach(callback => callback(data));
+        }
+
+    }
+}
 
 export enum GameState{
     MAIN_MENU,
