@@ -1,13 +1,16 @@
 ﻿import {NPC} from "../entities/NPC.ts";
+import {GameState, GameStateManager} from "./GameStateManager.ts";
 
 export class DialogueManager{
     private active = false;
-    private box;
+    private box!: HTMLDivElement;
     private textToDisplay: string[] = [];
     private currentPageIndex: number = 0;
     private currentTextPos: number = 0;
     private intervalId: number | null = null;
     private isAnimating = false;
+
+    private stateManager = GameStateManager.getInstance();
 
     private onHideCallback: () => void = () => {};
 
@@ -20,10 +23,15 @@ export class DialogueManager{
 
     constructor() {
         this.initUI();
+
+        this.stateManager.onStateExit(GameState.DIALOGUE, () => {
+            this.hide();
+        });
+
     }
 
     private initUI() {
-        this.box = document.createElement('div');
+        this.box = document.createElement('div')
         this.box.id = 'dialogue-box';
         this.box.innerHTML = `
             <div id="dialogue-text"></div>
@@ -107,6 +115,7 @@ export class DialogueManager{
         if(this.onHideCallback){
             this.onHideCallback();
         }
+        this.stateManager.setState(GameState.CAMERA_TRANSITION);
     }
 
 
@@ -114,6 +123,5 @@ export class DialogueManager{
     get isActive(){
         return this.active;
     }
-
 
 }

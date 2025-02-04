@@ -12,6 +12,7 @@ export interface NPCDependencies{
     physicsEngine: World;
 }
 
+
 export class NPC extends Object3D{
     private static readonly DEFAULT_START_POSITION: Vector3 = new Vector3(9, 0, 12);
 

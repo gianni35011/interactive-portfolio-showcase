@@ -4,9 +4,7 @@ import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import InputManager from "../control/InputManager.ts";
 import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
-import {DialogueManager} from "../engine/DialogueManager.ts";
 import {NPC} from "./NPC.ts";
-import Camera from "../engine/camera.ts";
 
 const SPEED: number = 1;
 const WALK = "Walking_C";
@@ -23,12 +21,12 @@ const GRASS_FOOTSTEPS = [
     ]
 
 
+    
 export interface PlayerDependencies {
     soundManager: SoundManager;
     animator: Animator;
     physicsEngine: World;
     npcList: NPC[];
-    camera: Camera;
 }
 
 export class Player extends Object3D {
@@ -40,10 +38,8 @@ export class Player extends Object3D {
     debugMesh: any = null;
     animator: Animator | null = null;
     soundManager: SoundManager| null = null;
-    private dialogueManager: DialogueManager;
     private npcList: NPC[] = [];
     private nearbyNPCs: NPC[] = [];
-    private camera: Camera;
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -60,11 +56,8 @@ export class Player extends Object3D {
         this.initializeAnimator(mesh);
         this.initializeSound();
         this.syncAnimationSounds()
-        this.dialogueManager = new DialogueManager();
         this.npcList = playerDependencies.npcList;
-        this.camera = playerDependencies.camera;
 
-        this.dialogueManager.setOnHideCallback(this.onDialogueHidden.bind(this));
     }
 
     private initializePhysics(physicsEngine: World) {
@@ -93,10 +86,7 @@ export class Player extends Object3D {
     }
 
     update(dt: number) {
-        if (!this.dialogueManager.isActive){
-            this.updatePhysics();
-            this.checkNPCInteractions();
-        }
+        this.updatePhysics();
         this.updateVisuals(dt);
         this.updateAnimation(dt);
     }
@@ -128,8 +118,6 @@ export class Player extends Object3D {
 
     }
 
-
-
     private updateAnimation(dt: number){
         if (this.controller.isMoving){
             this.animator?.play(WALK);
@@ -151,6 +139,7 @@ export class Player extends Object3D {
         });
     }
 
+    // @ts-ignore
     private checkNPCInteractions(){
         this.nearbyNPCs = [];
 
@@ -159,10 +148,6 @@ export class Player extends Object3D {
                 this.nearbyNPCs.push(npc);
             }
         });
-
-        if(this.controller.interaction && this.nearbyNPCs.length > 0) {
-            this.dialogueManager.show(this.nearbyNPCs[0], ["\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.", "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.\"", "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time."]);
-        }
 
 
 
@@ -175,14 +160,5 @@ export class Player extends Object3D {
         //         this.dialogueManager.startDialogue(object);
         //     }
         // }
-    }
-
-    onDialogueHidden(){
-        console.log("Dialogue");
-        this.camera.startPanAnimation(
-            new Vector3().copy(this.camera.position).add(new Vector3(0, 50, 0)),
-            new Vector3(this.camera.position.x, this.camera.position.y, this.camera.position.z),
-            3000
-        );
     }
 }

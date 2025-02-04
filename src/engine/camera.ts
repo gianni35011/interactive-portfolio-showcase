@@ -2,6 +2,7 @@
 import {Player} from "../entities/player.ts";
 import {GUI} from "dat.gui";
 import * as TWEEN from "@tweenjs/tween.js";
+import {GameState, GameStateManager} from "./GameStateManager.ts";
 
 export default class Camera extends PerspectiveCamera {
     private targetPosition: Vector3 = new Vector3();
@@ -12,8 +13,11 @@ export default class Camera extends PerspectiveCamera {
     private originalOffset = new Vector3();
     private originalRotation = new Euler();
     private originalLookAt = new Vector3();
+
+    private stateManager: GameStateManager;
+
     private tweenGroup = new TWEEN.Group();
-    private tp: TWEEN.Tween;
+
 
     constructor() {
         super(70,
@@ -27,6 +31,15 @@ export default class Camera extends PerspectiveCamera {
         positionFolder.add(this.offset, 'x', -50, 100).name('X');
         positionFolder.add(this.offset, 'y', -50, 100).name('Y');
         positionFolder.add(this.offset, 'z', -50, 100).name('Z');
+        this.stateManager = GameStateManager.getInstance();
+
+        this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION, () => {
+            this.startPanAnimation(
+                new Vector3().copy(this.position).add(new Vector3(0, 800, 0)),
+                new Vector3(this.position.x, this.position.y, this.position.z),
+                3000
+            );
+        })
     }
 
     updateLookAtTarget(player: Player){

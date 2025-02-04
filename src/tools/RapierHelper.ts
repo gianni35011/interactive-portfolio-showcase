@@ -21,6 +21,7 @@ function createColliderGeo(mesh: Mesh, physicsEngine: World, world: MyWorld){
         throw new Error("Mesh geometry requires an index buffer.");
     }
 
+    
     clonedGeo.applyMatrix4(mesh.matrixWorld)
     const vertices = new Float32Array(clonedGeo.attributes.position.array);
     const indices = new Uint32Array(clonedGeo.index?.array ?? []);
