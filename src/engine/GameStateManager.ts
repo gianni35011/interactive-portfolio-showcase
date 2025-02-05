@@ -28,8 +28,9 @@ export enum GameState{
     PLAYING,
     PAUSED,
     DIALOGUE,
-    CAMERA_TRANSITION,
-    BROWSER,
+    CAMERA_TRANSITION_ENTER,
+    CAMERA_TRANSITION_EXIT,
+    PORTFOLIO_VIEW,
 }
 
 export interface StateChangeEvent {
@@ -64,19 +65,27 @@ export class GameStateManager{
         this.addAllowedTransition(GameState.PLAYING, [
             GameState.DIALOGUE,
             GameState.PAUSED,
-            GameState.CAMERA_TRANSITION,
+            GameState.CAMERA_TRANSITION_ENTER,
             GameState.MAIN_MENU
         ]);
 
         this.addAllowedTransition(GameState.DIALOGUE, [
             GameState.PLAYING,
-            GameState.CAMERA_TRANSITION,
+            GameState.CAMERA_TRANSITION_ENTER,
         ])
 
-        this.addAllowedTransition(GameState.CAMERA_TRANSITION, [
+        this.addAllowedTransition(GameState.CAMERA_TRANSITION_ENTER, [
             GameState.PLAYING,
+            GameState.PORTFOLIO_VIEW,
         ]);
 
+        this.addAllowedTransition(GameState.PORTFOLIO_VIEW, [
+            GameState.CAMERA_TRANSITION_EXIT,
+        ]);
+
+        this.addAllowedTransition(GameState.CAMERA_TRANSITION_EXIT, [
+            GameState.PLAYING,
+        ]);
     }
 
     private addAllowedTransition(from: GameState, to: GameState[] | GameState){

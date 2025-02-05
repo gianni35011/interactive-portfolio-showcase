@@ -15,6 +15,7 @@ import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
 import {DialogueManager} from "./engine/DialogueManager.ts";
+import {PortfolioOverlay} from "./ui/PortfolioOverlay.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
@@ -58,6 +59,7 @@ if (player_mesh){
     scene.add(player.debugMesh);
 }
 
+const portfolioOverlay = new PortfolioOverlay()
 
 if (ground_mesh){
     const world = new MyWorld({visuals: ground_mesh.scene, physicsEngine: Rapier});

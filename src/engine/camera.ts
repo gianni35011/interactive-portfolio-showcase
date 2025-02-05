@@ -17,6 +17,7 @@ export default class Camera extends PerspectiveCamera {
     private stateManager: GameStateManager;
 
     private tweenGroup = new TWEEN.Group();
+    private originalPosition: Vector3 = new Vector3();
 
 
     constructor() {
@@ -33,13 +34,21 @@ export default class Camera extends PerspectiveCamera {
         positionFolder.add(this.offset, 'z', -50, 100).name('Z');
         this.stateManager = GameStateManager.getInstance();
 
-        this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION, () => {
+        this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION_ENTER, () => {
             this.startPanAnimation(
                 new Vector3().copy(this.position).add(new Vector3(0, 800, 0)),
                 new Vector3(this.position.x, this.position.y, this.position.z),
-                3000
+                5000
             );
-        })
+        });
+
+        this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION_EXIT, () => {
+            this.resetToPlayer(5000);
+        });
+
+        this.stateManager.onStateEnter(GameState.PLAYING, () => {
+            this._isPanning = false;
+        });
     }
 
     updateLookAtTarget(player: Player){
@@ -60,6 +69,7 @@ export default class Camera extends PerspectiveCamera {
     startPanAnimation(targetPosition: Vector3, targetLookAt: Vector3, duration: number){
         if(this._isPanning) return;
         this._isPanning = true;
+        this.originalPosition.copy(this.position);
         this.originalOffset.copy(this.offset);
         this.originalRotation.copy(this.rotation);
         this.originalLookAt.copy(this.LookAtTarget)
@@ -67,7 +77,9 @@ export default class Camera extends PerspectiveCamera {
         const tweenPos = new TWEEN.Tween(this.position)
             .to(targetPosition, duration)
             .easing(TWEEN.Easing.Quadratic.InOut)
-            .start();
+            .start().onComplete(()=>{
+                this.stateManager.setState(GameState.PORTFOLIO_VIEW);
+            });
 
          const tweenRot = new TWEEN.Tween(this.rotation)
             .to(targetPosition, duration)
@@ -85,19 +97,30 @@ export default class Camera extends PerspectiveCamera {
     }
 
     resetToPlayer(duration: number = 3000){
-        new TWEEN.Tween(this.offset)
-            .to(this.originalOffset, duration)
+        this._isPanning = true;
+
+        const tweenPos = new TWEEN.Tween(this.position)
+            .to(this.originalPosition, duration)
             .easing(TWEEN.Easing.Quadratic.InOut)
-            .start();
+            .start().onComplete(()=>{
+                this.stateManager.setState(GameState.PLAYING);
+            });
 
-        new TWEEN.Tween(this.rotation)
+        const tweenRot = new TWEEN.Tween(this.rotation)
             .to(this.originalRotation, duration)
-            .start();
+            .easing(TWEEN.Easing.Quadratic.InOut);
 
-        new TWEEN.Tween(this.LookAtTarget)
+        const tweenLookAt = new TWEEN.Tween(this.LookAtTarget)
             .to(this.originalLookAt, duration)
-            .onComplete(() => this._isPanning = false)
-            .start();
+            .onUpdate(() => {
+                this.lookAt(this.LookAtTarget);
+            });
+
+        this.tweenGroup.removeAll()
+
+        this.tweenGroup.add(tweenPos);
+        this.tweenGroup.add(tweenRot);
+        this.tweenGroup.add(tweenLookAt);
     }
 
     get isPanning(){

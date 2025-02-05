@@ -106,7 +106,7 @@ export class DialogueManager{
         this.currentTextPos = 0;
         this.clearAnimation();
         console.log("Dialogue hidden");
-        this.stateManager.setState(GameState.CAMERA_TRANSITION);
+        this.stateManager.setState(GameState.CAMERA_TRANSITION_ENTER);
     }
 
 
