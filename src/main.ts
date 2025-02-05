@@ -16,6 +16,7 @@ import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
 import {DialogueManager} from "./engine/DialogueManager.ts";
 import {PortfolioOverlay} from "./ui/PortfolioOverlay.ts";
+import {Skybox} from "./entities/SkyBox.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
@@ -102,6 +103,9 @@ scene.add(light);
 const graphic = new Graphics({scene, camera})
 graphic.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(graphic.domElement);
+
+const hdriPath = 'src/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr'
+new Skybox(scene, graphic, hdriPath, 1);
 
 if(DEBUG){
     const controls = new OrbitControls(camera, graphic.domElement);

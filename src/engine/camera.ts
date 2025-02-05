@@ -24,7 +24,7 @@ export default class Camera extends PerspectiveCamera {
         super(70,
             innerWidth/innerHeight,
             0.1,
-            1000)
+            10000)
         this.position.set(0,0,0);
         const gui = new GUI();
         const cameraFolder = gui.addFolder('Camera');

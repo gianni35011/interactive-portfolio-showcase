@@ -7,6 +7,7 @@ export class Graphics extends WebGLRenderer {
     cbUpdate: ((dt: number) => void) | null = null
     cbLoop: (() => void) | null = null
 
+
     constructor({scene, camera}: { scene: Object3D, camera: Camera }) {
         super();
         this.scene = scene;
