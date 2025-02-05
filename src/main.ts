@@ -17,6 +17,7 @@ import {NPC, NPCDependencies} from "./entities/NPC.ts";
 import {DialogueManager} from "./engine/DialogueManager.ts";
 import {PortfolioOverlay} from "./ui/PortfolioOverlay.ts";
 import {Skybox} from "./entities/SkyBox.ts";
+import {MusicManager} from "./engine/MusicManager.ts";
 
 const ground_mesh = await loader('src/assets/world/ground/Ground.gltf')
 const player_mesh: Mesh | null = await loadAnimatedAsset('src/assets/adventurers/Rogue.glb')
@@ -106,6 +107,8 @@ document.body.appendChild(graphic.domElement);
 
 const hdriPath = 'src/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr'
 new Skybox(scene, graphic, hdriPath, 1);
+
+const musicManager = new MusicManager();
 
 if(DEBUG){
     const controls = new OrbitControls(camera, graphic.domElement);

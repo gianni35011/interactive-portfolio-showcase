@@ -4,7 +4,7 @@ import {EXRLoader} from "three/addons/loaders/EXRLoader.js";
 import {GUI} from "dat.gui";
 
 export class Skybox{
-    constructor(scene: Scene, renderer: Graphics, hdriPath: string, intensity: number) {
+    constructor(scene: Scene, renderer: Graphics, hdriPath: string) {
 
         this.loadEXR(scene, renderer, hdriPath);
         this.addControls(scene);

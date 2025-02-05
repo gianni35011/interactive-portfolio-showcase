@@ -120,6 +120,7 @@ export class GameStateManager{
         this.eventEmitter.emit(`state:exit:${GameState[this.previousState]}`, stateChangeEvent);
         this.eventEmitter.emit(`state:enter:${GameState[newState]}`, stateChangeEvent);
 
+        console.log(`State transition: ${GameState[this.previousState]} -> ${GameState[newState]}`);
         return true;
     }
 

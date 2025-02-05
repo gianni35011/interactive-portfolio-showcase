@@ -24,15 +24,15 @@ export class NPC extends Object3D{
     soundManager: SoundManager | null = null;
     private _dialogueEntries: DialogueEntry[] = [
         {
-            text: "\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.",
+            text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
             audioPath: "src/assets/voiceLines/ProjectsNPC/1_ProjectsNPC.mp3"
         },
         {
-            text: "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.",
+            text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
             audioPath: "src/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3"
         },
         {
-            text: "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time.",
+            text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
             audioPath: "src/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3"
         }
     ];
