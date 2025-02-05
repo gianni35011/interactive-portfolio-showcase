@@ -1,18 +1,22 @@
 ﻿import {NPC} from "../entities/NPC.ts";
 import {GameState, GameStateManager} from "./GameStateManager.ts";
 
+export interface DialogueEntry{
+    text: string;
+    audioPath?: string;
+}
+
 export class DialogueManager{
     private active = false;
     private box!: HTMLDivElement;
-    private textToDisplay: string[] = [];
     private currentPageIndex: number = 0;
     private currentTextPos: number = 0;
     private intervalId: number | null = null;
     private isAnimating = false;
+    private currentDialogueEntries: DialogueEntry[] = [];
 
     private stateManager = GameStateManager.getInstance();
 
-    // @ts-ignore
     private currentNPC: NPC | null = null;
 
     constructor() {
@@ -36,10 +40,11 @@ export class DialogueManager{
         document.getElementById('dialogue-close')?.addEventListener('click', () => this.handleContinue());
     }
 
-    startDialogue(npc: NPC, text: string[]){
+    startDialogue(npc: NPC){
+        if(this.active) return;
         this.active = true;
         this.currentNPC = npc;
-        this.textToDisplay = text;
+        this.currentDialogueEntries = npc.dialogueEntries;
         this.currentPageIndex = 0;
         this.currentTextPos = 0;
         this.box.style.display = 'block';
@@ -51,19 +56,29 @@ export class DialogueManager{
 
         this.startAnimation();
 
+        const currentEntry = this.currentDialogueEntries[this.currentPageIndex];
+        if(currentEntry.audioPath) {
+            npc.playAudio(currentEntry.audioPath);
+        }
     }
 
     handleContinue(){
         if(this.isAnimating){
             this.clearAnimation();
-            const currentPage = this.textToDisplay[this.currentPageIndex];
-            document.getElementById('dialogue-text')!.textContent = currentPage;
-            this.currentTextPos = currentPage.length;
+            const currentEntry = this.currentDialogueEntries[this.currentPageIndex];
+            document.getElementById('dialogue-text')!.textContent = currentEntry.text;
+            this.currentTextPos = currentEntry.text.length;
         } else {
             this.currentPageIndex++;
-            if(this.currentPageIndex < this.textToDisplay.length){
+            if(this.currentPageIndex < this.currentDialogueEntries.length){
                 this.currentTextPos = 0;
                 this.startAnimation();
+
+                //Audio
+                const nextEntry = this.currentDialogueEntries[this.currentPageIndex];
+                if(nextEntry.audioPath && this.currentNPC){
+                    this.currentNPC?.playAudio(nextEntry.audioPath);
+                }
             } else {
                 this.hide();
             }
@@ -76,12 +91,12 @@ export class DialogueManager{
         this.isAnimating = true;
 
         this.intervalId = window.setInterval(() => {
-            if(this.currentPageIndex >= this.textToDisplay.length){
+            if(this.currentPageIndex >= this.currentDialogueEntries.length){
                 this.clearAnimation();
                 return;
             }
 
-            const currentPage = this.textToDisplay[this.currentPageIndex];
+            const currentPage = this.currentDialogueEntries[this.currentPageIndex].text;
             if(this.currentTextPos < currentPage.length){
                 dialogueText.textContent = currentPage.substring(0, this.currentTextPos + 1);
                 this.currentTextPos++;

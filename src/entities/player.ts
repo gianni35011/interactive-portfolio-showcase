@@ -155,8 +155,7 @@ export class Player extends Object3D {
         });
 
         if (nearbyNPCs.length === 0) return;
-        this.dialogueManager.startDialogue(nearbyNPCs[0], nearbyNPCs[0].getDialogue());
-        this.npcList[0].getDialogue();
+        this.dialogueManager.startDialogue(nearbyNPCs[0]);
         // const direction = this.rotateInputClockwise90();
         // const ray = new Raycaster(this.position, new Vector3(direction.x, 0, direction.z), 0, 1);
         // const intersects = ray.intersectObjects(scene.children, true);

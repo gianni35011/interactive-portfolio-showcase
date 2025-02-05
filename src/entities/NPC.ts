@@ -3,6 +3,7 @@ import {GUI} from "dat.gui";
 import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
+import {DialogueEntry} from "../engine/DialogueManager.ts";
 
 const IDLE = "Sit_Chair_Idle";
 
@@ -21,7 +22,23 @@ export class NPC extends Object3D{
     debugMesh: any = null;
     animator: Animator | null = null;
     soundManager: SoundManager | null = null;
-    private dialogueText: string[] = ["\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.", "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.\"", "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time."];
+    private _dialogueEntries: DialogueEntry[] = [
+        {
+            text: "\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.",
+            audioPath: "src/assets/voiceLines/ProjectsNPC/1_ProjectsNPC.mp3"
+        },
+        {
+            text: "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.",
+            audioPath: "src/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3"
+        },
+        {
+            text: "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time.",
+            audioPath: "src/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3"
+        }
+    ];
+
+    private audioElements: Map<string, HTMLAudioElement> = new Map();
+    //private dialogueText: string[] = ["\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.", "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.\"", "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time."];
 
 
     constructor(
@@ -37,7 +54,8 @@ export class NPC extends Object3D{
         this.initializeVisual(mesh);
         this.initializeAnimator(mesh);
         this.initializeSound();
-        this.syncAnimationSounds()
+        this.syncAnimationSounds();
+        this.initializeAudio();
         const gui: GUI = new GUI();
         const positionFolder = gui.addFolder('Position');
         const rotationFolder = gui.addFolder('Rotation');
@@ -61,6 +79,35 @@ export class NPC extends Object3D{
         animator.load(IDLE, 0.3, true);
         animator.play(IDLE);
         this.animator = animator;
+    }
+
+    private initializeAudio() {
+        this._dialogueEntries.forEach((entry) =>{
+            if(entry.audioPath){
+                const audio = new Audio(entry.audioPath);
+                audio.preload = 'auto';
+                this.audioElements.set(entry.audioPath, audio);
+            }
+        })
+    };
+
+    get dialogueEntries(): DialogueEntry[]{
+        return this._dialogueEntries;
+    }
+
+    playAudio(audioPath: string){
+        const audio = this.audioElements.get(audioPath);
+        if(audio){
+            this.stopAllAudio();
+            audio.play();
+        }
+    }
+
+    stopAllAudio(){
+        this.audioElements.forEach((audio) => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
     }
 
     private updateAnimation(dt: number){
