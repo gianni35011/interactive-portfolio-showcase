@@ -207,8 +207,9 @@ export class PortfolioOverlay{
                 transition: opacity 1s ease-in-out;
                 display: flex;
                 justify-content: center;
-                align-items: center;
+                align-items: flex-start;
                 z-index: 1000;
+                overflow-y: auto;
             }
 
             .portfolio-overlay.visible {
@@ -251,17 +252,17 @@ export class PortfolioOverlay{
             */Project card stylings */
             
             .detail-container {
-                position: absolute;
+                position: relative;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100%;
+                min-height: 100%;
                 padding: 2rem;
                 color: white;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 1s ease-out;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
 
             .detail-content {
@@ -270,6 +271,7 @@ export class PortfolioOverlay{
                 background: rgba(255, 255, 255, 0.1);
                 padding: 2rem;
                 border-radius: 8px;
+                margin-bottom: 2rem;
             }
 
             .back-button {
