@@ -1,5 +1,5 @@
 ﻿import {GLTF, GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
-import {AnimationClip, Mesh} from "three";
+import {AnimationClip, Mesh, Object3D} from "three";
 
 const loaderGLTF = new GLTFLoader();
 
@@ -60,6 +60,20 @@ export async function loadStaticAssetArray(path: string): Promise<Mesh[] | null>
             }
         }
         return mesh;
+    } catch (error: any) {
+        console.error(error);
+        return null;
+    }
+}
+
+export async function loadStaticAsset_02(path: string): Promise<Object3D | null>{
+    try{
+        const asset = await loadAsset(path);
+        if(!asset) return null;
+        asset.scene.traverse(child => {
+            child.castShadow = true;
+        })
+        return asset.scene;
     } catch (error: any) {
         console.error(error);
         return null;

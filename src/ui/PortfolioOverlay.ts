@@ -14,11 +14,18 @@ interface ProjectData{
 }
 
 export class PortfolioOverlay{
+    get isVisible(): boolean {
+        return this._isVisible;
+    }
+
+    set isVisible(value: boolean) {
+        this._isVisible = value;
+    }
     private overlay!: HTMLElement;
     private container!: HTMLElement;
     private stateManager: GameStateManager;
-    private isVisible: boolean;
-    private detailsContainer: HTMLElement ;
+    private _isVisible: boolean;
+    private detailsContainer!: HTMLElement ;
 
     private projects: ProjectData[] = [
         {
@@ -50,7 +57,7 @@ export class PortfolioOverlay{
 
     constructor() {
         this.stateManager = GameStateManager.getInstance();
-        this.isVisible = false;
+        this._isVisible = false;
         this.createOverlay();
         this.createDetailView();
         this.setupEventListeners();
@@ -460,7 +467,7 @@ export class PortfolioOverlay{
     }
 
     show(){
-        this.isVisible =true;
+        this._isVisible =true;
         this.overlay.classList.add('visible');
     }
 

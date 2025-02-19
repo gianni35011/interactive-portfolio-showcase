@@ -32,7 +32,7 @@ export interface PlayerDependencies {
 }
 
 export class Player extends Object3D {
-    private static readonly DEFAULT_START_POSITION = new Vector3(0, 2, 0);
+    private static readonly DEFAULT_START_POSITION = new Vector3(0, 2, 8);
 
     rigidBody: RigidBody | null = null;
     collider: any | null = null;

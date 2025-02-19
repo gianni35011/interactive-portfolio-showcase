@@ -127,11 +127,9 @@ export class NPC extends Object3D{
         this.updateAnimation(dt);
     }
 
+    // @ts-ignore
     isInRange(position: Vector3, range: number): boolean {
         return true;
     }
 
-    getDialogue(): string[] {
-        return this.dialogueText;
-    }
 }

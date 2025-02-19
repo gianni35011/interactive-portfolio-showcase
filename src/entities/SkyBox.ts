@@ -1,4 +1,4 @@
-﻿import {EquirectangularReflectionMapping, PMREMGenerator, Scene, Texture, TextureLoader, WebGLRenderer} from "three";
+﻿import {EquirectangularReflectionMapping, PMREMGenerator, Scene, TextureLoader} from "three";
 import {Graphics} from "../engine/graphics.ts";
 import {EXRLoader} from "three/addons/loaders/EXRLoader.js";
 import {GUI} from "dat.gui";
@@ -10,6 +10,7 @@ export class Skybox{
         this.addControls(scene);
     }
 
+    // @ts-ignore
     private loadTexture(scene: Scene, renderer: Graphics, hdriPath: string): void {
         const pmremGenerator = new PMREMGenerator(renderer);
         pmremGenerator.compileEquirectangularShader();

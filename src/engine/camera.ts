@@ -56,6 +56,7 @@ export default class Camera extends PerspectiveCamera {
         this.lookAt(player.position);
     }
 
+    // @ts-ignore
     update(player: Player, dt: number){
         if (this._isPanning){
             this.tweenGroup.update();
