@@ -3,7 +3,12 @@ import {GUI} from "dat.gui";
 import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
-import {DialogueEntry} from "../engine/DialogueManager.ts";
+import {DialogueEntry, DialogueManager} from "../engine/DialogueManager.ts";
+
+import Audio00Url from '/public/assets/voiceLines/ProjectsNPC/1_ProjectsNPC.mp3';
+import Audio01Url from '/public/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3';
+import Audio02Url from '/public/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3';
+import {Interactive} from "../engine/Interactive.ts";
 
 const IDLE = "Sit_Chair_Idle";
 
@@ -11,10 +16,11 @@ export interface NPCDependencies{
     soundManager: SoundManager;
     animator: Animator;
     physicsEngine: World;
+    dialogueManager: DialogueManager;
 }
 
 
-export class NPC extends Object3D{
+export class NPC extends Object3D implements  Interactive{
     private static readonly DEFAULT_START_POSITION: Vector3 = new Vector3(9, 0, 12);
 
     rigidBody: RigidBody | null = null;
@@ -22,18 +28,20 @@ export class NPC extends Object3D{
     debugMesh: any = null;
     animator: Animator | null = null;
     soundManager: SoundManager | null = null;
+    private _dialogueManager: DialogueManager | null = null;
+    private _interactiveDistance: number = 4;
     private _dialogueEntries: DialogueEntry[] = [
         {
             text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
-            audioPath: "src/assets/voiceLines/ProjectsNPC/1_ProjectsNPC.mp3"
+            audioPath: Audio00Url
         },
         {
             text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
-            audioPath: "src/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3"
+            audioPath: Audio01Url
         },
         {
             text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
-            audioPath: "src/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3"
+            audioPath: Audio02Url
         }
     ];
 
@@ -49,6 +57,7 @@ export class NPC extends Object3D{
         super();
         this.soundManager = npcDependencies.soundManager;
         this.animator = npcDependencies.animator;
+        this._dialogueManager = npcDependencies.dialogueManager;
         mesh.position.set(startPosition.x, startPosition.y, startPosition.z);
         this.position.copy(mesh.position);
         this.initializeVisual(mesh);
@@ -127,9 +136,16 @@ export class NPC extends Object3D{
         this.updateAnimation(dt);
     }
 
-    // @ts-ignore
-    isInRange(position: Vector3, range: number): boolean {
-        return true;
+    canInteract(playerPosition: Vector3): boolean {
+       if (playerPosition.distanceTo(this.position) < this._interactiveDistance) return true;
     }
 
+    getPosition(): Vector3 {
+        return this.position;
+    }
+
+    interact() {
+        if (!this._dialogueManager) return;
+        this._dialogueManager.startDialogue(this);
+    }
 }

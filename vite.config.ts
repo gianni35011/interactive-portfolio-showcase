@@ -4,9 +4,10 @@ export default defineConfig(({
     build: {
         target: 'esnext',
         assetsDir: 'assets',
-        copyPublicDir: true
+        copyPublicDir: true,
+        sourcemap: true,
     },
     base: '/',
-    assetsInclude: ['**/*.gltf', '**/*.glb', '**/*.mp3', '**/*.ogg', '**/*.wav', '**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.svg', '**/*.json'],
+    assetsInclude: ['**/*.gltf', '**/*.glb', '**/*.mp3', '**/*.ogg', '**/*.wav', '**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.svg', '**/*.json', '**/*.exr'],
     publicDir:' public'
 }))

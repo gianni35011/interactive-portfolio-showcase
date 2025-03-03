@@ -4,6 +4,25 @@ import {GUI} from "dat.gui";
 import * as TWEEN from "@tweenjs/tween.js";
 import {GameState, GameStateManager} from "./GameStateManager.ts";
 
+const customBackEasing = {
+        In: function (amount: number) {
+            let s = 1.70158;
+            return amount === 1 ? 1 : amount * amount * ((s + 1) * amount - s);
+        },
+        Out: function (amount: number) {
+            let s = 1.70158;
+            return amount === 0 ? 0 : --amount * amount * ((s + 1) * amount + s) + 1;
+        },
+        InOut: function (amount: number) {
+            let s = 1.70158 * 0.25;
+            // var s = 1.70158 * 1.525;
+            if ((amount *= 2) < 1) {
+                return 0.5 * (amount * amount * ((s + 1) * amount - s));
+            }
+            return 0.5 * ((amount -= 2) * amount * ((s + 1) * amount + s) + 2);
+        },
+}
+
 export default class Camera extends PerspectiveCamera {
     private targetPosition: Vector3 = new Vector3();
     offset = new Vector3(-12, 8, 0);
@@ -36,9 +55,9 @@ export default class Camera extends PerspectiveCamera {
 
         this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION_ENTER, () => {
             this.startPanAnimation(
-                new Vector3().copy(this.position).add(new Vector3(0, 800, 0)),
+                new Vector3().copy(this.position).add(new Vector3(0, 250, 0)),
                 new Vector3(this.position.x, this.position.y, this.position.z),
-                5000
+                3000
             );
         });
 
@@ -77,7 +96,7 @@ export default class Camera extends PerspectiveCamera {
 
         const tweenPos = new TWEEN.Tween(this.position)
             .to(targetPosition, duration)
-            .easing(TWEEN.Easing.Quadratic.InOut)
+            .easing(customBackEasing.InOut)
             .start().onComplete(()=>{
                 this.stateManager.setState(GameState.PORTFOLIO_VIEW);
             });
@@ -102,7 +121,7 @@ export default class Camera extends PerspectiveCamera {
 
         const tweenPos = new TWEEN.Tween(this.position)
             .to(this.originalPosition, duration)
-            .easing(TWEEN.Easing.Quadratic.InOut)
+            .easing(customBackEasing.InOut)
             .start().onComplete(()=>{
                 this.stateManager.setState(GameState.PLAYING);
             });

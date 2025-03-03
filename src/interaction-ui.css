@@ -1,0 +1,167 @@
+﻿/* Interaction Prompt Styles */
+.interaction-prompt {
+    /* Positioning */
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    /* Size and layout */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+
+    /* Visual style */
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    /* Text */
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+
+    /* Animation */
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite ease-in-out;
+
+    /* Initially hidden */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* When active/visible */
+.interaction-prompt.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Key highlight */
+.interaction-prompt .key {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    margin: 0 0.3rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05);
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .interaction-prompt {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        bottom: 1.5rem;
+    }
+}
+
+/* Dialog UI styles */
+.dialogue-panel {
+    /* Positioning */
+    position: fixed;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+
+    /* Size and layout */
+    width: clamp(300px, 80%, 600px);
+    padding: 1.5rem;
+    border-radius: 12px;
+
+    /* Visual style */
+    background-color: rgba(25, 25, 35, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    /* Text */
+    color: white;
+    font-family: 'Arial', sans-serif;
+
+    /* Animation */
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.dialogue-panel p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Dialogue choices container */
+.dialogue-choices {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Buttons for dialogue choices */
+.dialogue-panel button,
+.dialogue-choices button {
+    background-color: rgba(60, 60, 80, 0.6);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    border-left: 3px solid transparent;
+}
+
+.dialogue-panel button {
+    margin-top: 1rem;
+    align-self: flex-end;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+}
+
+.dialogue-panel button:hover,
+.dialogue-choices button:hover {
+    background-color: rgba(80, 80, 120, 0.8);
+    border-left-color: #6d9eff;
+    transform: translateX(4px);
+}
+
+/* Character name styling */
+.dialogue-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #6d9eff;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation for dialogue appearance */
+@keyframes dialogueAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.dialogue-panel.active {
+    animation: dialogueAppear 0.4s forwards;
+}

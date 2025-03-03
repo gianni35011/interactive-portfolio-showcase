@@ -4,8 +4,12 @@ import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import InputManager from "../control/InputManager.ts";
 import Animator from "../engine/AnimationHandler.ts";
 import SoundManager from "../engine/SoundManager.ts";
-import {NPC} from "./NPC.ts";
-import {DialogueManager} from "../engine/DialogueManager.ts";
+
+import Footstep00Url from '/public/assets/sounds/footsteps/grass/00_footstep_grass.wav';
+import Footstep01Url from '/public/assets/sounds/footsteps/grass/00_footstep_grass.wav';
+import Footstep02Url from '/public/assets/sounds/footsteps/grass/00_footstep_grass.wav';
+import Footstep03Url from '/public/assets/sounds/footsteps/grass/00_footstep_grass.wav';
+import {Interactive} from "../engine/Interactive.ts";
 
 const SPEED: number = 1;
 const WALK = "Walking_C";
@@ -15,10 +19,10 @@ const IDLE = "Idle";
 const GRASS = 'GRASS_FOOTSTEPS';
 
 const GRASS_FOOTSTEPS = [
-    'src/assets/sounds/footsteps/grass/00_footstep_grass.wav',
-    'src/assets/sounds/footsteps/grass/01_footstep_grass.wav',
-    'src/assets/sounds/footsteps/grass/02_footstep_grass.wav',
-    'src/assets/sounds/footsteps/grass/03_footstep_grass.wav',
+    Footstep00Url,
+    Footstep01Url,
+    Footstep02Url,
+    Footstep03Url,
     ]
 
 
@@ -27,8 +31,6 @@ export interface PlayerDependencies {
     soundManager: SoundManager;
     animator: Animator;
     physicsEngine: World;
-    npcList: NPC[];
-    dialogueManager: DialogueManager;
 }
 
 export class Player extends Object3D {
@@ -40,8 +42,9 @@ export class Player extends Object3D {
     debugMesh: any = null;
     animator: Animator | null = null;
     soundManager: SoundManager| null = null;
-    private npcList: NPC[] = [];
-    private dialogueManager: DialogueManager;
+    private _interactableObjects: Interactive[] = [];
+    private  _interactiveUIPrompt!: HTMLDivElement;
+    private _interactableObjectsInRange: Interactive[] = [];
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -58,9 +61,59 @@ export class Player extends Object3D {
         this.initializeAnimator(mesh);
         this.initializeSound();
         this.syncAnimationSounds()
-        this.npcList = playerDependencies.npcList;
-        this.dialogueManager = playerDependencies.dialogueManager;
+        this.InteractionUISetup();
     }
+
+    private InteractionUISetup(): void{
+        this._interactiveUIPrompt = document.createElement('div');
+        this._interactiveUIPrompt.className = 'interaction-prompt';
+        this._interactiveUIPrompt.innerHTML = 'Press <span class="key">E</span> to interact';
+        document.body.appendChild(this._interactiveUIPrompt);
+    }
+
+    public registerInteractableObject(interactableObject: Interactive): void{
+        this._interactableObjects.push(interactableObject);
+    }
+
+    private CanInteract(): void{
+        this._interactableObjectsInRange = [];
+        for (const interactableObject of this._interactableObjects) {
+            if(interactableObject.canInteract(this.position)){
+                this._interactableObjectsInRange.push(interactableObject);
+            }
+        }
+        if(this._interactableObjectsInRange.length > 0){
+            this._interactiveUIPrompt.classList.add('visible');
+        }
+        else{
+            this._interactiveUIPrompt.classList.remove('visible');
+        }
+    }
+
+    private checkInteraction(): void{
+        if(!this._interactableObjectsInRange || this._interactableObjectsInRange.length === 0) return;
+        console.log("Checking for interaction");
+        const playerPosition: Vector3 = this.position;
+        let closestObject: Interactive | null = null;
+        let closestDistance: number = Infinity;
+        for (const interactableObject of this._interactableObjectsInRange) {
+            const distance = playerPosition.distanceTo(interactableObject.getPosition());
+            if (distance < closestDistance){
+                closestDistance = distance;
+                closestObject = interactableObject;
+            }
+        }
+        if (!closestObject) return;
+        this.tryInteract(closestObject);
+    }
+
+    private tryInteract(InteractableObject: Interactive): void{
+        if(InteractableObject){
+            InteractableObject.interact();
+        }
+    }
+
+
 
     private initializePhysics(physicsEngine: World) {
         const {rigidBody, collider} = createRigidBodyDynamic(this.position, physicsEngine, this);
@@ -89,8 +142,10 @@ export class Player extends Object3D {
 
     update(dt: number) {
         if (this.controller.interaction) {
-            this.checkNPCInteractions();
+            this.checkInteraction();
+            this.controller.clearInteraction()
         }
+        this.CanInteract();
         this.updatePhysics();
         this.updateVisuals(dt);
         this.updateAnimation(dt);
@@ -144,26 +199,4 @@ export class Player extends Object3D {
         });
     }
 
-    // @ts-ignore
-    private checkNPCInteractions(){
-        const nearbyNPCs: NPC[] = [];
-
-        this.npcList.forEach(npc => {
-            if(npc.isInRange(this.position, 1)){
-                nearbyNPCs.push(npc);
-            }
-        });
-
-        if (nearbyNPCs.length === 0) return;
-        this.dialogueManager.startDialogue(nearbyNPCs[0]);
-        // const direction = this.rotateInputClockwise90();
-        // const ray = new Raycaster(this.position, new Vector3(direction.x, 0, direction.z), 0, 1);
-        // const intersects = ray.intersectObjects(scene.children, true);
-        // for (const intersect of intersects){
-        //     const object = intersect.object;
-        //     if (object instanceof NPC){
-        //         this.dialogueManager.startDialogue(object);
-        //     }
-        // }
-    }
 }

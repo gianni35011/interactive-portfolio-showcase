@@ -10,6 +10,7 @@ export class Skybox{
         this.addControls(scene);
     }
 
+    //TODO: Remove this function
     // @ts-ignore
     private loadTexture(scene: Scene, renderer: Graphics, hdriPath: string): void {
         const pmremGenerator = new PMREMGenerator(renderer);

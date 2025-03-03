@@ -1,5 +1,12 @@
 ﻿import {GameState, GameStateManager} from "../engine/GameStateManager.ts";
 
+import GeoAdventure0 from '/public/assets/portfolioAssets/geoadventure/0_GeoAdventure.png';
+import GeoAdventure1 from '/public/assets/portfolioAssets/geoadventure/1_GeoAdventure.png';
+import GeoAdventure2 from '/public/assets/portfolioAssets/geoadventure/2_GeoAdventure.png';
+import GeoAdventure3 from '/public/assets/portfolioAssets/geoadventure/3_GeoAdventure.png';
+import GeoAdventure4 from '/public/assets/portfolioAssets/geoadventure/4_GeoAdventure.png';
+import GeoAdventure5 from '/public/assets/portfolioAssets/geoadventure/5_GeoAdventure.png';
+
 interface ProjectData{
     id: string,
     title: string;
@@ -27,6 +34,8 @@ export class PortfolioOverlay{
     private _isVisible: boolean;
     private detailsContainer!: HTMLElement ;
 
+
+
     private projects: ProjectData[] = [
         {
             id: 'project1',
@@ -35,12 +44,12 @@ export class PortfolioOverlay{
             fullDescription: 'GeoAdventure is a 3D educational game that teaches geography and history. Players can explore a 1:1 scale Earth environment, complete quests, and learn about different cultures and landmarks.',
             technologies: ['Unreal Engine', 'Cesium', 'ChatGPT'],
             images: [
-                'src/assets/portfolioAssets/geoadventure/0_GeoAdventure.png',
-                'src/assets/portfolioAssets/geoadventure/1_GeoAdventure.png',
-                'src/assets/portfolioAssets/geoadventure/2_GeoAdventure.png',
-                'src/assets/portfolioAssets/geoadventure/3_GeoAdventure.png',
-                'src/assets/portfolioAssets/geoadventure/4_GeoAdventure.png',
-                'src/assets/portfolioAssets/geoadventure/5_GeoAdventure.png'
+                GeoAdventure0,
+                GeoAdventure1,
+                GeoAdventure2,
+                GeoAdventure3,
+                GeoAdventure4,
+                GeoAdventure5,
             ],
             keyFeatures: [
                 {title: "Combat & Flight Mechanics", body: "Seamless player interaction in 1:1 scale Earth environment"},

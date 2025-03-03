@@ -1,5 +1,8 @@
 ﻿import {GameState, GameStateManager} from "./GameStateManager.ts";
 
+import WorldMusicUrl from "/public/assets/sounds/music/PlayingMusic.mp3";
+import PortfolioMusicUrl from "/public/assets/sounds/music/PortfolioMusic.mp3";
+
 export class MusicManager{
     private stateManager: GameStateManager;
     private currentTrack: HTMLAudioElement | null = null;
@@ -15,8 +18,8 @@ export class MusicManager{
     }
 
     private setupTracks(){
-        const playingMusic = new Audio('src/assets/sounds/music/PlayingMusic.mp3');
-        const portfolioMusic = new Audio('src/assets/sounds/music/PortfolioMusic.mp3');
+        const playingMusic = new Audio(WorldMusicUrl);
+        const portfolioMusic = new Audio(PortfolioMusicUrl);
 
         [playingMusic, portfolioMusic].forEach(track => {
             track.loop  = true;

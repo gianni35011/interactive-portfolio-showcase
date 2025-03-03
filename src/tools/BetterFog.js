@@ -1,6 +1,6 @@
 ﻿import * as THREE from 'three';
 
-// TODO: Add implement fog shader
+// TODO: Implement better fog using Perlin noise.
 const _NOISE_GLSL = `
 float hash(float n) {
   return fract(sin(n) * 43758.5453);

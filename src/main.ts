@@ -14,7 +14,6 @@ import {Mesh, Object3D} from "three";
 import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
-import {DialogueManager} from "./engine/DialogueManager.ts";
 import {PortfolioOverlay} from "./ui/PortfolioOverlay.ts";
 import {Skybox} from "./entities/SkyBox.ts";
 import {MusicManager} from "./engine/MusicManager.ts";
@@ -28,6 +27,8 @@ import grassUrl from '/public/assets/world/ground/grass/SM_GrassLumpLargeC.gltf'
 import centralRuinsUrl from '/public/assets/world/ground/centralRuins/CentralRuins.gltf';
 import mountainsUrl from '/public/assets/world/ground/mountains/untitled.glb';
 import worldCollisionUrl from '/public/assets/world/world_collision.glb';
+import SkyBoxUrl from '/public/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr';
+import {DialogueManager} from "./engine/DialogueManager.ts";
 
 async function initializeGame() {
 
@@ -59,7 +60,8 @@ async function initializeGame() {
         const dependencies: NPCDependencies = {
             soundManager: new SoundManager(),
             animator: new Animator(npc_mesh),
-            physicsEngine: Rapier
+            physicsEngine: Rapier,
+            dialogueManager: new DialogueManager()
         }
         npc = new NPC(dependencies, npc_mesh);
 
@@ -71,13 +73,13 @@ async function initializeGame() {
             soundManager: new SoundManager(),
             animator: new Animator(player_mesh),
             physicsEngine: Rapier,
-            npcList: [],
-            dialogueManager: new DialogueManager(),
         }
-        if (npc) dependencies.npcList.push(npc);
         player = new Player(dependencies, player_mesh);
         scene.add(player);
         scene.add(player.debugMesh);
+        if (npc){
+            player.registerInteractableObject(npc);
+        }
     }
 
 // @ts-ignore
@@ -131,7 +133,7 @@ async function initializeGame() {
     graphic.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(graphic.domElement);
 
-    const hdriPath = 'src/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr'
+    const hdriPath = SkyBoxUrl;
     new Skybox(scene, graphic, hdriPath);
 
 // @ts-ignore
