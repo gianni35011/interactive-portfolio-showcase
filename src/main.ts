@@ -29,6 +29,7 @@ import mountainsUrl from '/public/assets/world/ground/mountains/untitled.glb';
 import worldCollisionUrl from '/public/assets/world/world_collision.glb';
 import SkyBoxUrl from '/public/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr';
 import {DialogueManager} from "./engine/DialogueManager.ts";
+import Fire from "./entities/fire.ts";
 
 async function initializeGame() {
 
@@ -126,8 +127,10 @@ async function initializeGame() {
         }
     }
 
-
-    scene.add(light);
+    const fire = new Fire(5.5, 0.5, 10.2);
+    scene.add(fire);
+    fire.addHelperToScene(scene);
+    //scene.add(light);
 
     const graphic = new Graphics({scene, camera})
     graphic.setSize(window.innerWidth, window.innerHeight);
@@ -156,6 +159,7 @@ async function initializeGame() {
         player.update(dt);
         Rapier.step();
         light.update(player);
+        fire.update(dt);
         if (!DEBUG) camera.update(player, dt);
         if (once) {
             camera.updateLookAtTarget(player);
