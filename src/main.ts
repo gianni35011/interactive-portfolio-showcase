@@ -127,10 +127,10 @@ async function initializeGame() {
         }
     }
 
-    const fire = new Fire(5.5, 0.5, 10.2);
+    const fire = new Fire(9.5, 0.25, 10.2);
     scene.add(fire);
     fire.addHelperToScene(scene);
-    //scene.add(light);
+    scene.add(light);
 
     const graphic = new Graphics({scene, camera})
     graphic.setSize(window.innerWidth, window.innerHeight);

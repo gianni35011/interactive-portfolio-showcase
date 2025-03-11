@@ -29,13 +29,13 @@ export default class Fire extends Object3D {
     private distanceVariation: number = 1.0;
 
     private particles: Points;
-    private particleCount: number = 50;
-    private particlePositions: number[];
-    private particleVelocities: Vector3[];
-    private particleLifespans: number[];
-    private particleMaxLifespan: number = 1;
+    private particleCount: number = 250;
+    private particlePositions: number[] = [];
+    private particleVelocities: Vector3[] = [];
+    private particleLifespans: number[] = [];
+    private particleMaxLifespan: number = 3;
 
-    private fireSize: number = .25;
+    private fireSize: number = .5;
 
 
     constructor(x: number,y: number,z: number) {
@@ -46,7 +46,10 @@ export default class Fire extends Object3D {
 
         this.pointLightHelper = new PointLightHelper(this.fireLight);
         this.position.set(x, y, z);
-        this.initializeParticles()
+
+
+        this.particles = this.initializeParticles();
+        this.add(this.particles);
     }
 
     addHelperToScene(scene: Scene) {
@@ -88,7 +91,7 @@ export default class Fire extends Object3D {
 
     }
 
-    private initializeParticles(): void {
+    private initializeParticles(): Points {
         // Create geometry for particles
         const geometry = new BufferGeometry();
 
@@ -113,9 +116,7 @@ export default class Fire extends Object3D {
                 (Math.random() - 0.5) * 0.3 * this.fireSize
             ));
 
-            // Random initial lifespan
-            this.particleLifespans.push(Math.random() * this.particleMaxLifespan);
-            console.log(Math.random() * this.particleMaxLifespan);
+            this.particleLifespans.push((i / this.particleCount) * this.particleMaxLifespan);
         }
 
         // Add attributes to geometry
@@ -124,6 +125,7 @@ export default class Fire extends Object3D {
         // Particle color and size arrays
         const colors = [];
         const sizes = [];
+        const lives = [];
 
         for (let i = 0; i < this.particleCount; i++) {
             // Colors - yellow to red gradient
@@ -131,25 +133,17 @@ export default class Fire extends Object3D {
 
             // Random size between 0.1 and 0.3
             sizes.push(Math.random() * 0.2 + 0.1);
+
+            lives.push(this.particleLifespans[i]);
         }
 
         geometry.setAttribute('color', new Float32BufferAttribute(colors, 3));
         geometry.setAttribute('size', new Float32BufferAttribute(sizes, 1));
+        geometry.setAttribute('life', new Float32BufferAttribute(lives, 1));
 
         // Load a fire particle texture
         const textureLoader = new TextureLoader();
         const particleTexture = textureLoader.load(fireTexture);  // You'll need to create this texture
-
-        // Create material for particles
-        // const material = new PointsMaterial({
-        //     size: 0.5,
-        //     map: particleTexture,
-        //     blending: AdditiveBlending,
-        //     transparent: true,
-        //     vertexColors: true,
-        //     depthWrite: false,
-        //     sizeAttenuation: true
-        // });
 
         // Custom vertex shader for particle animation
         const vertexShader = `
@@ -190,16 +184,13 @@ export default class Fire extends Object3D {
                 finalColor.g *= max(0.0, 1.0 - vLife * 1.5);
                 
                 gl_FragColor = vec4(finalColor, alpha);
-                
-                #include <tonemapping_fragment>
-                #include <colorspace_fragment>
             }
         `;
 
         // Create shader material
         const material = new ShaderMaterial({
             uniforms: {
-                pointTexture: { value: fireTexture }
+                pointTexture: { value: particleTexture }
             },
             vertexShader: vertexShader,
             fragmentShader: fragmentShader,
@@ -208,15 +199,14 @@ export default class Fire extends Object3D {
             transparent: true
         });
 
-        // Create the particle system
-        this.particles = new Points(geometry, material);
-        this.add(this.particles);
+        return new Points(geometry, material);
     }
 
     updateParticles(deltaTime: number): void {
         const positions = this.particles.geometry.attributes.position.array;
         const colors = this.particles.geometry.attributes.color.array;
         const sizes = this.particles.geometry.attributes.size.array;
+        const lives = this.particles.geometry.attributes.life.array;
 
         for (let i = 0; i < this.particleCount; i++) {
             // Update lifespan
@@ -232,6 +222,7 @@ export default class Fire extends Object3D {
 
             // Calculate life percentage
             const lifePercent = this.particleLifespans[i] / this.particleMaxLifespan;
+            lives[i] = this.particleLifespans[i];
 
             // Update position based on velocity
             positions[idx]     += this.particleVelocities[i].x * deltaTime;
@@ -249,15 +240,15 @@ export default class Fire extends Object3D {
             colors[idx + 2] = Math.max(0.1 - lifePercent * 0.1, 0); // B (decreases)
 
             // Size first increases then decreases with smoother transition
-            let sizeScale = 0;
+            let sizeScale = 3.0;
 
-            // if (lifePercent < 0.3) {
-            //     sizeScale = lifePercent / 0.3;
-            // } else {
-            //     const fadePercent = (lifePercent - 0.3) / 0.7;
-            //     // Smoother fade out using easing function
-            //     sizeScale = 1.0 - (fadePercent * fadePercent);
-            // }
+            if (lifePercent < 0.3) {
+                sizeScale = lifePercent * sizeScale / 0.3;
+            } else {
+                const fadePercent = (lifePercent - 0.3) / 0.7;
+                // Smoother fade out using easing function
+                sizeScale = 1.0 - (fadePercent * fadePercent);
+            }
 
             // Apply size with fire size scaling
             sizes[i] = (Math.random() * 0.2 + 0.1) * sizeScale * this.fireSize;
@@ -267,6 +258,7 @@ export default class Fire extends Object3D {
         this.particles.geometry.attributes.position.needsUpdate = true;
         this.particles.geometry.attributes.color.needsUpdate = true;
         this.particles.geometry.attributes.size.needsUpdate = true;
+        this.particles.geometry.attributes.life.needsUpdate = true;
     }
 
     resetParticle(index: number): void {
