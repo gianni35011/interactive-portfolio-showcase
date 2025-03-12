@@ -61,6 +61,30 @@ export class PortfolioOverlay{
             liveLink: 'https://example.com',
             githubLink: 'https://github.com',
         },
+        {
+            id: 'threejs-portfolio',
+            title: 'Interactive 3D Portfolio',
+            shortDescription: 'An interactive 3D portfolio inspired by Firelink Shrine, built with Three.js.',
+            fullDescription: 'This is a low-poly, isometric portfolio built with Three.js, inspired by Firelink Shrine. Users can explore a small village, interact with NPCs, and learn about my projects. The portfolio is designed to be engaging while showcasing my skills in web-based 3D environments.',
+            technologies: ['Three.js', 'TypeScript', 'GLTF', 'HTML/CSS'],
+            images: [
+                GeoAdventure0,
+                GeoAdventure1,
+                GeoAdventure2,
+                GeoAdventure3,
+                GeoAdventure4,
+                GeoAdventure5,
+            ],
+            keyFeatures: [
+                {title: "Explorable 3D World", body: "A fully interactive environment where users can navigate and discover projects."},
+                {title: "NPC Interactions", body: "Talk to NPCs who provide details about different projects."},
+                {title: "Low-Poly Art Style", body: "Inspired by *The Legend of Zelda: Link’s Awakening* remake for a nostalgic, game-like feel."},
+                {title: "Optimized for Web", body: "Built with Three.js for smooth performance in browsers."},
+            ],
+            youtubeLink: 'https://www.youtube.com/embed/your-video-id', // Replace with actual demo if available
+            liveLink: 'https://your-portfolio-website.com', // Replace with actual URL
+            githubLink: 'https://github.com/your-repo', // Replace with actual GitHub repo
+        }
         ];
 
 
@@ -478,9 +502,11 @@ export class PortfolioOverlay{
     show(){
         this._isVisible =true;
         this.overlay.classList.add('visible');
+        this.overlay.style.pointerEvents = 'auto';
     }
 
     hide(){
         this.overlay.classList.remove('visible');
+        this.overlay.style.pointerEvents = 'none';
     }
 }

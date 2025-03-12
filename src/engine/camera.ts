@@ -55,14 +55,14 @@ export default class Camera extends PerspectiveCamera {
 
         this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION_ENTER, () => {
             this.startPanAnimation(
-                new Vector3().copy(this.position).add(new Vector3(0, 250, 0)),
+                new Vector3().copy(this.position).add(new Vector3(0, 125, 0)),
                 new Vector3(this.position.x, this.position.y, this.position.z),
-                3000
+                2000
             );
         });
 
         this.stateManager.onStateEnter(GameState.CAMERA_TRANSITION_EXIT, () => {
-            this.resetToPlayer(5000);
+            this.resetToPlayer(2000);
         });
 
         this.stateManager.onStateEnter(GameState.PLAYING, () => {
@@ -98,7 +98,9 @@ export default class Camera extends PerspectiveCamera {
             .to(targetPosition, duration)
             .easing(customBackEasing.InOut)
             .start().onComplete(()=>{
-                this.stateManager.setState(GameState.PORTFOLIO_VIEW);
+                const targetState
+                    = this.stateManager.npcViewType === 'education' ? GameState.EDUCATION_VIEW : GameState.PORTFOLIO_VIEW;
+                this.stateManager.setState(targetState);
             });
 
          const tweenRot = new TWEEN.Tween(this.rotation)

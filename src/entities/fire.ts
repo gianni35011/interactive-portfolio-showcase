@@ -13,7 +13,6 @@
 
 import fireTexture from '/public/assets/world/fire-particle.png';
 
-//TODO: Use a 3rd party library for fire particles
 export default class Fire extends Object3D {
     private readonly fireLight: PointLight;
     private readonly pointLightHelper: PointLightHelper;

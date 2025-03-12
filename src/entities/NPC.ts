@@ -17,16 +17,19 @@ export interface NPCDependencies{
     animator: Animator;
     physicsEngine: World;
     dialogueManager: DialogueManager;
+    dialogueEntries?: DialogueEntry[];
+    npcType?: 'portfolio' | 'education';
 }
 
 
 export class NPC extends Object3D implements  Interactive{
-    private static readonly DEFAULT_START_POSITION: Vector3 = new Vector3(9, 0, 12);
+    private static readonly DEFAULT_START_POSITION: Vector3 = new Vector3(9.8, 0.5, 12.5);
 
     rigidBody: RigidBody | null = null;
     collider: any | null = null;
     debugMesh: any = null;
     animator: Animator | null = null;
+    private _idleAnimation = IDLE;
     soundManager: SoundManager | null = null;
     private _dialogueManager: DialogueManager | null = null;
     private _interactiveDistance: number = 4;
@@ -45,6 +48,8 @@ export class NPC extends Object3D implements  Interactive{
         }
     ];
 
+    private _npcType: 'portfolio' | 'education' = 'education';
+
     private audioElements: Map<string, HTMLAudioElement> = new Map();
     //private dialogueText: string[] = ["\"Ah… another traveler. Drawn here by fate, or mere curiosity? It matters not. Sit, if you wish. Warm yourself by the embers.", "\"You seek the works of those who came before? Hah… I have seen many. Some forged with steady hands, others… unfinished, yet brimming with intent.\"", "Look upon them, if you dare. Each carries a story, etched in toil and tempered by time."];
 
@@ -52,14 +57,25 @@ export class NPC extends Object3D implements  Interactive{
     constructor(
         npcDependencies: NPCDependencies,
         mesh: Mesh,
-        startPosition: Vector3 = NPC.DEFAULT_START_POSITION
+        startPosition: Vector3 = NPC.DEFAULT_START_POSITION,
+        startRot: Vector3 = new Vector3(0, 1.8, 0),
+        idleAnimation: string = IDLE
     ){
         super();
         this.soundManager = npcDependencies.soundManager;
         this.animator = npcDependencies.animator;
         this._dialogueManager = npcDependencies.dialogueManager;
+        this._idleAnimation = idleAnimation;
+        this._dialogueEntries = npcDependencies.dialogueEntries || [];
+
         mesh.position.set(startPosition.x, startPosition.y, startPosition.z);
         this.position.copy(mesh.position);
+
+        mesh.rotation.set(startRot.x, startRot.y, startRot.z);
+        this.rotation.copy(mesh.rotation);
+
+        this._npcType = npcDependencies.npcType || 'portfolio';
+
         this.initializeVisual(mesh);
         this.initializeAnimator(mesh);
         this.initializeSound();
@@ -71,9 +87,9 @@ export class NPC extends Object3D implements  Interactive{
         rotationFolder.add(this.rotation, 'x', -Math.PI, Math.PI).name('X');
         rotationFolder.add(this.rotation, 'y', -Math.PI, Math.PI).name('Y');
         rotationFolder.add(this.rotation, 'z', -Math.PI, Math.PI).name('Z');
-        positionFolder.add(this.position, 'x', -1 + NPC.DEFAULT_START_POSITION.x, 1 + NPC.DEFAULT_START_POSITION.x).name('X');
-        positionFolder.add(this.position, 'y', -1 + NPC.DEFAULT_START_POSITION.y, 1 + NPC.DEFAULT_START_POSITION.y).name('Y');
-        positionFolder.add(this.position, 'z', -1 + NPC.DEFAULT_START_POSITION.z, 1 + NPC.DEFAULT_START_POSITION.z).name('Z');
+        positionFolder.add(this.position, 'x', -5 + startPosition.x, 5 + startPosition.x).name('X');
+        positionFolder.add(this.position, 'y', -5 + startPosition.y, 5 + startPosition.y).name('Y');
+        positionFolder.add(this.position, 'z', -5 + startPosition.z, 5 + startPosition.z).name('Z');
 
     }
 
@@ -83,10 +99,14 @@ export class NPC extends Object3D implements  Interactive{
         this.add(mesh)
     }
 
+    get npcType(): 'portfolio' | 'education' {
+        return this._npcType;
+    }
+
     private initializeAnimator(mesh: Mesh){
         const animator = new Animator(mesh);
-        animator.load(IDLE, 0.3, true);
-        animator.play(IDLE);
+        animator.load(this._idleAnimation, 0.3, true);
+        animator.play(this._idleAnimation);
         this.animator = animator;
     }
 
@@ -138,6 +158,7 @@ export class NPC extends Object3D implements  Interactive{
 
     canInteract(playerPosition: Vector3): boolean {
        if (playerPosition.distanceTo(this.position) < this._interactiveDistance) return true;
+       return false;
     }
 
     getPosition(): Vector3 {

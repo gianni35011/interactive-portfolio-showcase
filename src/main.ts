@@ -21,7 +21,8 @@ import {FogSystem} from "./engine/FogSystem.ts";
 
 import groundUrl from '/public/assets/world/ground/ground.glb';
 import playerUrl from '/public/assets/adventurers/Rogue.glb';
-import npcUrl from '/public/assets/adventurers/Barbarian.glb';
+import npcUrl from '/public/assets/adventurers/Barbarian_NoWeapons.glb';
+import npc2Url from '/public/assets/adventurers/Mage.glb';
 import treesUrl from '/public/assets/world/ground/foliage_lowpoly.glb';
 import grassUrl from '/public/assets/world/ground/grass/SM_GrassLumpLargeC.gltf';
 import centralRuinsUrl from '/public/assets/world/ground/centralRuins/CentralRuins.gltf';
@@ -30,6 +31,8 @@ import worldCollisionUrl from '/public/assets/world/world_collision.glb';
 import SkyBoxUrl from '/public/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr';
 import {DialogueManager} from "./engine/DialogueManager.ts";
 import Fire from "./entities/fire.ts";
+import {EducationOverlay} from "./ui/EducationOverlay.ts";
+
 
 async function initializeGame() {
 
@@ -40,6 +43,7 @@ async function initializeGame() {
     const ground_mesh = await loader(groundUrl);
     const player_mesh: Mesh | null = await loadAnimatedAsset(playerUrl);
     const npc_mesh: Mesh | null = await loadAnimatedAsset(npcUrl);
+    const npc_mesh2: Mesh | null = await loadAnimatedAsset(npc2Url);
     const trees: Mesh | null = await loadStaticAsset(treesUrl);
     const grass: Mesh | null = await loadStaticAsset(grassUrl);
     const centralRuins: Mesh[] | null = await loadStaticAssetArray(centralRuinsUrl);
@@ -51,8 +55,10 @@ async function initializeGame() {
     const light = new Light();
     const camera = new Camera();
 
-    let player = null
-    let npc = null
+    let player = null;
+    let npc = null;
+    let npc2 = null;
+    const DM = new DialogueManager();
     const DEBUG = false;
 
 
@@ -62,11 +68,46 @@ async function initializeGame() {
             soundManager: new SoundManager(),
             animator: new Animator(npc_mesh),
             physicsEngine: Rapier,
-            dialogueManager: new DialogueManager()
+            dialogueManager: DM,
+            dialogueEntries: [
+                {
+                    text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
+                },
+                {
+                    text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
+                },
+                {
+                    text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
+                }
+            ],
         }
         npc = new NPC(dependencies, npc_mesh);
 
         scene.add(npc);
+    }
+
+    if(npc_mesh2){
+        console.log(npc_mesh2);
+        const dependencies: NPCDependencies = {
+            soundManager: new SoundManager(),
+            animator: new Animator(npc_mesh2),
+            physicsEngine: Rapier,
+            dialogueManager: DM,
+            dialogueEntries: [
+                {
+                    text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
+                },
+                {
+                    text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
+                },
+                {
+                    text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
+                }
+            ],
+            npcType: 'education',
+        }
+        npc2 = new NPC(dependencies, npc_mesh2, new THREE.Vector3(8, 0, 20.25), new THREE.Vector3(0,2,0), "Idle");
+        scene.add(npc2);
     }
     if (player_mesh) {
         console.log(player_mesh);
@@ -78,13 +119,15 @@ async function initializeGame() {
         player = new Player(dependencies, player_mesh);
         scene.add(player);
         scene.add(player.debugMesh);
-        if (npc){
+        if (npc && npc2) {
             player.registerInteractableObject(npc);
+            player.registerInteractableObject(npc2);
         }
     }
 
 // @ts-ignore
-    const portfolioOverlay = new PortfolioOverlay()
+    const portfolioOverlay = new PortfolioOverlay();
+    const educationOverlay = new EducationOverlay();
 
     if (ground_mesh && world_collision) {
         const world = new MyWorld({
@@ -154,8 +197,9 @@ async function initializeGame() {
 
     let once = true;
     graphic.onUpdate((dt: number) => {
-        if (!player || !npc) return;
+        if (!player || !npc || !npc2) return;
         npc.update(dt);
+        npc2.update(dt);
         player.update(dt);
         Rapier.step();
         light.update(player);
@@ -171,3 +215,5 @@ async function initializeGame() {
 initializeGame().catch(error => {
     console.error('Failed to initialise', error);
 })
+
+

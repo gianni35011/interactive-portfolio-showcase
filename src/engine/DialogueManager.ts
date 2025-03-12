@@ -115,12 +115,14 @@ export class DialogueManager{
     }
 
     hide(){
+        const npcType = this.currentNPC?.npcType || 'portfolio';
         this.active = false;
         this.currentNPC = null;
         this.box.style.display = 'none';
         this.currentTextPos = 0;
         this.clearAnimation();
         console.log("Dialogue hidden");
+        this.stateManager.npcViewType = npcType;
         this.stateManager.setState(GameState.CAMERA_TRANSITION_ENTER);
     }
 
