@@ -7,12 +7,34 @@ import GeoAdventure3 from '/public/assets/portfolioAssets/geoadventure/3_GeoAdve
 import GeoAdventure4 from '/public/assets/portfolioAssets/geoadventure/4_GeoAdventure.png';
 import GeoAdventure5 from '/public/assets/portfolioAssets/geoadventure/5_GeoAdventure.png';
 
+import MindQuest0 from '/public/assets/portfolioAssets/MindQuest/MindQuest_02.png';
+import MindQuest1 from '/public/assets/portfolioAssets/MindQuest/MindQuest_03.png';
+import MindQuest2 from '/public/assets/portfolioAssets/MindQuest/MindQuest_04.png';
+import MindQuest3 from '/public/assets/portfolioAssets/MindQuest/MindQuest_05.png';
+import MindQuest4 from '/public/assets/portfolioAssets/MindQuest/MindQuest_06.png';
+import MindQuest5 from '/public/assets/portfolioAssets/MindQuest/MindQuest_07.png';
+
+import Blender from '/public/assets/icons/blender-icon.svg';
+import AWS from '/public/assets/icons/AWS-icon.svg';
+import CPP from '/public/assets/icons/CPP-icon.svg';
+import Cesium from '/public/assets/icons/Cesium-icon.svg';
+import ElevenLabs from '/public/assets/icons/11Labs-icon.svg';
+import Git from '/public/assets/icons/Git-icon.svg';
+import HTML from '/public/assets/icons/HTML-icon.svg';
+import Udio from '/public/assets/icons/udio-icon.svg';
+import CS from '/public/assets/icons/cs-icon.svg';
+import OpenAI from '/public/assets/icons/openai-icon.svg';
+import Threejs from '/public/assets/icons/threejs-icon.svg';
+import Typescript from '/public/assets/icons/ts-icon.svg';
+import Unity from '/public/assets/icons/unity-icon.svg';
+import UE from '/public/assets/icons/unreal-icon.svg';
+
 interface ProjectData{
     id: string,
     title: string;
     shortDescription: string;
     fullDescription: string;
-    technologies: string[];
+    technologies: {name: string, icon: string}[];
     keyFeatures: { title: string; body: string}[];
     images: string[];
     youtubeLink?: string;
@@ -41,8 +63,13 @@ export class PortfolioOverlay{
             id: 'project1',
             title: 'GeoAdventure',
             shortDescription: 'GeoAdventure is a 3D educational game that teaches geography and history',
-            fullDescription: 'GeoAdventure is a 3D educational game that teaches geography and history. Players can explore a 1:1 scale Earth environment, complete quests, and learn about different cultures and landmarks.',
-            technologies: ['Unreal Engine', 'Cesium', 'ChatGPT'],
+            fullDescription: 'GeoAdventure is a 3D educational game that teaches geography and history. Players can explore a 1:1 scale Earth environment (Generated using Cesium), complete quests, and learn about different cultures and landmarks. By integrating ChatGPT players can query an in game assistant to get taken directly to locations such as asking the assistant "Where is the largest mountain?" will teleport players directly to Mount Everest in game.',
+            technologies: [
+                {name:'Unreal Engine', icon:UE},
+                {name:'Cesium', icon:Cesium},
+                {name:'ChatGPT', icon:OpenAI},
+                {name:'C++', icon:CPP},
+                {name:'Git', icon:Git}],
             images: [
                 GeoAdventure0,
                 GeoAdventure1,
@@ -53,9 +80,9 @@ export class PortfolioOverlay{
             ],
             keyFeatures: [
                 {title: "Combat & Flight Mechanics", body: "Seamless player interaction in 1:1 scale Earth environment"},
-                {title: "Ai Integration", body: "Custom ChatGPT assistant for navigation and information"},
+                {title: "AI Integration", body: "Custom ChatGPT assistant for navigation and information"},
                 {title: "Dynamic Quest System", body: "20+ unique challenges and educational objectives"},
-                {title: "Real-world Scale", body: "Cesium for Unreal Engine plugin integration"},
+                {title: "Real-world Scale", body: "By utilising Google maps data we have generated a 1:1 scale of the Earth to allow players to explore and learn about real-world locations in-game"},
             ],
             youtubeLink: 'https://www.youtube.com/embed/LwSHAgCfX-I?si=T42gVXMH2K1YC67X',
             liveLink: 'https://example.com',
@@ -66,7 +93,14 @@ export class PortfolioOverlay{
             title: 'Interactive 3D Portfolio',
             shortDescription: 'An interactive 3D portfolio inspired by Firelink Shrine, built with Three.js.',
             fullDescription: 'This is a low-poly, isometric portfolio built with Three.js, inspired by Firelink Shrine. Users can explore a small village, interact with NPCs, and learn about my projects. The portfolio is designed to be engaging while showcasing my skills in web-based 3D environments.',
-            technologies: ['Three.js', 'TypeScript', 'GLTF', 'HTML/CSS'],
+            technologies: [
+                {name:'Eleven Labs', icon: ElevenLabs},
+                {name:'Udio', icon: Udio},
+                {name:'Three.js', icon:Threejs},
+                {name:'TypeScript', icon:Typescript},
+                {name:'Blender', icon:Blender},
+                {name:'HTML/CSS', icon:HTML},
+                {name:'Git', icon:Git}],
             images: [
                 GeoAdventure0,
                 GeoAdventure1,
@@ -79,11 +113,45 @@ export class PortfolioOverlay{
                 {title: "Explorable 3D World", body: "A fully interactive environment where users can navigate and discover projects."},
                 {title: "NPC Interactions", body: "Talk to NPCs who provide details about different projects."},
                 {title: "Low-Poly Art Style", body: "Inspired by *The Legend of Zelda: Link’s Awakening* remake for a nostalgic, game-like feel."},
+                {title: "Darksouls Inspiration", body: "I've always found games such as Darksouls and Legend of Zelda games to be good and unique, so I was inspired by the Darksouls hub area Firelink shrine. Where NPCs would gather and provide lore in vague ways. So much like that my portoflio was inspired by this section, with NPCs talking much the same.."},
                 {title: "Optimized for Web", body: "Built with Three.js for smooth performance in browsers."},
+                {title: "AI", body:"By utilising generative AI, I was able to add both voice acting (Using Eleven Labs) and music (Using Udio) to the project, to give it a more immersive feel."},
             ],
             youtubeLink: 'https://www.youtube.com/embed/your-video-id', // Replace with actual demo if available
             liveLink: 'https://your-portfolio-website.com', // Replace with actual URL
             githubLink: 'https://github.com/your-repo', // Replace with actual GitHub repo
+        },
+        {
+            id: 'project2',
+            title: 'MindQuest',
+            shortDescription: 'A turn-based RPG that integrates learning mechanics into combat.',
+            fullDescription: 'MindQuest is a turn-based RPG where knowledge is power. Players engage in battles where answering subject-based questions enhances their combat abilities. The game features a unique deck-building system, strategic combat, and a dynamically generated world influenced by player choices.',
+            technologies: [
+                {name:'Unity', icon: Unity},
+                {name:'C#', icon: CS},
+                {name:'AWS', icon: AWS},
+                {name:'Git', icon: Git}],
+            images: [
+                MindQuest0,
+                MindQuest1,
+                MindQuest2,
+                MindQuest3,
+                MindQuest4,
+                MindQuest5
+            ],
+            keyFeatures: [
+                {title: "Knowledge-Based Combat", body: "Answer subject-based questions to boost attacks and dodge incoming damage."},
+                {title: "Deck-Building System", body: "Customize your combat style by building a deck of knowledge cards."},
+                {title: "Turn-Based Strategy", body: "Plan your moves carefully as enemies adapt to your tactics."},
+                {title: "RPG Progression", body: "Unlock new abilities, collect powerful items, and grow stronger as you progress."},
+                {title: "Procedural Events", body: "Quests and enemy spawns adjust based on previous player actions."},
+                {title: "Multiplayer & Community Features", body: "Integrate user-created question decks to challenge friends and share knowledge."},
+                {title: "Adaptive Learning", body: "The game tracks performance and suggests areas for improvement based on player choices."},
+                {title: "Item Crafting & Equipment", body: "Collect and craft powerful items to aid in combat and exploration."}
+            ],
+            youtubeLink: 'https://www.youtube.com/embed/5ELjVpXemNY?si=Ha2xn2EfFiHJAVWV',
+            liveLink: 'https://example.com', // Replace with actual game link if applicable
+            githubLink: 'https://github.com/your-repo' // Replace with actual GitHub repo
         }
         ];
 
@@ -123,7 +191,18 @@ export class PortfolioOverlay{
     private createDetailView(){
         this.detailsContainer = document.createElement('div');
         this.detailsContainer.className = 'detail-container';
+
+        const imageModal = document.createElement('div');
+        imageModal.className = 'image-modal';
+        imageModal.innerHTML =`
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img class="modal-image" src="" alt="Full-size image">
+            </div>
+        `;
+
         this.overlay.appendChild(this.detailsContainer);
+        this.overlay.appendChild(imageModal);
     }
 
     private createProjectCard(project: ProjectData): HTMLElement{
@@ -145,16 +224,20 @@ export class PortfolioOverlay{
             <button class="back-button"><- Back to Projects</button>
             <div class="project-header">
                 <h2>${project.title}</h2>
+                <p class="project-description">${project.fullDescription}</p>
                 <div class="project-links">
                     ${project.githubLink ? `<a href="${project.githubLink}" class="github-link" target="_blank">
-                    <i class="fab fa-github">
                     </i>View Source</a>` : ``}
                 </div>  
             </div>
             
             <div class="media-container">
                 <div class="main-media">
-                    ${project.images.length > 0 ? `<img src="${project.images[0]}" alt="${project.title}">` : ``}
+                ${project.youtubeLink
+                    ? `<div class="video-wrapper"><iframe src="${project.youtubeLink}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe></div>`
+                        : project.images.length > 0
+                        ? `<img src="${project.images[0]}" alt="${project.title}">`
+                        : ``}
                 </div>
                 <div class ="media-grid">
                     ${project.images.slice(1).map( img => `
@@ -162,10 +245,10 @@ export class PortfolioOverlay{
                             <img src="${img}" alt="${project.title} Screenshot">
                         </div>                        
                         `).join('')}
-                    <div class="media-item video-wrapper">
+                    <!--<div class="media-item video-wrapper">
                         <iframe src="${project.youtubeLink}"  frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             
@@ -187,8 +270,8 @@ export class PortfolioOverlay{
                 <div class="tools-grid">
                     ${project.technologies.map(tech => `
                         <div class="tool-item">
-                            <img src="src/assets/icons/${tech.toLowerCase()}-icon.svg" alt="${tech} Icon">
-                             <span>${tech}</span>                            
+                            <img src="${tech.icon}" alt="${tech.name} Icon">
+                             <span>${tech.name}</span>                            
                         </div>
                     `).join('')}
                 </div>
@@ -221,6 +304,32 @@ export class PortfolioOverlay{
 
         const backButton = this.detailsContainer.querySelector('.back-button');
         backButton?.addEventListener('click', () => this.showProjectGrid());
+
+        setTimeout(() => {
+            const allImages = this.detailsContainer.querySelectorAll('.main-media img, .media-item img');
+            const modal = document.querySelector('.image-modal') as HTMLElement;
+            const modalImg = document.querySelector('.modal-image') as HTMLImageElement;
+            const closeModal = document.querySelector('.close-modal') as HTMLElement;
+
+            allImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    const imgElement = img as HTMLImageElement;
+                    modal.style.display = 'flex';
+                    modalImg.src = imgElement.src;
+                });
+            });
+
+            // Close modal when clicking the × or outside the image
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }, 100);
     }
 
     private showProjectGrid(){
@@ -363,11 +472,36 @@ export class PortfolioOverlay{
             /* Media Grid */
             
             .project-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
             }
+            
+            .project-header h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+                color: #ffffff;
+            }
+            
+            .project-header p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.9);
+                max-width: 90%;
+                margin-bottom: 1.5rem;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+            
+            .project-description {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-bottom: 2rem;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: rgba(255, 255, 255, 0.9);
+            }
+            
+
 
             .media-container {
                 display: grid;
@@ -480,6 +614,43 @@ export class PortfolioOverlay{
             .github-link:hover {
                 background: #444;
             }
+            
+            /* Image Modal */
+                    .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
         `;
         const styleSheet = document.createElement('style');
         styleSheet.textContent = styles;
