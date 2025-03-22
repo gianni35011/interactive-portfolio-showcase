@@ -279,23 +279,6 @@ export class PortfolioOverlay{
         </div>
         `;
 
-        // this.detailsContainer.innerHTML = `
-        // <div class = "detail-content">
-        //     <button class="back-button"><- Back to Projects</button>
-        //     <h2>${project.title}</h2>
-        //     <div class ="project-details">
-        //         <p>${project.fullDescription}</p>
-        //             <div class="technologies">
-        //                 ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-        //             </div>
-        //             <div class="project-links">
-        //                 <a href="${project.liveLink}">Live Demo</a>
-        //                 <a href="${project.githubLink}" target="_blank">GitHub</a>
-        //             </div>
-        //     </div>
-        // </div>
-        // `;
-
         this.container.style.opacity = '0';
         this.container.style.visibility = 'hidden';
 
