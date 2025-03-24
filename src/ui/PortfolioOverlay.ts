@@ -14,6 +14,12 @@ import MindQuest3 from '/public/assets/portfolioAssets/MindQuest/MindQuest_05.pn
 import MindQuest4 from '/public/assets/portfolioAssets/MindQuest/MindQuest_06.png';
 import MindQuest5 from '/public/assets/portfolioAssets/MindQuest/MindQuest_07.png';
 
+
+import PortfolioImage1 from '/public/assets/portfolioAssets/portfolio/campfire.gif'
+import PortfolioImage2 from '/public/assets/portfolioAssets/portfolio/fire.png'
+import PortfolioImage3 from '/public/assets/portfolioAssets/portfolio/transition.gif'
+import PortfolioImage4 from '/public/assets/portfolioAssets/portfolio/world.png'
+
 import Blender from '/public/assets/icons/blender-icon.svg';
 import AWS from '/public/assets/icons/AWS-icon.svg';
 import CPP from '/public/assets/icons/CPP-icon.svg';
@@ -38,7 +44,6 @@ interface ProjectData{
     keyFeatures: { title: string; body: string}[];
     images: string[];
     youtubeLink?: string;
-    liveLink?: string;
     githubLink?: string;
 }
 
@@ -84,15 +89,13 @@ export class PortfolioOverlay{
                 {title: "Dynamic Quest System", body: "20+ unique challenges and educational objectives"},
                 {title: "Real-world Scale", body: "By utilising Google maps data we have generated a 1:1 scale of the Earth to allow players to explore and learn about real-world locations in-game"},
             ],
-            youtubeLink: 'https://www.youtube.com/embed/LwSHAgCfX-I?si=T42gVXMH2K1YC67X',
-            liveLink: 'https://example.com',
-            githubLink: 'https://github.com',
+            youtubeLink: 'https://www.youtube.com/embed/jcHXC0uW1jo?si=23XkSOFUbfGHS9w-',
         },
         {
             id: 'threejs-portfolio',
             title: 'Interactive 3D Portfolio',
-            shortDescription: 'An interactive 3D portfolio inspired by Firelink Shrine, built with Three.js.',
-            fullDescription: 'This is a low-poly, isometric portfolio built with Three.js, inspired by Firelink Shrine. Users can explore a small village, interact with NPCs, and learn about my projects. The portfolio is designed to be engaging while showcasing my skills in web-based 3D environments.',
+            shortDescription: 'A low-poly, isometric 3D portfolio inspired by Firelink Shrine, built with Three.js.',
+            fullDescription: 'This interactive portfolio, built with Three.js, features a low-poly isometric village inspired by Firelink Shrine. Users can explore the environment, interact with NPCs, and learn about my projects in an engaging and immersive way. The design reflects my passion for game-inspired web experiences while showcasing my skills in 3D development.',
             technologies: [
                 {name:'Eleven Labs', icon: ElevenLabs},
                 {name:'Udio', icon: Udio},
@@ -102,24 +105,21 @@ export class PortfolioOverlay{
                 {name:'HTML/CSS', icon:HTML},
                 {name:'Git', icon:Git}],
             images: [
-                GeoAdventure0,
-                GeoAdventure1,
-                GeoAdventure2,
-                GeoAdventure3,
-                GeoAdventure4,
-                GeoAdventure5,
+                PortfolioImage1,
+                PortfolioImage2,
+                PortfolioImage3,
+                PortfolioImage4,
             ],
             keyFeatures: [
-                {title: "Explorable 3D World", body: "A fully interactive environment where users can navigate and discover projects."},
-                {title: "NPC Interactions", body: "Talk to NPCs who provide details about different projects."},
-                {title: "Low-Poly Art Style", body: "Inspired by *The Legend of Zelda: Link’s Awakening* remake for a nostalgic, game-like feel."},
-                {title: "Darksouls Inspiration", body: "I've always found games such as Darksouls and Legend of Zelda games to be good and unique, so I was inspired by the Darksouls hub area Firelink shrine. Where NPCs would gather and provide lore in vague ways. So much like that my portoflio was inspired by this section, with NPCs talking much the same.."},
-                {title: "Optimized for Web", body: "Built with Three.js for smooth performance in browsers."},
-                {title: "AI", body:"By utilising generative AI, I was able to add both voice acting (Using Eleven Labs) and music (Using Udio) to the project, to give it a more immersive feel."},
+                { title: "Explorable 3D World", body: "A fully interactive environment where users can navigate and discover my projects." },
+                { title: "NPC Interactions", body: "NPCs provide information about my work, delivering dialogue inspired by Dark Souls-style storytelling." },
+                { title: "Low-Poly Art Style", body: "Designed with a nostalgic, game-like aesthetic inspired by *The Legend of Zelda: Link’s Awakening* remake." },
+                { title: "Dark Souls-Inspired Atmosphere", body: "Modeled after Firelink Shrine, my portfolio features NPCs that share project details in a cryptic, lore-driven manner, much like the NPCs in *Dark Souls*." },
+                { title: "Optimized for the Web", body: "Built with Three.js for smooth performance and compatibility across modern browsers." },
+                { title: "AI-Enhanced Experience", body: "Utilizing generative AI, the project includes voice acting (via Eleven Labs) and music (via Udio) for an immersive experience." }
             ],
             youtubeLink: 'https://www.youtube.com/embed/your-video-id', // Replace with actual demo if available
-            liveLink: 'https://your-portfolio-website.com', // Replace with actual URL
-            githubLink: 'https://github.com/your-repo', // Replace with actual GitHub repo
+            githubLink: 'https://github.com/gianni35011/interactive-portfolio-showcase'
         },
         {
             id: 'project2',
@@ -150,8 +150,6 @@ export class PortfolioOverlay{
                 {title: "Item Crafting & Equipment", body: "Collect and craft powerful items to aid in combat and exploration."}
             ],
             youtubeLink: 'https://www.youtube.com/embed/5ELjVpXemNY?si=Ha2xn2EfFiHJAVWV',
-            liveLink: 'https://example.com', // Replace with actual game link if applicable
-            githubLink: 'https://github.com/your-repo' // Replace with actual GitHub repo
         }
         ];
 
@@ -240,15 +238,11 @@ export class PortfolioOverlay{
                         : ``}
                 </div>
                 <div class ="media-grid">
-                    ${project.images.slice(1).map( img => `
+                    ${project.images.map( img => `
                         <div class="media-item">
                             <img src="${img}" alt="${project.title} Screenshot">
                         </div>                        
                         `).join('')}
-                    <!--<div class="media-item video-wrapper">
-                        <iframe src="${project.youtubeLink}"  frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen></iframe>
-                    </div> -->
                 </div>
             </div>
             
@@ -261,7 +255,7 @@ export class PortfolioOverlay{
                                 <h4>${feature.title}</h4>
                                 <p>${feature.body}</p>
                             </div>
-                        `).join('')};
+                        `).join('')}
                 </div>
             </div>
             
