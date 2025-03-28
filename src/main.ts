@@ -59,7 +59,7 @@ async function initializeGame() {
     let npc = null;
     let npc2 = null;
     const DM = new DialogueManager();
-    const DEBUG = false;
+    const DEBUG = true;
 
 
     if (npc_mesh) {
