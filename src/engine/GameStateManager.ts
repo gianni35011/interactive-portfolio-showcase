@@ -24,6 +24,7 @@ class EventEmitter{
 }
 
 export enum GameState{
+    LOADING,
     MAIN_MENU,
     PLAYING,
     PAUSED,
@@ -32,6 +33,7 @@ export enum GameState{
     CAMERA_TRANSITION_EXIT,
     PORTFOLIO_VIEW,
     EDUCATION_VIEW,
+    START_MENU,
 }
 
 export interface StateChangeEvent {

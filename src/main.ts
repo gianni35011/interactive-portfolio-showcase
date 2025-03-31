@@ -1,16 +1,15 @@
 import './style.css'
 import * as THREE from 'three'
+import {Mesh, Object3D} from 'three'
 
 import Camera from './engine/camera'
 import Light from './engine/light'
-import { Graphics } from './engine/graphics.ts'
-import {loadAnimatedAsset, loadStaticAsset, loadStaticAsset_02, loadStaticAssetArray} from './tools/loader.ts'
-import loader from './tools/loader.ts'
+import {Graphics} from './engine/graphics.ts'
+import loader, {loadAnimatedAsset, loadStaticAsset, loadStaticAsset_02, loadStaticAssetArray} from './tools/loader.ts'
 import MyWorld from './entities/world.ts'
 import {Player, PlayerDependencies} from "./entities/player.ts";
-import { initPhysics } from "./engine/physics.ts"
+import {initPhysics} from "./engine/physics.ts"
 import {OrbitControls} from "three/addons/controls/OrbitControls.js";
-import {Mesh, Object3D} from "three";
 import SoundManager from "./engine/SoundManager.ts";
 import Animator from "./engine/AnimationHandler.ts";
 import {NPC, NPCDependencies} from "./entities/NPC.ts";
@@ -32,12 +31,29 @@ import SkyBoxUrl from '/public/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr';
 import {DialogueManager} from "./engine/DialogueManager.ts";
 import Fire from "./entities/fire.ts";
 import {EducationOverlay} from "./ui/EducationOverlay.ts";
+import {GameState, GameStateManager} from "./engine/GameStateManager.ts";
+import {LoadingScreen} from "./ui/LoadingScreen.ts";
 
 
 async function initializeGame() {
 
+    const stateManager = GameStateManager.getInstance();
+    stateManager.setState(GameState.LOADING);
+
+    const loadingScreen = new LoadingScreen();
+
+    let totalAssets = 9;
+    let loadedAssets = 0;
+
+    const updateProgress = () => {
+        loadedAssets++;
+        const progress = (loadedAssets / totalAssets) * 100;
+        loadingScreen.updateProgress(progress);
+    };
+
 // Initialize physics
     const Rapier = await initPhysics();
+
 
 // Load assets using imported URLs
     const ground_mesh = await loader(groundUrl);
@@ -59,7 +75,7 @@ async function initializeGame() {
     let npc = null;
     let npc2 = null;
     const DM = new DialogueManager();
-    const DEBUG = true;
+    const DEBUG = false;
 
 
     if (npc_mesh) {
@@ -194,6 +210,17 @@ async function initializeGame() {
         controls.screenSpacePanning = false; // Optional: Prevents panning beyond the scene
         controls.maxPolarAngle = Math.PI / 2;
     }
+
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
+    updateProgress();
 
     let once = true;
     graphic.onUpdate((dt: number) => {
