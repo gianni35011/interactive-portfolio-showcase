@@ -34,6 +34,12 @@ import {EducationOverlay} from "./ui/EducationOverlay.ts";
 import {GameState, GameStateManager} from "./engine/GameStateManager.ts";
 import {LoadingScreen} from "./ui/LoadingScreen.ts";
 
+import Audio00Url from '/public/assets/voiceLines/ProjectsNPC/1_ProjectsNPC.mp3';
+import Audio01Url from '/public/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3';
+import Audio02Url from '/public/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3';
+
+import WizardVoice00Url from '/public/assets/voiceLines/EducationNPC/00_WizardVoice.mp3';
+import WizardVoice01Url from '/public/assets/voiceLines/EducationNPC/01_WizardVoice.mp3';
 
 async function initializeGame() {
 
@@ -88,12 +94,15 @@ async function initializeGame() {
             dialogueEntries: [
                 {
                     text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
+                    audioPath: Audio00Url
                 },
                 {
                     text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
+                    audioPath: Audio01Url
                 },
                 {
                     text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
+                    audioPath: Audio02Url
                 }
             ],
         }
@@ -111,14 +120,13 @@ async function initializeGame() {
             dialogueManager: DM,
             dialogueEntries: [
                 {
-                    text: "Ah… another traveler. Drawn here by fate, or by purpose? It matters not. All who walk this path seek something.",
+                    text: "You walk the path of progress… I know it well. The long nights, the silent battles fought beneath flickering lamps.",
+                    audioPath: WizardVoice00Url
                 },
                 {
-                    text: "I have witnessed creations born of skill and resolve—each bearing the mark of its maker. Some shaped in quiet reflection, others tempered through challenge and strife.",
+                    text: "If you would know the foundations upon which I stand—then look, and see for yourself.",
+                    audioPath: WizardVoice01Url
                 },
-                {
-                    text: "If knowledge is what you seek, then look upon them. Their purpose is clear to those with the will to see.",
-                }
             ],
             npcType: 'education',
         }
