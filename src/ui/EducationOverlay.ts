@@ -3,6 +3,28 @@
 import ProjectImage1 from '/public/assets/portfolioAssets/geoadventure/0_GeoAdventure.png';
 import ProjectImage2 from '/public/assets/portfolioAssets/geoadventure/1_GeoAdventure.png';
 
+import bluelightImage00 from '/public/assets/portfolioAssets/bluelight/image00.gif';
+import bluelightImage01 from '/public/assets/portfolioAssets/bluelight/image01.gif';
+import bluelightImage02 from '/public/assets/portfolioAssets/bluelight/image02.gif';
+import bluelightImage03 from '/public/assets/portfolioAssets/bluelight/image03.gif';
+import bluelightImage04 from '/public/assets/portfolioAssets/bluelight/image04.gif';
+import bluelightImage05 from '/public/assets/portfolioAssets/bluelight/image05.gif';
+import bluelightImage06 from '/public/assets/portfolioAssets/bluelight/image06.jpg';
+import bluelightImage07 from '/public/assets/portfolioAssets/bluelight/image07.gif';
+
+import dataHuntImage00 from '/public/assets/portfolioAssets/datahunt/image00.jpg'
+import dataHuntImage01 from '/public/assets/portfolioAssets/datahunt/image01.png'
+import dataHuntImage02 from '/public/assets/portfolioAssets/datahunt/image02.png'
+
+import resourceImage00 from '/public/assets/portfolioAssets/resource/image00.gif';
+import resourceImage01 from '/public/assets/portfolioAssets/resource/image01.gif';
+import resourceImage02 from '/public/assets/portfolioAssets/resource/image02.gif';
+import resourceImage03 from '/public/assets/portfolioAssets/resource/image03.gif';
+import resourceImage04 from '/public/assets/portfolioAssets/resource/image04.gif';
+import resourceImage05 from '/public/assets/portfolioAssets/resource/image05.png';
+import resourceImage06 from '/public/assets/portfolioAssets/resource/image06.png';
+import resourceImage07 from '/public/assets/portfolioAssets/resource/image07.png';
+
 interface EducationData{
     university: string;
     degree: string;
@@ -75,7 +97,11 @@ export class EducationOverlay{
                 { title: "Target Hunting System", body: "Players are assigned a target based on a provided image and must track them down." },
                 { title: "Survival & Reward System", body: "Players earn more in-game cash the longer they survive, while more hunters are assigned to them over time." }
             ],
-            images: [ProjectImage1, ProjectImage2],
+            images: [
+                dataHuntImage00,
+                dataHuntImage01,
+                dataHuntImage02
+            ],
             githubLink: "" // No GitHub link provided
         },
         {
@@ -92,8 +118,14 @@ export class EducationOverlay{
                 { title: "HUD & UI Design", body: "Designed and implemented functional UI with animations and blurred backgrounds to improve clarity and polish." }
             ],
             images: [
-                ProjectImage1,
-                ProjectImage2
+                bluelightImage00,
+                bluelightImage01,
+                bluelightImage02,
+                bluelightImage03,
+                bluelightImage04,
+                bluelightImage05,
+                bluelightImage06,
+                bluelightImage07
             ],
             githubLink: "" // No GitHub link provided
         },
@@ -108,7 +140,16 @@ export class EducationOverlay{
                 { title: "Hovering Spaceship Controls", body: "Navigate and manipulate objects from a unique top-down perspective." },
                 { title: "Drag-and-Drop Mechanics", body: "Use the mouse to grab and move boxes to solve environmental challenges." }
             ],
-            images: [], // No images provided
+            images: [
+                resourceImage00,
+                resourceImage01,
+                resourceImage02,
+                resourceImage03,
+                resourceImage04,
+                resourceImage05,
+                resourceImage06,
+                resourceImage07
+            ],
             githubLink: "" // No GitHub link provided
         }
 

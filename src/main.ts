@@ -174,7 +174,7 @@ async function initializeGame() {
     }
 
     if (grass) {
-        const grassCount = 10000;
+        const grassCount = 15000;
         const grassGeometry = grass.geometry;
         const grassMaterial = grass.material;
 
@@ -183,9 +183,9 @@ async function initializeGame() {
         const dummy = new THREE.Object3D();
         for (let i = 0; i < grassCount; i++) {
             dummy.position.set(
-                Math.random() * 50 - 25,
+                Math.random() * 72 - 25,
                 0,
-                Math.random() * 50 - 25
+                Math.random() * 72 - 25
             );
             dummy.rotation.y = Math.random() * Math.PI * 2;
             dummy.scale.setScalar(Math.random() * 0.5 + 0.75 + 1);
