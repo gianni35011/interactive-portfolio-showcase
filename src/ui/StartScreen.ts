@@ -28,7 +28,7 @@ export class StartScreen {
 
         const source = document.createElement('source');
         source.src = videoPath;
-        source.type = 'video/mp4';
+        source.type = 'video/webm';
 
         videoBackground.appendChild(source);
         this.overlay.appendChild(videoBackground);
@@ -129,7 +129,7 @@ export class StartScreen {
                 height: 100%;
                 object-fit: cover;
                 z-index: -1;
-                filter: brightness(0.4);
+                filter: brightness(0.9);
             }
             
             .start-screen-container {

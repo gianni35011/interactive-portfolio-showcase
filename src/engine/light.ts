@@ -34,7 +34,7 @@ export default class Light extends Object3D {
         this.directionalLight = new DirectionalLight(color, intensity);
         this.directionalLight.position.set(30, 8, -1);
         this.directionalLight.target.position.set(2.7, 0, 18);
-        this.directionalLightHelper = new DirectionalLightHelper(this.directionalLight);
+        //this.directionalLightHelper = new DirectionalLightHelper(this.directionalLight);
 
         this.directionalLight.add(this.directionalLightHelper);
         this.directionalLight.castShadow = true;

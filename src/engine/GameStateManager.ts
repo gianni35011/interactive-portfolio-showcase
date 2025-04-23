@@ -103,6 +103,10 @@ export class GameStateManager{
             GameState.PORTFOLIO_VIEW,
             GameState.EDUCATION_VIEW
         ]));
+
+        this.allowedTransitions.set(GameState.LOADING, new Set([
+            GameState.PLAYING,
+        ]));
     }
 
     private addAllowedTransition(from: GameState, to: GameState[] | GameState){

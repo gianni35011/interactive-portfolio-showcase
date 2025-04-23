@@ -52,7 +52,7 @@ export class LoadingScreen {
         if (percentage >= 100) {
             setTimeout(() => {
                 this.hide();
-                this.stateManager.setState(GameState.START_MENU);
+                this.stateManager.setState(GameState.PLAYING);
             }, 500);
 
         }
