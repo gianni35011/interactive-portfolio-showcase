@@ -33,7 +33,8 @@ export enum GameState{
     CAMERA_TRANSITION_EXIT,
     PORTFOLIO_VIEW,
     EDUCATION_VIEW,
-    START_MENU,
+    GAME_START_SCREEN,
+    GAME_RESET,
 }
 
 export interface StateChangeEvent {
@@ -51,8 +52,8 @@ export class GameStateManager{
     public npcViewType: 'portfolio' | 'education' = 'education';
 
     private constructor(){
-        this.currentState = GameState.PLAYING;
-        this.previousState = GameState.PLAYING;
+        this.currentState = GameState.GAME_START_SCREEN;
+        this.previousState = GameState.GAME_START_SCREEN;
         this.eventEmitter = new EventEmitter();
         this.allowedTransitions = new Map();
         this.initializeTransitions()
@@ -96,6 +97,12 @@ export class GameStateManager{
         this.addAllowedTransition(GameState.EDUCATION_VIEW, [
             GameState.CAMERA_TRANSITION_EXIT,
         ])
+
+        this.allowedTransitions.set(GameState.GAME_START_SCREEN, new Set([
+            GameState.LOADING,
+            GameState.PORTFOLIO_VIEW,
+            GameState.EDUCATION_VIEW
+        ]));
     }
 
     private addAllowedTransition(from: GameState, to: GameState[] | GameState){

@@ -40,12 +40,23 @@ import Audio02Url from '/public/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3'
 
 import WizardVoice00Url from '/public/assets/voiceLines/EducationNPC/00_WizardVoice.mp3';
 import WizardVoice01Url from '/public/assets/voiceLines/EducationNPC/01_WizardVoice.mp3';
+import {StartScreen} from "./ui/StartScreen.ts";
+
+async function  startScreen(){
+    new StartScreen('/public/assets/background-video.mp4');
+    const stateManager = GameStateManager.getInstance();
+    const portoflio = new PortfolioOverlay();
+    stateManager.onStateEnter(GameState.LOADING, async () => {
+        await initializeGame();
+    })
+}
 
 async function initializeGame() {
 
     const stateManager = GameStateManager.getInstance();
-    stateManager.setState(GameState.LOADING);
 
+
+    stateManager.setState(GameState.LOADING);
     const loadingScreen = new LoadingScreen();
 
     let totalAssets = 9;
@@ -247,7 +258,7 @@ async function initializeGame() {
     });
 }
 
-initializeGame().catch(error => {
+startScreen().catch(error => {
     console.error('Failed to initialise', error);
 })
 
