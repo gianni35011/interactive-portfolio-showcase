@@ -24,7 +24,7 @@ export default class Light extends Object3D {
     constructor() {
         super();
 
-        const ambient = new AmbientLight(0xf04343, 0.1);
+        const ambient = new AmbientLight(0xf04343, 0.2);
         const point = new PointLight(0xffffff, 80, 30);
 
 
@@ -33,8 +33,8 @@ export default class Light extends Object3D {
         const intensity = 1.4;
         this.directionalLight = new DirectionalLight(color, intensity);
         this.directionalLight.position.set(30, 8, -1);
-        this.directionalLight.target.position.set(2.7, 0, 18);
-        //this.directionalLightHelper = new DirectionalLightHelper(this.directionalLight);
+        this.directionalLight.target.position.set(6, 0, 18);
+        this.directionalLightHelper = new DirectionalLightHelper(this.directionalLight);
 
         this.directionalLight.add(this.directionalLightHelper);
         this.directionalLight.castShadow = true;

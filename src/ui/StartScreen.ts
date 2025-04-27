@@ -1,10 +1,9 @@
 ﻿import { GameState, GameStateManager } from "../engine/GameStateManager.ts";
 
 export class StartScreen {
-    private overlay: HTMLElement;
-    private container: HTMLElement;
+    private overlay!: HTMLElement;
+    private container!: HTMLElement;
     private stateManager: GameStateManager;
-    private _isVisible: boolean = true;
 
     constructor(videoPath: string) {
         this.stateManager = GameStateManager.getInstance();
@@ -238,12 +237,10 @@ export class StartScreen {
     }
 
     show(): void {
-        this._isVisible = true;
         this.overlay.classList.add('visible');
     }
 
     hide(): void {
-        this._isVisible = false;
         this.overlay.classList.remove('visible');
     }
 }
