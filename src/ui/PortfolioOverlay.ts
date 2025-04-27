@@ -60,8 +60,7 @@ export class PortfolioOverlay{
     private stateManager: GameStateManager;
     private _isVisible: boolean;
     private detailsContainer!: HTMLElement ;
-
-
+    private previousState: GameState = GameState.PLAYING;
 
     private projects: ProjectData[] = [
         {
@@ -636,24 +635,33 @@ export class PortfolioOverlay{
 
     private setupEventListeners(){
         this.stateManager.onStateEnter(GameState.PORTFOLIO_VIEW, () =>{
-            this.show()
+            const currentState = this.stateManager.state;
+            if (currentState !== GameState.PORTFOLIO_VIEW) {
+                this.previousState = currentState;
+            }
+            this.show();
         });
 
         this.overlay.addEventListener('click', (e) => {
             if(e.target === this.overlay){
                 this.hide();
-                this.stateManager.setState(GameState.CAMERA_TRANSITION_EXIT);
+                if (this.stateManager.previous == GameState.GAME_START_SCREEN) {
+                    this.stateManager.setState(GameState.GAME_START_SCREEN);
+                } else {
+                    this.stateManager.setState(GameState.CAMERA_TRANSITION_EXIT);
+                }
             }
         });
     }
 
     show(){
-        this._isVisible =true;
+        this._isVisible = true;
         this.overlay.classList.add('visible');
         this.overlay.style.pointerEvents = 'auto';
     }
 
     hide(){
+        this._isVisible = false;
         this.overlay.classList.remove('visible');
         this.overlay.style.pointerEvents = 'none';
     }

@@ -1,8 +1,5 @@
 ﻿import {GameState, GameStateManager} from "../engine/GameStateManager.ts";
 
-import ProjectImage1 from '/public/assets/portfolioAssets/geoadventure/0_GeoAdventure.png';
-import ProjectImage2 from '/public/assets/portfolioAssets/geoadventure/1_GeoAdventure.png';
-
 import bluelightImage00 from '/public/assets/portfolioAssets/bluelight/image00.gif';
 import bluelightImage01 from '/public/assets/portfolioAssets/bluelight/image01.gif';
 import bluelightImage02 from '/public/assets/portfolioAssets/bluelight/image02.gif';

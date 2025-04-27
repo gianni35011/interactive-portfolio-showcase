@@ -70,12 +70,11 @@ export class StartScreen {
         const buttonContainer = document.createElement('div');
         buttonContainer.className = 'direct-buttons-container';
 
-        // Portfolio button
+        // Portfolio button - Changed to overlay portfolio without hiding start screen
         const portfolioButton = document.createElement('button');
         portfolioButton.className = 'direct-button portfolio-button';
         portfolioButton.textContent = 'Portfolio';
         portfolioButton.addEventListener('click', () => {
-            this.hide();
             this.stateManager.setState(GameState.PORTFOLIO_VIEW);
         });
         buttonContainer.appendChild(portfolioButton);
@@ -112,7 +111,7 @@ export class StartScreen {
                 opacity: 0;
                 visibility: hidden;
                 transition: opacity 1s ease-in-out;
-                z-index: 2000;
+                z-index: 1000; /* Ensure this is below portfolio overlay z-index */
             }
             
             .start-screen-overlay.visible {
