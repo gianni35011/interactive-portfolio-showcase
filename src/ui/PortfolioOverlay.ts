@@ -60,7 +60,6 @@ export class PortfolioOverlay{
     private stateManager: GameStateManager;
     private _isVisible: boolean;
     private detailsContainer!: HTMLElement ;
-    private previousState: GameState = GameState.PLAYING;
 
     private projects: ProjectData[] = [
         {
@@ -635,10 +634,6 @@ export class PortfolioOverlay{
 
     private setupEventListeners(){
         this.stateManager.onStateEnter(GameState.PORTFOLIO_VIEW, () =>{
-            const currentState = this.stateManager.state;
-            if (currentState !== GameState.PORTFOLIO_VIEW) {
-                this.previousState = currentState;
-            }
             this.show();
         });
 

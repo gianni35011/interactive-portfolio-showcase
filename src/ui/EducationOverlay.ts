@@ -328,6 +328,8 @@ export class EducationOverlay{
                 height: 100%;
                 background: rgba(0, 0, 0, 0.9);
                 opacity: 0;
+                padding: 2rem;
+                
                 visibility: hidden;
                 transition: opacity 1s ease-in-out;
                 display: flex;
@@ -556,7 +558,11 @@ export class EducationOverlay{
         this.overlay.addEventListener('click', (e) => {
             if(e.target === this.overlay){
                 this.hide();
-                this.stateManager.setState(GameState.CAMERA_TRANSITION_EXIT);
+                if (this.stateManager.previous == GameState.GAME_START_SCREEN) {
+                    this.stateManager.setState(GameState.GAME_START_SCREEN);
+                } else {
+                    this.stateManager.setState(GameState.CAMERA_TRANSITION_EXIT);
+                }
             }
         })
     }
