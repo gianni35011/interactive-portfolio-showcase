@@ -22,6 +22,12 @@ import resourceImage05 from '/public/assets/portfolioAssets/resource/image05.png
 import resourceImage06 from '/public/assets/portfolioAssets/resource/image06.png';
 import resourceImage07 from '/public/assets/portfolioAssets/resource/image07.png';
 
+import CPP from '/public/assets/icons/CPP-icon.svg';
+import CS from '/public/assets/icons/cs-icon.svg';
+import Unity from '/public/assets/icons/unity-icon.svg';
+import UE from '/public/assets/icons/unreal-icon.svg';
+import Firebase from '/public/assets/icons/firebase-icon.svg';
+
 interface EducationData{
     university: string;
     degree: string;
@@ -37,7 +43,7 @@ interface AcademicProject{
     title: string;
     course: string;
     description: string;
-    technologies: string[];
+    technologies: { name: string, icon: string}[];
     keyFeatures: {title: string; body: string}[];
     images: string[];
     githubLink?: string;
@@ -88,7 +94,10 @@ export class EducationOverlay{
             title: "Data Hunt",
             course: "University Project",
             description: "A pervasive game developed in Unity3D where players hunt down targets based on images assigned to them through the game.",
-            technologies: ["Unity3D", "C#", "Google Firebase"],
+            technologies: [
+                {name: "Unity3D", icon: Unity},
+                {name: "C#", icon: CS},
+                {name: "Google Firebase", icon: Firebase}],
             keyFeatures: [
                 { title: "Online Multiplayer", body: "Integrated Firebase to manage player data, including usernames, images, and online status." },
                 { title: "Target Hunting System", body: "Players are assigned a target based on a provided image and must track them down." },
@@ -106,7 +115,7 @@ export class EducationOverlay{
             title: "BlueLight",
             course: "University Project",
             description: "A fast-paced first-person melee combat game where both the player and enemies die in one hit. The goal is to deliver the box before time runs out.",
-            technologies: ["Unreal Engine 4", "Blueprints", "C++"],
+            technologies: [{name: "Unreal Engine 4", icon: UE}, {name: "C++", icon: CPP}],
             keyFeatures: [
                 { title: "Fast-Paced Combat", body: "One-hit kill system for both players and enemies, requiring quick reflexes and precision." },
                 { title: "Dashing Mechanic", body: "Implemented quick movement and dashing to enhance combat fluidity." },
@@ -131,7 +140,9 @@ export class EducationOverlay{
             title: "RE-Source",
             course: "University Project",
             description: "A single-player 3D puzzle game where players control a hovering spaceship to solve puzzles using pressure plates, switches, and doors while dragging boxes with the mouse.",
-            technologies: ["Unity3D", "C#"],
+            technologies: [
+                {name: "Unity3D", icon: Unity},
+                {name: "C#",  icon: CS}],
             keyFeatures: [
                 { title: "Physics-Based Puzzles", body: "Solve puzzles using interactive elements like pressure plates, switches, and movable boxes." },
                 { title: "Hovering Spaceship Controls", body: "Navigate and manipulate objects from a unique top-down perspective." },
@@ -289,7 +300,8 @@ export class EducationOverlay{
                     <div class="tools-grid">
                         ${project.technologies.map(tech => `
                             <div class="tool-item">
-                                <span>${tech}</span>
+                            <img src="${tech.icon}" alt="${tech.name} Icon">
+                             <span>${tech.name}</span>           
                             </div>
                         `).join('')}
                     </div>
@@ -421,14 +433,26 @@ export class EducationOverlay{
                 margin-bottom: 0.75rem;
             }
 
-            .tech-tag {
-                display: inline-block;
-                background: rgba(255, 255, 255, 0.2);
-                padding: 0.2rem 0.6rem;
-                border-radius: 20px;
-                margin-right: 0.5rem;
-                margin-top: 0.5rem;
-                font-size: 0.8rem;
+            .tools-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+                margin-top: 1rem;
+            }
+            
+            .tool-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+            }
+            
+            .tool-item img {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 0.5rem;
             }
 
             .detail-container {

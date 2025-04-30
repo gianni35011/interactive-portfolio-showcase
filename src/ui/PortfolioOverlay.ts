@@ -414,15 +414,6 @@ export class PortfolioOverlay{
                 color: black;
             }
 
-            .tech-tag {
-                display: inline-block;
-                background: rgba(255, 255, 255, 0.2);
-                padding: 0.3rem 0.8rem;
-                border-radius: 20px;
-                margin: 0.25rem;
-                font-size: 0.9rem;
-            }
-
             .project-links {
                 margin-top: 2rem;
             }

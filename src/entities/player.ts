@@ -1,4 +1,4 @@
-﻿import {Mesh, Object3D, Vector3} from "three";
+﻿import {Mesh, Object3D, Vector3, MeshStandardMaterial, Material} from "three";
 import {createRigidBodyDynamic, range} from "../tools/RapierHelper.ts";
 import {RigidBody, World} from "@dimforge/rapier3d-compat";
 import InputManager from "../control/InputManager.ts";
@@ -26,7 +26,7 @@ const GRASS_FOOTSTEPS = [
     ]
 
 
-    
+
 export interface PlayerDependencies {
     soundManager: SoundManager;
     animator: Animator;
@@ -34,7 +34,7 @@ export interface PlayerDependencies {
 }
 
 export class Player extends Object3D {
-    private static readonly DEFAULT_START_POSITION = new Vector3(0, 2, 8);
+    private static readonly DEFAULT_START_POSITION = new Vector3(0, 0.1, 8);
 
     rigidBody: RigidBody | null = null;
     collider: any | null = null;
@@ -43,8 +43,13 @@ export class Player extends Object3D {
     animator: Animator | null = null;
     soundManager: SoundManager| null = null;
     private _interactableObjects: Interactive[] = [];
-    private  _interactiveUIPrompt!: HTMLDivElement;
+    private _interactiveUIPrompt!: HTMLDivElement;
     private _interactableObjectsInRange: Interactive[] = [];
+    private _materials: Material[] = [];
+    private _fadeInProgress: boolean = true;
+    private _fadeInDuration: number = 1; // Duration in seconds
+    private _fadeInDelay: number = 2; // Delay before fade-in starts (in seconds)
+    private _fadeInTimer: number = 0;
 
     constructor(
         playerDependencies: PlayerDependencies,
@@ -60,8 +65,9 @@ export class Player extends Object3D {
         this.initializeVisual(mesh);
         this.initializeAnimator(mesh);
         this.initializeSound();
-        this.syncAnimationSounds()
+        this.syncAnimationSounds();
         this.InteractionUISetup();
+        this.setupFadeIn(mesh);
     }
 
     private InteractionUISetup(): void{
@@ -113,8 +119,6 @@ export class Player extends Object3D {
         }
     }
 
-
-
     private initializePhysics(physicsEngine: World) {
         const {rigidBody, collider} = createRigidBodyDynamic(this.position, physicsEngine, this);
         this.rigidBody = rigidBody;
@@ -140,6 +144,29 @@ export class Player extends Object3D {
         this.soundManager.load(GRASS, GRASS_FOOTSTEPS);
     }
 
+    private setupFadeIn(mesh: Mesh): void {
+        mesh.traverse((child) => {
+            if (child instanceof Mesh) {
+                const materials = Array.isArray(child.material) ? child.material : [child.material];
+
+                materials.forEach((material) => {
+                    if (material instanceof MeshStandardMaterial) {
+                        // Clone material to avoid affecting other instances
+                        const newMaterial = material.clone();
+                        // Setup for transparency
+                        newMaterial.transparent = true;
+                        newMaterial.opacity = 0; // Start fully transparent
+                        newMaterial.needsUpdate = true;
+
+                        // Replace original material
+                        child.material = newMaterial;
+                        this._materials.push(newMaterial);
+                    }
+                });
+            }
+        });
+    }
+
     update(dt: number) {
         if (this.controller.interaction) {
             this.checkInteraction();
@@ -149,6 +176,55 @@ export class Player extends Object3D {
         this.updatePhysics();
         this.updateVisuals(dt);
         this.updateAnimation(dt);
+
+        // Handle fade-in effect
+        if (this._fadeInProgress) {
+            this.updateFadeIn(dt);
+        }
+    }
+
+    private updateFadeIn(dt: number): void {
+        if (!this._fadeInProgress) return;
+
+        this._fadeInTimer += dt;
+        
+        // Wait for the delay period before starting the fade-in
+        if (this._fadeInTimer < this._fadeInDelay) {
+            // Keep objects invisible during delay
+            this._materials.forEach(material => {
+                if (material instanceof MeshStandardMaterial) {
+                    material.opacity = 0;
+                }
+            });
+            return;
+        }
+        
+        // Calculate progress after the delay period
+        const progress = Math.min((this._fadeInTimer - this._fadeInDelay) / this._fadeInDuration, 1.0);
+
+        // Update opacity of all materials
+        this._materials.forEach(material => {
+            if (material instanceof MeshStandardMaterial) {
+                material.opacity = progress;
+                material.needsUpdate = true;
+            }
+        });
+
+        // Check if fade-in is complete
+        if (progress >= 1.0) {
+            this._fadeInProgress = false;
+
+            // Optional: Set materials back to non-transparent for performance
+            // after a small delay to ensure the fade is complete
+            setTimeout(() => {
+                this._materials.forEach(material => {
+                    if (material instanceof MeshStandardMaterial) {
+                        material.transparent = false;
+                        material.needsUpdate = true;
+                    }
+                });
+            }, 1000);
+        }
     }
 
     private updatePhysics() {
@@ -200,3 +276,4 @@ export class Player extends Object3D {
     }
 
 }
+

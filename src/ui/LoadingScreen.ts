@@ -52,12 +52,11 @@ export class LoadingScreen {
         if (percentage >= 100) {
             setTimeout(() => {
                 this.hide();
-                this.stateManager.setState(GameState.PLAYING);
+                // Transition to PLAYING state will now be handled in main.ts
+                // with the fade effect
             }, 500);
-
         }
     }
-
 
     private addStyles() {
             const styles = `
