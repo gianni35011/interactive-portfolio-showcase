@@ -35,9 +35,10 @@ import loader, {loadAnimatedAsset, loadStaticAsset, loadStaticAsset_02, loadStat
 // Asset URLs
 // World assets
 import groundUrl from '/public/assets/world/ground/ground.glb'
+import waterUrl from '/public/assets/world/ground/water.glb'
 import treesUrl from '/public/assets/world/ground/foliage_lowpoly.glb'
-import grassUrl from '/public/assets/world/ground/grass/SM_GrassLumpLargeC.gltf'
-import centralRuinsUrl from '/public/assets/world/ground/centralRuins/CentralRuins.gltf'
+import grassUrl from '/public/assets/world/ground/grass/grass.glb'
+import centralRuinsUrl from '/public/assets/world/ground/centralRuins/centralRuins.glb'
 import mountainsUrl from '/public/assets/world/ground/mountains/untitled.glb'
 import worldCollisionUrl from '/public/assets/world/world_collision.glb'
 import SkyBoxUrl from '/public/assets/world/skybox/NightSkyHDRI002_4K-HDR.exr'
@@ -53,21 +54,21 @@ import Audio01Url from '/public/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3'
 import Audio02Url from '/public/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3'
 import WizardVoice00Url from '/public/assets/voiceLines/EducationNPC/00_WizardVoice.mp3'
 import WizardVoice01Url from '/public/assets/voiceLines/EducationNPC/01_WizardVoice.mp3'
+import BackgroundVideo from '/public/assets/background-video.webm';
 
 // Configuration
 const DEBUG = false;
 const GRASS_COUNT = 15000;
-const BACKGROUND_VIDEO_PATH = '/public/assets/background-video.webm';
 
 /**
  * Initialize the start screen and set up state transitions
  */
 async function startScreen() {
-    new StartScreen(BACKGROUND_VIDEO_PATH);
+    new StartScreen(BackgroundVideo);
     const stateManager = GameStateManager.getInstance();
     new PortfolioOverlay(); // Initialize portfolio overlay
     new EducationOverlay();
-    
+    new MusicManager();
     stateManager.onStateEnter(GameState.LOADING, async () => {
         await initializeGame();
     });
@@ -97,6 +98,7 @@ async function initializeGame() {
             { name: 'grass', loader: () => loadStaticAsset(grassUrl) },
             { name: 'centralRuins', loader: () => loadStaticAssetArray(centralRuinsUrl) },
             { name: 'mountains', loader: () => loadStaticAsset_02(mountainsUrl) },
+            { name: 'water', loader: () => loadStaticAsset_02(waterUrl) },
             { name: 'worldCollision', loader: () => loader(worldCollisionUrl) }
         ];
         
@@ -171,16 +173,18 @@ async function initializeGame() {
         addEnvironmentToScene(scene, assets);
         
         // Add fire
+        const soundManager = SoundManager.getInstance();
         const fire = new Fire(9.5, 0.25, 10.2);
         scene.add(fire);
         fire.addHelperToScene(scene);
         scene.add(light);
-        
+        camera.add(soundManager.getListener());
+
         // Initialize skybox
         new Skybox(scene, graphics, SkyBoxUrl);
         
         // Initialize music and fog
-        new MusicManager();
+
         scene.fog = new FogSystem(new THREE.Color().setHex(0xDFE9F3), 0.005);
         
         // Set up debug controls if needed
@@ -316,6 +320,7 @@ function addEnvironmentToScene(scene: THREE.Scene, assets: Record<string, any>) 
     
     // Add mountains
     if (assets.mountains) scene.add(assets.mountains);
+    if(assets.water) scene.add(assets.water);
     
     // Add central ruins
     if (assets.centralRuins) {

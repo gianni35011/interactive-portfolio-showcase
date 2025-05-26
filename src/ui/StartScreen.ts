@@ -1,4 +1,5 @@
 ﻿import { GameState, GameStateManager } from "../engine/GameStateManager.ts";
+import SoundManager from "../engine/SoundManager.ts";
 
 export class StartScreen {
     private overlay!: HTMLElement;
@@ -9,7 +10,9 @@ export class StartScreen {
         this.stateManager = GameStateManager.getInstance();
         this.createOverlay(videoPath);
         this.setupEventListeners();
-        this.show(); // Show by default when created
+        this.show();
+        const soundManager = SoundManager.getInstance();
+        soundManager.load('startScreen', [videoPath]);
     }
 
     private createOverlay(videoPath: string): void {

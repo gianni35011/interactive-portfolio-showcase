@@ -1,13 +1,10 @@
-﻿import {GameState, GameStateManager} from "../engine/GameStateManager.ts";
-
+﻿
 export class LoadingScreen {
     private element!: HTMLElement;
     private progressBar!: HTMLElement;
     private progressText!: HTMLElement;
-    private stateManager: GameStateManager;
 
     constructor() {
-        this.stateManager = GameStateManager.getInstance();
         this.createLoadingScreen();
         this.show();
     }
