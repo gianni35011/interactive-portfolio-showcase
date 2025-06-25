@@ -6,12 +6,14 @@
     Object3D,
     PointLight,
     PointLightHelper,
-    Points, PointsMaterial,
+    Points, PositionalAudio,
     Scene, ShaderMaterial, TextureLoader,
     Vector3
 } from "three";
+import SoundManager from "../engine/SoundManager.ts";
 
 import fireTexture from '/public/assets/world/fire-particle.png';
+import fireSound from '/public/assets/sounds/Campfire.wav';
 
 export default class Fire extends Object3D {
     private readonly fireLight: PointLight;
@@ -35,6 +37,10 @@ export default class Fire extends Object3D {
     private particleMaxLifespan: number = 3;
 
     private fireSize: number = .5;
+    private soundManager: SoundManager;
+    private fireSound: PositionalAudio | null = null;
+    private static FIRE_SOUND_KEY: string = "fireSound";;
+
 
 
     constructor(x: number,y: number,z: number) {
@@ -49,10 +55,16 @@ export default class Fire extends Object3D {
 
         this.particles = this.initializeParticles();
         this.add(this.particles);
+
+        this.soundManager = SoundManager.getInstance();
+        this.fireSound = this.soundManager.loadPositional(Fire.FIRE_SOUND_KEY, fireSound);
+        this.add(this.fireSound);
+        // this.fireSound.play();
+        // this.soundManager.playPositional(Fire.FIRE_SOUND_KEY);
     }
 
     addHelperToScene(scene: Scene) {
-        //scene.add(this.pointLightHelper);
+        scene.add(this.pointLightHelper);
     }
 
     update(dt: number){
