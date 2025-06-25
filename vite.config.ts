@@ -1,4 +1,5 @@
 ﻿import { defineConfig} from "vite";
+import path from 'path'
 
 export default defineConfig(({
     build: {
@@ -9,5 +10,10 @@ export default defineConfig(({
     },
     base: '/',
     assetsInclude: ['**/*.gltf', '**/*.glb', '**/*.mp3', '**/*.ogg', '**/*.wav', '**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.svg', '**/*.json', '**/*.exr'],
-    publicDir:' public'
+    publicDir:' public',
+    resolve:{
+        alias: {
+            '/public': path.resolve(__dirname, 'public')
+        }
+    }
 }))
