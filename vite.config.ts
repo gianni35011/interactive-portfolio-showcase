@@ -7,7 +7,7 @@ export default defineConfig(({
         copyPublicDir: true,
         sourcemap: true,
     },
-    base: '/interactive-portfolio-showcase/',
+    base: '/',
     assetsInclude: ['**/*.gltf', '**/*.glb', '**/*.mp3', '**/*.ogg', '**/*.wav', '**/*.jpg', '**/*.png', '**/*.jpeg', '**/*.svg', '**/*.json', '**/*.exr'],
     publicDir: 'public',
 }))
