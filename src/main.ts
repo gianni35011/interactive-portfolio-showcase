@@ -54,7 +54,7 @@ import Audio01Url from '/public/assets/voiceLines/ProjectsNPC/2_ProjectsNPC.mp3'
 import Audio02Url from '/public/assets/voiceLines/ProjectsNPC/3_ProjectsNPC.mp3'
 import WizardVoice00Url from '/public/assets/voiceLines/EducationNPC/00_WizardVoice.mp3'
 import WizardVoice01Url from '/public/assets/voiceLines/EducationNPC/01_WizardVoice.mp3'
-import BackgroundVideo from '/public/assets/background-video.webm';
+import BackgroundVideo from '/assets/assets/background-video.webm';
 
 // Configuration
 const DEBUG = false;
