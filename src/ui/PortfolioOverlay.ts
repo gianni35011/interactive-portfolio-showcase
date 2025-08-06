@@ -189,10 +189,9 @@ export class PortfolioOverlay{
         this.detailsContainer.className = 'detail-container';
 
         const imageModal = document.createElement('div');
-        imageModal.className = 'image-modal';
+        imageModal.className = 'image-modal-portfolio';
         imageModal.innerHTML =`
             <div class="modal-content">
-                <span class="close-modal">&times;</span>
                 <img class="modal-image" src="" alt="Full-size image">
             </div>
         `;
@@ -282,9 +281,8 @@ export class PortfolioOverlay{
 
         setTimeout(() => {
             const allImages = this.detailsContainer.querySelectorAll('.main-media img, .media-item img');
-            const modal = document.querySelector('.image-modal') as HTMLElement;
+            const modal = document.querySelector('.image-modal-portfolio') as HTMLElement;
             const modalImg = document.querySelector('.modal-image') as HTMLImageElement;
-            const closeModal = document.querySelector('.close-modal') as HTMLElement;
 
             allImages.forEach(img => {
                 img.addEventListener('click', () => {
@@ -293,16 +291,10 @@ export class PortfolioOverlay{
                     modalImg.src = imgElement.src;
                 });
             });
+            
 
-            // Close modal when clicking the × or outside the image
-            closeModal.addEventListener('click', () => {
+            modal.addEventListener('click', () => {
                 modal.style.display = 'none';
-            });
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
             });
         }, 100);
     }
@@ -570,7 +562,7 @@ export class PortfolioOverlay{
                 background: #444;
             }
 
-            .image-modal {
+            .image-modal-portfolio {
                 display: none;
                 position: fixed;
                 z-index: 2000;
@@ -594,16 +586,6 @@ export class PortfolioOverlay{
                 height: auto;
                 max-height: 90vh;
                 object-fit: contain;
-            }
-
-            .close-modal {
-                position: absolute;
-                top: -40px;
-                right: 0;
-                color: white;
-                font-size: 35px;
-                font-weight: bold;
-                cursor: pointer;
             }
 
             @media (max-width: 700px) {

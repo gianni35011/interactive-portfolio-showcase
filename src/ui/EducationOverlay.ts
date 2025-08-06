@@ -228,10 +228,22 @@ export class EducationOverlay{
 
     }
 
+
+
     private createDetailView(){
         this.detailsContainer = document.createElement('div');
         this.detailsContainer.className = 'detail-container';
+
+        const imageModal = document.createElement('div');
+        imageModal.className = 'image-modal-education';
+        imageModal.innerHTML =`
+            <div class="modal-content">
+                <img class="modal-image-education" src="" alt="Full-size image">
+            </div>
+        `;
+
         this.overlay.appendChild(this.detailsContainer);
+        this.overlay.appendChild(imageModal);
     }
 
     private createProjectCard(project: AcademicProject): HTMLElement{
@@ -242,7 +254,7 @@ export class EducationOverlay{
             <p class="course-name">${project.course}</p>
             <p>${project.description}</p>
             <div class="technologies">
-                ${project.technologies.slice(0, 3).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                ${project.technologies.slice(0, 3).map(tech => `<span class="tech-tag">${tech.name}</span>`).join('')}
                 ${project.technologies.length > 3 ? '<span class="tech-tag">+' + (project.technologies.length - 3) + '</span>' : ''}
             </div>
         `;
@@ -318,6 +330,25 @@ export class EducationOverlay{
 
         const backButton = this.detailsContainer.querySelector('.back-button');
         backButton?.addEventListener('click', () => this.ShowEducationView());
+
+        // Add fullscreen image functionality
+        setTimeout(() => {
+            const allImages = this.detailsContainer.querySelectorAll('.main-media img, .media-item img');
+            const modal = document.querySelector('.image-modal-education') as HTMLElement;
+            const modalImg = document.querySelector('.modal-image-education') as HTMLImageElement;
+
+            allImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    const imgElement = img as HTMLImageElement;
+                    modal.style.display = 'flex';
+                    modalImg.src = imgElement.src;
+                });
+            });
+
+            modal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }, 100);
     }
 
     private ShowEducationView(): void{
@@ -578,6 +609,30 @@ export class EducationOverlay{
             .github-link:hover {
                 background: #444;
             }
+            .image-modal-education {
+                display: none;
+                position: fixed;
+                z-index: 2000;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.95);
+                justify-content: center;
+                align-items: center;
+            }
+            .modal-content {
+                position: relative;
+                max-width: 90vw;
+                max-height: 90vh;
+            }
+            .modal-image-education {
+                width: 100%;
+                height: auto;
+                max-height: 90vh;
+                object-fit: contain;
+            }
+
             @media (max-width: 700px) {
                 .education-overlay-container, .detail-content {
                     max-width: 98vw;
