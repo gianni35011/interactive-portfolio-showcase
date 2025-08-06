@@ -336,221 +336,233 @@ export class EducationOverlay{
                 position: fixed;
                 top: 0;
                 left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.9);
+                width: 100vw;
+                height: 100vh;
+                background: rgba(30, 30, 40, 0.85);
+                backdrop-filter: blur(8px);
                 opacity: 0;
-                padding: 2rem;
-                
+                padding: 0;
                 visibility: hidden;
-                transition: opacity 1s ease-in-out;
+                transition: opacity 0.7s;
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
                 z-index: 1000;
                 overflow-y: auto;
             }
-
             .education-overlay.visible {
                 opacity: 1;
                 visibility: visible;
             }
-
-            .education-container {
-                max-width: 1200px;
+            .education-overlay-container {
+                width: 100%;
+                max-width: 900px;
+                margin: 2rem auto;
+                background: rgba(255,255,255,0.08);
+                border-radius: 24px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.18);
                 padding: 2rem;
-                color: white;
-                transform: translateY(50px);
-                opacity: 0;
-                transition: all 1s ease-out;
+                color: #f5f5fa;
+                font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+                transition: box-shadow 0.3s;
             }
-
-            .education-overlay.visible .education-container {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
             .education-header {
-                margin-bottom: 3rem;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                padding-bottom: 2rem;
+                margin-bottom: 2rem;
+                border-bottom: 1px solid rgba(255,255,255,0.12);
+                padding-bottom: 1.5rem;
             }
-
-            .degree-info {
-                margin-top: 1.5rem;
+            .education-header h1 {
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                letter-spacing: 1px;
             }
-
+            .degree-info h2 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin-bottom: 0.2rem;
+            }
+            .degree-info h3 {
+                font-size: 1rem;
+                color: #b0b0d0;
+                margin-bottom: 0.7rem;
+            }
+            .degree-info p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                color: #e0e0f0;
+            }
+            .achievements h4, .skills-container h4 {
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
+            }
             .achievements ul {
-                margin-top: 0.5rem;
-                padding-left: 1.5rem;
+                margin-top: 0.3rem;
+                padding-left: 1.2rem;
             }
-
-            .skills-container {
-                margin-top: 1.5rem;
-            }
-
             .skills {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 0.5rem;
                 margin-top: 0.5rem;
             }
-
             .skill-tag {
-                display: inline-block;
-                background: rgba(255, 255, 255, 0.1);
-                padding: 0.3rem 0.8rem;
-                border-radius: 20px;
-                font-size: 0.9rem;
+                background: rgba(255,255,255,0.18);
+                padding: 0.35rem 1rem;
+                border-radius: 16px;
+                font-size: 0.95rem;
+                margin-bottom: 0.2rem;
+                color: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             }
-
             .academic-projects h2 {
-                margin-bottom: 1.5rem;
+                font-size: 1.5rem;
+                margin-bottom: 1.2rem;
+                font-weight: 600;
             }
-
             .projects-grid {
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
             }
-
             .project-card {
-                background: rgba(255, 255, 255, 0.1);
-                padding: 1.5rem;
-                border-radius: 8px;
-                transition: transform 0.3s ease;
+                background: rgba(255,255,255,0.16);
+                border-radius: 18px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+                padding: 1.2rem;
+                transition: transform 0.2s, box-shadow 0.2s;
                 cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
             }
-
-            .project-card:hover {
-                transform: translateY(-5px);
-                background: rgba(255, 255, 255, 0.15);
+            .project-card:hover, .project-card:active {
+                transform: translateY(-4px) scale(1.03);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+                background: rgba(255,255,255,0.22);
             }
-
             .course-name {
-                color: #aaa;
+                color: #b0b0d0;
                 font-style: italic;
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.5rem;
             }
-
-            .tools-grid {
+            .technologies {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.4rem;
+                margin-top: 0.5rem;
+            }
+            .tech-tag {
+                background: rgba(0,0,0,0.10);
+                color: #fff;
+                border-radius: 12px;
+                padding: 0.2rem 0.7rem;
+                font-size: 0.85rem;
+            }
+            .detail-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(30,30,40,0.95);
+                backdrop-filter: blur(12px);
+                color: #fff;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.7s;
+                z-index: 1100;
+                overflow-y: auto;
+                padding: 0;
+            }
+            .detail-content {
+                max-width: 900px;
+                margin: 2rem auto;
+                background: rgba(255,255,255,0.10);
+                border-radius: 24px;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+                padding: 2rem;
+            }
+            .back-button {
+                background: rgba(255,255,255,0.18);
+                border: none;
+                color: #222;
+                font-weight: 600;
+                padding: 0.6rem 1.2rem;
+                border-radius: 8px;
+                cursor: pointer;
+                margin-bottom: 1.2rem;
+                transition: background 0.2s, color 0.2s;
+            }
+            .back-button:hover, .back-button:active {
+                background: #fff;
+                color: #222;
+            }
+            .project-header {
+                margin-bottom: 1.5rem;
+            }
+            .media-container {
+                margin-bottom: 1.5rem;
+            }
+            .media-grid {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 1rem;
-                margin-top: 1rem;
+                gap: 0.7rem;
             }
-            
+            .media-item {
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                background: rgba(255,255,255,0.08);
+            }
+            .media-item img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 12px;
+                transition: transform 0.2s;
+            }
+            .media-item:hover img {
+                transform: scale(1.04);
+            }
+            .project-body {
+                margin-top: 1.2rem;
+            }
+            .key-features h3, .tech-stack h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                margin-bottom: 1.2rem;
+            }
+            .feature-item {
+                background: rgba(255,255,255,0.08);
+                padding: 1rem;
+                border-radius: 12px;
+                font-size: 0.98rem;
+            }
+            .tools-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+                gap: 0.7rem;
+                margin-top: 0.5rem;
+            }
             .tool-item {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                padding: 1rem;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 8px;
+                padding: 0.7rem;
+                background: rgba(255,255,255,0.07);
+                border-radius: 10px;
             }
-            
             .tool-item img {
-                width: 40px;
-                height: 40px;
-                margin-bottom: 0.5rem;
+                width: 32px;
+                height: 32px;
+                margin-bottom: 0.3rem;
             }
-
-            .detail-container {
-                position: relative;
-                top: 0;
-                left: 0;
-                width: 100%;
-                min-height: 100%;
-                padding: 2rem;
-                color: white;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 1s ease-out;
-                overflow-y: auto;
-            }
-
-            .detail-content {
-                max-width: 1000px;
-                margin: 0 auto;
-                background: rgba(255, 255, 255, 0.1);
-                padding: 2rem;
-                border-radius: 8px;
-            }
-
-            .back-button {
-                background: transparent;
-                border: 1px solid white;
-                color: white;
-                padding: 0.5rem 1rem;
-                border-radius: 4px;
-                cursor: pointer;
-                margin-bottom: 1.5rem;
-                transition: all 0.3s ease;
-            }
-
-            .back-button:hover {
-                background: white;
-                color: black;
-            }
-
-            .project-header {
-                margin-bottom: 2rem;
-            }
-
-            .media-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .media-item {
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            .media-item img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-                transition: transform 0.3s ease;
-            }
-
-            .media-item:hover img {
-                transform: scale(1.05);
-            }
-
-            .feature-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 1.5rem;
-                margin-top: 1rem;
-                margin-bottom: 2rem;
-            }
-
-            .feature-item {
-                background: rgba(255, 255, 255, 0.05);
-                padding: 1.5rem;
-                border-radius: 8px;
-            }
-
-            .tools-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 1rem;
-                margin-top: 1rem;
-            }
-
-            .tool-item {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding: 1rem;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 8px;
-                text-align: center;
-            }
-
             .github-link {
                 display: inline-flex;
                 align-items: center;
@@ -558,14 +570,46 @@ export class EducationOverlay{
                 background: #333;
                 color: white;
                 text-decoration: none;
-                padding: 0.75rem 1.5rem;
-                border-radius: 4px;
-                transition: all 0.3s ease;
-                margin-top: 1rem;
+                padding: 0.6rem 1.2rem;
+                border-radius: 6px;
+                transition: background 0.2s;
+                margin-top: 0.7rem;
             }
-
             .github-link:hover {
                 background: #444;
+            }
+            @media (max-width: 700px) {
+                .education-overlay-container, .detail-content {
+                    max-width: 98vw;
+                    padding: 1rem;
+                }
+                .projects-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+                .media-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .feature-grid {
+                    grid-template-columns: 1fr;
+                }
+                .tools-grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+                .media-item img {
+                    height: 70px;
+                }
+            }
+            @media (max-width: 480px) {
+                .education-overlay-container, .detail-content {
+                    padding: 0.5rem;
+                }
+                .media-item img {
+                    height: 50px;
+                }
+                .back-button {
+                    padding: 0.5rem 0.8rem;
+                }
             }
         `;
         const styleSheet = document.createElement('style');
