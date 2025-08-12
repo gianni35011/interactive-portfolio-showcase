@@ -1,8 +1,8 @@
-﻿
-export class LoadingScreen {
+﻿export class LoadingScreen {
     private element!: HTMLElement;
     private progressBar!: HTMLElement;
     private progressText!: HTMLElement;
+    private onLoadingComplete?: () => void;
 
     constructor() {
         this.createLoadingScreen();
@@ -47,12 +47,15 @@ export class LoadingScreen {
         this.progressText.textContent = `${Math.round(percentage)}%`;
 
         if (percentage >= 100) {
+            // Add a small delay to show completion, then trigger callback
             setTimeout(() => {
-                this.hide();
-                // Transition to PLAYING state will now be handled in main.ts
-                // with the fade effect
-            }, 500);
+                this.onLoadingComplete?.();
+            }, 300);
         }
+    }
+
+    public setOnLoadingComplete(callback: () => void) {
+        this.onLoadingComplete = callback;
     }
 
     private addStyles() {

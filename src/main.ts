@@ -133,7 +133,7 @@ async function initializeGame() {
             return acc;
         }, {} as Record<string, any>);
         
-        // Set up scene
+        // Set up scene and basic components first
         const scene = new THREE.Scene();
         const light = new Light();
         const camera = new Camera();
@@ -144,14 +144,52 @@ async function initializeGame() {
         graphics.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(graphics.domElement);
         
-        // Initialize NPCs
+        // Start the asynchronous scene initialization
+        loadingScreen.setOnLoadingComplete(async () => {
+            await initializeSceneWithDelay(scene, assets, graphics, camera, light, Rapier, dialogueManager, loadingScreen);
+        });
+
+    } catch (error) {
+        console.error('Failed to initialize game:', error);
+    }
+}
+
+// Helper function to yield control back to the browser
+function yieldToMain(): Promise<void> {
+    return new Promise(resolve => {
+        requestAnimationFrame(() => resolve());
+    });
+}
+
+// Asynchronous scene initialization to prevent freezing
+async function initializeSceneWithDelay(
+    scene: THREE.Scene,
+    assets: Record<string, any>,
+    graphics: Graphics,
+    camera: Camera,
+    light: Light,
+    Rapier: any,
+    dialogueManager: DialogueManager,
+    loadingScreen: LoadingScreen
+) {
+    try {
+        // Hide loading screen first to show the fade transition
+        loadingScreen.hide();
+
+        // Allow the loading screen fade to start, then begin initialization
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Initialize NPCs first (yield between each)
+        await yieldToMain();
         const npc = createProjectsNPC(assets.npc, Rapier, dialogueManager);
-        const npc2 = createEducationNPC(assets.npc2, Rapier, dialogueManager);
-        
         if (npc) scene.add(npc);
+
+        await yieldToMain();
+        const npc2 = createEducationNPC(assets.npc2, Rapier, dialogueManager);
         if (npc2) scene.add(npc2);
         
         // Initialize player
+        await yieldToMain();
         const player = createPlayer(assets.player, Rapier, npc, npc2);
         if (player) {
             scene.add(player);
@@ -159,6 +197,7 @@ async function initializeGame() {
         }
         
         // Initialize world
+        await yieldToMain();
         if (assets.ground && assets.worldCollision) {
             const world = new MyWorld({
                 visuals: assets.ground.scene,
@@ -170,9 +209,11 @@ async function initializeGame() {
         }
         
         // Add environment elements
+        await yieldToMain();
         addEnvironmentToScene(scene, assets);
         
-        // Add fire
+        // Add fire and other elements
+        await yieldToMain();
         const soundManager = SoundManager.getInstance();
         const fire = new Fire(9.5, 0.25, 10.2);
         scene.add(fire);
@@ -181,10 +222,11 @@ async function initializeGame() {
         camera.add(soundManager.getListener());
 
         // Initialize skybox
+        await yieldToMain();
         new Skybox(scene, graphics, SkyBoxUrl);
         
-        // Initialize music and fog
-
+        // Initialize fog
+        await yieldToMain();
         scene.fog = new FogSystem(new THREE.Color().setHex(0xDFE9F3), 0.005);
         
         // Set up debug controls if needed
@@ -195,14 +237,12 @@ async function initializeGame() {
             controls.screenSpacePanning = false;
             controls.maxPolarAngle = Math.PI / 2;
         }
-        
-        // Initialize UI overlays
-        //new PortfolioOverlay();
-        //new EducationOverlay();
-        
+
         // Set up game loop
         let cameraInitialized = false;
+        const stateManager = GameStateManager.getInstance();
         stateManager.setState(GameState.PLAYING);
+
         graphics.onUpdate((dt: number) => {
             if (!player || !npc || !npc2) return;
             
@@ -220,9 +260,7 @@ async function initializeGame() {
             }
         });
         
-        // Transition to main game state
-        stateManager.setState(GameState.PLAYING);
-        
+
     } catch (error) {
         console.error('Failed to initialize game:', error);
     }
