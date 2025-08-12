@@ -48,7 +48,7 @@ export class Player extends Object3D {
     private _materials: Material[] = [];
     private _fadeInProgress: boolean = true;
     private _fadeInDuration: number = 1; // Duration in seconds
-    private _fadeInDelay: number = 4; // Delay before fade-in starts (in seconds)
+    private _fadeInDelay: number = 1.25; // Delay before fade-in starts (in seconds)
     private _fadeInTimer: number = 0;
 
     constructor(

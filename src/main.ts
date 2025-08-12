@@ -102,7 +102,7 @@ async function initializeGame() {
             { name: 'worldCollision', loader: () => loader(worldCollisionUrl) }
         ];
         
-        const totalAssets = assetsToLoad.length;
+        const totalAssets = assetsToLoad.length + 1;
         let loadedAssets = 0;
         
         // Create progress updater
@@ -145,9 +145,7 @@ async function initializeGame() {
         document.body.appendChild(graphics.domElement);
         
         // Start the asynchronous scene initialization
-        loadingScreen.setOnLoadingComplete(async () => {
-            await initializeSceneWithDelay(scene, assets, graphics, camera, light, Rapier, dialogueManager, loadingScreen);
-        });
+        await initializeSceneWithDelay(scene, assets, graphics, camera, light, Rapier, dialogueManager, loadingScreen);
 
     } catch (error) {
         console.error('Failed to initialize game:', error);
@@ -173,8 +171,6 @@ async function initializeSceneWithDelay(
     loadingScreen: LoadingScreen
 ) {
     try {
-        // Hide loading screen first to show the fade transition
-        loadingScreen.hide();
 
         // Allow the loading screen fade to start, then begin initialization
         await new Promise(resolve => setTimeout(resolve, 100));
@@ -207,11 +203,11 @@ async function initializeSceneWithDelay(
             scene.add(world);
             scene.add(world.debugMesh);
         }
-        
+
         // Add environment elements
         await yieldToMain();
         addEnvironmentToScene(scene, assets);
-        
+
         // Add fire and other elements
         await yieldToMain();
         const soundManager = SoundManager.getInstance();
@@ -224,11 +220,11 @@ async function initializeSceneWithDelay(
         // Initialize skybox
         await yieldToMain();
         new Skybox(scene, graphics, SkyBoxUrl);
-        
+
         // Initialize fog
         await yieldToMain();
         scene.fog = new FogSystem(new THREE.Color().setHex(0xDFE9F3), 0.005);
-        
+
         // Set up debug controls if needed
         if (DEBUG) {
             const controls = new OrbitControls(camera, graphics.domElement);
@@ -238,10 +234,27 @@ async function initializeSceneWithDelay(
             controls.maxPolarAngle = Math.PI / 2;
         }
 
+
         // Set up game loop
         let cameraInitialized = false;
         const stateManager = GameStateManager.getInstance();
         stateManager.setState(GameState.PLAYING);
+
+        const tempdt = graphics.clock.getDelta()
+        npc.update(tempdt);
+        npc2.update(tempdt);
+        player.update(tempdt);
+        Rapier.step();
+        light.update(player);
+        fire.update(tempdt);
+
+        if (!cameraInitialized && player) {
+            camera.updateLookAtTarget(player);
+            cameraInitialized = true;
+        }
+        await yieldToMain();
+        loadingScreen.updateProgress(100);
+        loadingScreen.hide();
 
         graphics.onUpdate((dt: number) => {
             if (!player || !npc || !npc2) return;
@@ -252,9 +265,9 @@ async function initializeSceneWithDelay(
             Rapier.step();
             light.update(player);
             fire.update(dt);
-            
+            console.log("Running");
             if (!DEBUG) camera.update(player, dt);
-            if (!cameraInitialized) {
+            if (!cameraInitialized && !player) {
                 camera.updateLookAtTarget(player);
                 cameraInitialized = true;
             }
