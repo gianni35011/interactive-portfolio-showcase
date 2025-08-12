@@ -90,10 +90,10 @@ export class PortfolioOverlay{
             youtubeLink: 'https://www.youtube.com/embed/jcHXC0uW1jo?si=23XkSOFUbfGHS9w-',
         },
         {
-            id: 'threejs-portfolio',
-            title: 'Interactive 3D Portfolio',
-            shortDescription: 'A low-poly, isometric 3D portfolio inspired by Firelink Shrine, built with Three.js.',
-            fullDescription: 'This interactive portfolio, built with Three.js, features a low-poly isometric village inspired by Firelink Shrine. Users can explore the environment, interact with NPCs, and learn about my projects in an engaging and immersive way. The design reflects my passion for game-inspired web experiences while showcasing my skills in 3D development.',
+            id: 'project-darkshrine',
+            title: 'Firelink Shrine Inspired Portfolio',
+            shortDescription: 'An interactive portfolio scene inspired by Dark Souls’ Firelink Shrine, featuring moody ambience and cryptic NPC dialogue.',
+            fullDescription: 'This portfolio project recreates the contemplative atmosphere of Firelink Shrine with ambient music, sparse lighting, and NPCs delivering cryptic, Dark Souls–style dialogue. It blends game-inspired narrative and exploration to showcase my programming skills and creative vision, using Three.js for 3D interaction and immersive storytelling.',
             technologies: [
                 {name:'Eleven Labs', icon: ElevenLabs},
                 {name:'Udio', icon: Udio},
@@ -109,12 +109,10 @@ export class PortfolioOverlay{
                 PortfolioImage4,
             ],
             keyFeatures: [
-                { title: "Explorable 3D World", body: "A fully interactive environment where users can navigate and discover my projects." },
-                { title: "NPC Interactions", body: "NPCs provide information about my work, delivering dialogue inspired by Dark Souls-style storytelling." },
-                { title: "Low-Poly Art Style", body: "Designed with a nostalgic, game-like aesthetic inspired by *The Legend of Zelda: Link’s Awakening* remake." },
-                { title: "Dark Souls-Inspired Atmosphere", body: "Modeled after Firelink Shrine, my portfolio features NPCs that share project details in a cryptic, lore-driven manner, much like the NPCs in *Dark Souls*." },
-                { title: "Optimized for the Web", body: "Built with Three.js for smooth performance and compatibility across modern browsers." },
-                { title: "AI-Enhanced Experience", body: "Utilizing generative AI, the project includes voice acting (via Eleven Labs) and music (via Udio) for an immersive experience." }
+                { title: "Immersive 3D Environment", body: "Isometric, low-poly scene inspired by Firelink Shrine’s mood and design" },
+                { title: "Cryptic NPC Dialogue", body: "Dark Souls–style cryptic and dramatic NPC lines with a comedic edge" },
+                { title: "Ambient Soundscape", body: "Original ambient music generated to evoke Firelink Shrine’s contemplative atmosphere" },
+                { title: "Interactive Exploration", body: "Players can interact with NPCs to learn about my projects and skills" }
             ],
             youtubeLink: 'https://www.youtube.com/embed/your-video-id', // Replace with actual demo if available
             githubLink: 'https://github.com/gianni35011/interactive-portfolio-showcase'
@@ -291,7 +289,7 @@ export class PortfolioOverlay{
                     modalImg.src = imgElement.src;
                 });
             });
-            
+
 
             modal.addEventListener('click', () => {
                 modal.style.display = 'none';

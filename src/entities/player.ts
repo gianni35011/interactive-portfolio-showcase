@@ -11,7 +11,7 @@ import Footstep02Url from '/public/assets/sounds/footsteps/grass/00_footstep_gra
 import Footstep03Url from '/public/assets/sounds/footsteps/grass/00_footstep_grass.wav';
 import {Interactive} from "../engine/Interactive.ts";
 
-const SPEED: number = 1;
+const SPEED: number = 2;
 const WALK = "Walking_C";
 const IDLE = "Idle";
 
@@ -48,7 +48,7 @@ export class Player extends Object3D {
     private _materials: Material[] = [];
     private _fadeInProgress: boolean = true;
     private _fadeInDuration: number = 1; // Duration in seconds
-    private _fadeInDelay: number = 2; // Delay before fade-in starts (in seconds)
+    private _fadeInDelay: number = 4; // Delay before fade-in starts (in seconds)
     private _fadeInTimer: number = 0;
 
     constructor(

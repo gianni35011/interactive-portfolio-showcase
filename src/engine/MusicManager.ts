@@ -1,6 +1,6 @@
 ﻿import {GameState, GameStateManager} from "./GameStateManager.ts";
 
-import WorldMusicUrl from "/public/assets/sounds/music/LofiSolitude.mp3";
+import WorldMusicUrl from "/public/assets/sounds/music/EtherealWhispersV3.mp3";
 import PortfolioMusicUrl from "/public/assets/sounds/music/PortfolioMusic.mp3";
 
 export class MusicManager{
@@ -9,7 +9,7 @@ export class MusicManager{
     private nextTrack: HTMLAudioElement | null = null;
     private tracks: Map<GameState, HTMLAudioElement> = new Map();
     private fadeInterval: number | null = null;
-    private currentVolume = 0.5;
+    private currentVolume = 0.20;
 
     constructor() {
         this.stateManager = GameStateManager.getInstance();

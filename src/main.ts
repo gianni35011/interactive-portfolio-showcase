@@ -291,11 +291,11 @@ function createEducationNPC(npcMesh: Mesh | null, physicsEngine: any, dialogueMa
         dialogueManager,
         dialogueEntries: [
             {
-                text: "It's all there. ",
+                text: "Degrees, titles… the rituals we called learning.",
                 audioPath: WizardVoice00Url
             },
             {
-                text: "Degrees, titles… the rituals we called learning.",
+                text: "It's all there. ",
                 audioPath: WizardVoice01Url
             },
         ],
