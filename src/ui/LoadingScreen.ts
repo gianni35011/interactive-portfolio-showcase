@@ -2,7 +2,6 @@
     private element!: HTMLElement;
     private progressBar!: HTMLElement;
     private progressText!: HTMLElement;
-    private onLoadingComplete?: () => void;
 
     constructor() {
         this.createLoadingScreen();

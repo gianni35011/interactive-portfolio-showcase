@@ -32,24 +32,24 @@ export class Skybox{
     }
 
     private loadEXR(scene: Scene, renderer: Graphics, exrPath: string): void {
-        // const pmremGenerator = new PMREMGenerator(renderer);
-        // pmremGenerator.compileEquirectangularShader();
-        //
-        // const exrLoader = new EXRLoader();
-        // exrLoader.load(exrPath, (texture) => {
-        //     texture.mapping = EquirectangularReflectionMapping;
-        //     const envMap = pmremGenerator.fromEquirectangular(texture).texture;
-        //
-        //     scene.environment = envMap;
-        //     scene.background = envMap;
-        //
-        //     // Set initial values
-        //     scene.backgroundBlurriness = 0;
-        //     scene.backgroundIntensity = 1;
-        //
-        //     texture.dispose();
-        //     pmremGenerator.dispose();
-        // });
+        const pmremGenerator = new PMREMGenerator(renderer);
+        pmremGenerator.compileEquirectangularShader();
+
+        const exrLoader = new EXRLoader();
+        exrLoader.load(exrPath, (texture) => {
+            texture.mapping = EquirectangularReflectionMapping;
+            const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+
+            scene.environment = envMap;
+            scene.background = envMap;
+
+            // Set initial values
+            scene.backgroundBlurriness = 0;
+            scene.backgroundIntensity = 1;
+
+            texture.dispose();
+            pmremGenerator.dispose();
+        });
     }
 
     private addControls(scene: Scene): void {

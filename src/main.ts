@@ -240,6 +240,7 @@ async function initializeSceneWithDelay(
         const stateManager = GameStateManager.getInstance();
         stateManager.setState(GameState.PLAYING);
 
+        if(!player || !npc || !npc2) return;
         const tempdt = graphics.clock.getDelta()
         npc.update(tempdt);
         npc2.update(tempdt);
